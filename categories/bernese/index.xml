@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bernese on GeoPlus</title>
+    <link>http://geoyxd.github.io/categories/bernese/</link>
+    <description>Recent content in bernese on GeoPlus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 17 Sep 2020 22:11:36 +0800</lastBuildDate><atom:link href="http://geoyxd.github.io/categories/bernese/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux系统编译bernese软件</title>
+      <link>http://geoyxd.github.io/post/install-bernese-on-linux/</link>
+      <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
+      
+      <guid>http://geoyxd.github.io/post/install-bernese-on-linux/</guid>
+      <description>&lt;p&gt;安装bernese5.2遇到两个坑
+一、Qt的安装
+二、bernese的按装&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

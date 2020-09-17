@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://geoyxd.github.io/sitemap.xml
+Sitemap: http://geoyxd.github.io/sitemap.xml

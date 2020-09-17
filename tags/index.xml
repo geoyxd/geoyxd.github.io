@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on GeoPlus</title>
-    <link>https://geoyxd.github.io/tags/</link>
+    <link>http://geoyxd.github.io/tags/</link>
     <description>Recent content in Tags on GeoPlus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 17 Sep 2020 22:11:36 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Sep 2020 22:11:36 +0800</lastBuildDate><atom:link href="http://geoyxd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git</title>
-      <link>https://geoyxd.github.io/tags/git/</link>
+      <link>http://geoyxd.github.io/tags/git/</link>
       <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
       
-      <guid>https://geoyxd.github.io/tags/git/</guid>
+      <guid>http://geoyxd.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git worktree</title>
-      <link>https://geoyxd.github.io/tags/git-worktree/</link>
+      <link>http://geoyxd.github.io/tags/git-worktree/</link>
       <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
       
-      <guid>https://geoyxd.github.io/tags/git-worktree/</guid>
+      <guid>http://geoyxd.github.io/tags/git-worktree/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scm</title>
-      <link>https://geoyxd.github.io/tags/scm/</link>
+      <link>http://geoyxd.github.io/tags/scm/</link>
       <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
       
-      <guid>https://geoyxd.github.io/tags/scm/</guid>
+      <guid>http://geoyxd.github.io/tags/scm/</guid>
       <description></description>
     </item>
     

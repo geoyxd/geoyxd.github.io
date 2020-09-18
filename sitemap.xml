@@ -16,42 +16,7 @@
   </url>
   
   <url>
-    <loc>http://geoyxd.github.io/tags/bernese/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://geoyxd.github.io/categories/bernese/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://geoyxd.github.io/categories/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://geoyxd.github.io/tags/gamit/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://geoyxd.github.io/categories/gamit/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://geoyxd.github.io/post/gamit-install/</loc>
     <lastmod>2020-09-17T22:11:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -86,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://geoyxd.github.io/post/install-bernese-on-linux/</loc>
-    <lastmod>2020-09-17T22:11:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://geoyxd.github.io/post/</loc>
     <lastmod>2020-09-17T22:11:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -116,6 +74,48 @@
   <url>
     <loc>http://geoyxd.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/tags/bernese/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/categories/bernese/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/tags/gamit/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/categories/gamit/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/post/gamit-install/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/post/install-bernese-on-linux/</loc>
+    <lastmod>2019-09-17T22:11:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

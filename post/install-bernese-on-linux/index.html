@@ -46,14 +46,14 @@
 二、bernese的按装" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://geoyxd.github.io/post/install-bernese-on-linux/" />
-<meta property="article:published_time" content="2020-09-17T22:11:36+08:00" />
-<meta property="article:modified_time" content="2020-09-17T22:11:36+08:00" />
+<meta property="article:published_time" content="2019-09-17T22:11:36+08:00" />
+<meta property="article:modified_time" content="2019-09-17T22:11:36+08:00" />
 <meta itemprop="name" content="linux系统编译bernese软件">
 <meta itemprop="description" content="安装bernese5.2遇到两个坑
 一、Qt的安装
 二、bernese的按装">
-<meta itemprop="datePublished" content="2020-09-17T22:11:36+08:00" />
-<meta itemprop="dateModified" content="2020-09-17T22:11:36+08:00" />
+<meta itemprop="datePublished" content="2019-09-17T22:11:36+08:00" />
+<meta itemprop="dateModified" content="2019-09-17T22:11:36+08:00" />
 <meta itemprop="wordCount" content="2459">
 
 
@@ -100,8 +100,12 @@
         <li class="mobile-menu-item">书单</li>
       </a><a href="/resume/">
         <li class="mobile-menu-item">简历</li>
+      </a><a href="/donation/">
+        <li class="mobile-menu-item">捐赠</li>
       </a><a href="/solution/">
         <li class="mobile-menu-item">解决方案</li>
+      </a><a href="/download/">
+        <li class="mobile-menu-item">资料下载</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">关于GeoPlus</li>
       </a>
@@ -128,7 +132,11 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/resume/">简历</a>
       </li><li class="menu-item">
+        <a class="menu-item-link" href="/donation/">捐赠</a>
+      </li><li class="menu-item">
         <a class="menu-item-link" href="/solution/">解决方案</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/download/">资料下载</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">关于GeoPlus</a>
       </li>
@@ -145,7 +153,7 @@
       <h1 class="post-title">linux系统编译bernese软件</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-09-17 </span>
+        <span class="post-time"> 2019-09-17 </span>
         <div class="post-category">
             <a href="/categories/bernese/"> bernese </a>
             </div>
@@ -223,7 +231,7 @@ $ sudo make
 $ sudo make install
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="qt编译失败编译器参数设置不对应该加上-stdgnu98参数">QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数</h4>
+</div><h4 id="qt编译失败编译器参数设置不对应该加上-stdgnu98-参数">QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数</h4>
 <p>在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:</p>
 <p><img src="en-resource://database/434:1" alt="406f0c73372bd6b85a474626185200be.png">
 文件夹中mkspecs打开在Build type后面的linux-g++文件夹/qmake.conf
@@ -238,7 +246,7 @@ $ sudo make install
 </div>
 </div><p>如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。
 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ../common/linux.conf、../common/gcc-base-unix.conf、../common/g++-unix.conf 这三个文件。如果没有找到还需要递归的打开着三个文件中包含的文件。在../common/gcc-base.conf （包含在文件../common/gcc-base-unix.conf 中）文件中找到，并修改为如下所示。
-<strong><strong>本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。</strong></strong></p>
+<strong><strong>本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。</strong></strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -264,7 +272,7 @@ $ sudo make
 $ sudo make install
 </code></pre></td></tr></table>
 </div>
-</div><p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 QTDIR，将其指向 Qt 4 的安装目录。切换至 root ，打开 bash 环境配置文件：</p>
+</div><p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 QTDIR，将其指向 Qt 4 的安装目录。切换至 root ，打开 bash 环境配置文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -304,7 +312,7 @@ sudo apt install gfortran
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="bernese52">bernese5.2</h2>
-<p>通过 root 用户执行 Bernese 的安装引导脚本：</p>
+<p>通过 root 用户执行 Bernese 的安装引导脚本：</p>
 <p>首先给root用户设置密码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -328,9 +336,9 @@ sudo apt install gfortran
 </code></pre></td></tr></table>
 </div>
 </div><p>之后程序提示输入 Bernese 软件的安装目录，
-<strong><strong>这里的 /root 表示默认安装路径。</strong></strong> !这里有坑，显示/root为正常
-我们将其安装到 /opt/BERN52 文件夹，因此输入：/opt。
-一路回车，之后，配置文件 configure.pm 被启动，并在屏幕打印以下提示：</p>
+<strong><strong>这里的 /root 表示默认安装路径。</strong></strong> !这里有坑，显示/root为正常
+我们将其安装到 /opt/BERN52 文件夹，因此输入：/opt。
+一路回车，之后，配置文件 configure.pm 被启动，并在屏幕打印以下提示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -364,13 +372,13 @@ x ... Exit
 </code></pre></td></tr></table>
 </div>
 </div><p>解释一下此处的各个选项：
-键入 0：执行从第 1 项至第 5 项的全部过程键入 
-1：更新环境变量设置键入 
-2：安装在线更新包键入 
-3：添加新用户环境键入 
-4：编译图形界面菜单键入 
-5：编辑程序键入 
-6：安装解算工程示例键入 
+键入 0：执行从第 1 项至第 5 项的全部过程键入
+1：更新环境变量设置键入
+2：安装在线更新包键入
+3：添加新用户环境键入
+4：编译图形界面菜单键入
+5：编辑程序键入
+6：安装解算工程示例键入
 x： 退出安装程序
 由于存在一些坑，我们老老实实一步一步进行。键入 1，安装程序打印出支持的编译器，其中 GNU 指示到 gfortran 的路径，表明安装程序找到的了该编译器：</p>
 <div class="highlight"><div class="chroma">
@@ -487,7 +495,7 @@ Select  [2]:
 GNU ld (GNU Binutils for Ubuntu) 2.30
 </code></pre></td></tr></table>
 </div>
-</div><p>版本大于 2.22，需要修改 BERN52/MENU/memu.pro 中的内容。
+</div><p>版本大于 2.22，需要修改 BERN52/MENU/memu.pro 中的内容。
 打开该文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -506,7 +514,7 @@ GNU ld (GNU Binutils for Ubuntu) 2.30
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">##QMAKE_LIBS += -lz
 </code></pre></td></tr></table>
 </div>
-</div><p>保存后退出。然后，回到原终端，按 3 添加新用户环境。
+</div><p>保存后退出。然后，回到原终端，按 3 添加新用户环境。
 <strong><strong>坑2</strong></strong> 进行到第五步</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -684,7 +692,7 @@ source /opt/BERN52/GPS/EXE/LOADGPS.setvar
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-09-17
+        2019-09-17
         
     </span>
   </p>
@@ -696,9 +704,9 @@ source /opt/BERN52/GPS/EXE/LOADGPS.setvar
           <a href="/tags/bernese/">bernese</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/hello-world/">
+        <a class="prev" href="/post/gamit-install/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Hello World</span>
+            <span class="prev-text nav-default">GAMIT软件安装</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         

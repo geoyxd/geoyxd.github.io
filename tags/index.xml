@@ -8,24 +8,6 @@
     <language>zh-cn</language>
     <lastBuildDate>Thu, 17 Sep 2020 22:11:36 +0800</lastBuildDate><atom:link href="http://geoyxd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bernese</title>
-      <link>http://geoyxd.github.io/tags/bernese/</link>
-      <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
-      
-      <guid>http://geoyxd.github.io/tags/bernese/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gamit</title>
-      <link>http://geoyxd.github.io/tags/gamit/</link>
-      <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
-      
-      <guid>http://geoyxd.github.io/tags/gamit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>http://geoyxd.github.io/tags/git/</link>
       <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
@@ -49,6 +31,24 @@
       <pubDate>Thu, 17 Sep 2020 22:11:36 +0800</pubDate>
       
       <guid>http://geoyxd.github.io/tags/scm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bernese</title>
+      <link>http://geoyxd.github.io/tags/bernese/</link>
+      <pubDate>Tue, 17 Sep 2019 22:11:36 +0800</pubDate>
+      
+      <guid>http://geoyxd.github.io/tags/bernese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gamit</title>
+      <link>http://geoyxd.github.io/tags/gamit/</link>
+      <pubDate>Tue, 17 Sep 2019 22:11:36 +0800</pubDate>
+      
+      <guid>http://geoyxd.github.io/tags/gamit/</guid>
       <description></description>
     </item>
     

@@ -23,13 +23,6 @@
   </url>
   
   <url>
-    <loc>http://geoyxd.github.io/post/orbit-determinatio/</loc>
-    <lastmod>2020-09-20T23:40:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://geoyxd.github.io/post/</loc>
     <lastmod>2020-09-20T23:40:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +31,13 @@
   
   <url>
     <loc>http://geoyxd.github.io/tags/</loc>
+    <lastmod>2020-09-20T23:40:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://geoyxd.github.io/post/orbit-determinatio/</loc>
     <lastmod>2020-09-20T23:40:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

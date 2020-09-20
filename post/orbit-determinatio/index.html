@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Orbit - GeoYxd</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="yxd" /><meta name="description" content="利用gamit_globk软件计算卫星轨道  根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="http://geoyxd.github.io/post/orbit-determinatio/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Orbit" />
+<meta property="og:description" content="利用gamit_globk软件计算卫星轨道
+
+根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://geoyxd.github.io/post/orbit-determinatio/" />
+<meta property="article:published_time" content="2020-09-20T23:40:34+08:00" />
+<meta property="article:modified_time" content="2020-09-20T23:40:34+08:00" />
+<meta itemprop="name" content="Orbit">
+<meta itemprop="description" content="利用gamit_globk软件计算卫星轨道
+
+根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+">
+<meta itemprop="datePublished" content="2020-09-20T23:40:34+08:00" />
+<meta itemprop="dateModified" content="2020-09-20T23:40:34+08:00" />
+<meta itemprop="wordCount" content="1177">
+
+
+
+<meta itemprop="keywords" content="定轨," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Orbit"/>
+<meta name="twitter:description" content="利用gamit_globk软件计算卫星轨道
+
+根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">GeoYxd</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">类别</li>
+      </a><a href="/booklist/">
+        <li class="mobile-menu-item">书单</li>
+      </a><a href="/resume/">
+        <li class="mobile-menu-item">简历</li>
+      </a><a href="/donation/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/download/">
+        <li class="mobile-menu-item">下载</li>
+      </a><a href="/solution/">
+        <li class="mobile-menu-item">解决方案</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于GeoPlus</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">GeoYxd</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">类别</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/booklist/">书单</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/resume/">简历</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donation/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/download/">下载</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/solution/">解决方案</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于GeoPlus</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Orbit</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-09-20 </span>
+        <div class="post-category">
+            <a href="/categories/gamit/"> gamit </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#利用gamit_globk软件计算卫星轨道">利用gamit_globk软件计算卫星轨道</a>
+      <ul>
+        <li><a href="#一gamit软件参数设置">一、gamit软件参数设置</a></li>
+        <li><a href="#三数据处理步骤">三、数据处理步骤</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="利用gamit_globk软件计算卫星轨道">利用gamit_globk软件计算卫星轨道</h1>
+<blockquote>
+<p>根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。</p>
+</blockquote>
+<h2 id="一gamit软件参数设置">一、gamit软件参数设置</h2>
+<p>与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。</p>
+<p>sestbl.主要得参数设置为：</p>
+<blockquote>
+<p>Choice of Experiment = RELAX.   | ORBIT
+Update T/L files = T_AND_L</p>
+</blockquote>
+<p>二、文件准备</p>
+<blockquote>
+<p>test
+305
+rinex
+jfs3050.17ochan3050.17odaej3050.17oshao3050.17osuwn3050.17o
+brdc
+brdc3050.17o
+igs
+igs19733.sp3
+table
+&hellip;&hellip;
+table文件用sh_setup</p>
+</blockquote>
+<blockquote>
+<p>sh_setup -yr 2017 305</p>
+</blockquote>
+<h2 id="三数据处理步骤">三、数据处理步骤</h2>
+<p>1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件</p>
+<blockquote>
+<p>sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+</blockquote>
+<p>2、生成轨道初值G文件</p>
+<blockquote>
+<p>sh_sp3fit -f igs19733.sp3</p>
+</blockquote>
+<p>3、检查G文件</p>
+<blockquote>
+<p>sh_check_sess -sess 305 -type gfile -file <g-file></p>
+</blockquote>
+<p>4、生成卫星钟文件</p>
+<blockquote>
+<p>makej brdc3050.17n    jigsf7.305 igs19733.sp3</p>
+</blockquote>
+<p>5、检查j文件</p>
+<blockquote>
+<p>sh_check_sess -sess 305 -type jfile  -file   jigsf7.305</p>
+</blockquote>
+<p>6、生成双差X文件</p>
+<blockquote>
+<p>makex test.makex.batch</p>
+</blockquote>
+<p>7、生成批处理脚本</p>
+<blockquote>
+<p>fixdrv dtest7.305</p>
+</blockquote>
+<p>8、运行脚本</p>
+<blockquote>
+<p>csh bbdst7.bat</p>
+</blockquote>
+<p>四、结果分析</p>
+<p>定轨结果在生成T文件（在sestbl.设置更新T文件）</p>
+<p>1、运行orbdif比较更新前后的结果</p>
+<blockquote>
+<p>$ orbdif ORBDIF: Interactive input Runsting: <Type> <Frame> &lt;T_file1&gt; &lt;T_File2&gt; <RMS File> <Plot> <Plot Ext> Differences are T_File2-T_file1 Enter orbit file type T-Tile (T) or NGS (N) t Are T-Files Inertial (I) or Earth Fixed (E) i Enter name of T-File (A) tchkg7.305 Enter name of T-File (B) tigsg7.305 Enter RMS output file name chkrms Interpolating Orbit files interval          20 interval          40 interval          60 interval          80 interval          86 Enter the following options 0  to return to skip plot file making 1  to make a set of plot files of dx,dy,dz 2  to make a set of plot files of dr,da,dc 3  to make a set of plot files of vx,vy,vz 4  dN,dE,dU, and satellite ground track positions 0 Normal end of ORBDIF</p>
+</blockquote>
+<p>2、运行ttongs生成sp3格式的文件</p>
+<blockquote>
+<p>ttongs tchkg7.305  sp3 chk fit itr97 fes2004 IGS05_1402 chk19733.sp3</p>
+</blockquote>
+<p>3、结果</p>
+<blockquote>
+<p>Positional Errors (RMS in meters
+) between Two Orbits: tchkg7.305 ( int:15.00min) vs. tigsg7.305 ( int:15.00min) Overlapped Time Range: 2017 305  1.25 2017 305 22.75 total: 21.50 hours</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>PRN     Total    delta-X   delta-Y   delta-Z   d-Radial  d-Along   d-Cross      d-3D
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;   1    0.26833   0.22330   0.33408   0.23351   0.09138   0.44740   0.08667   0.46476   2    0.21675   0.16998   0.27468   0.19132   0.08135   0.35694   0.08391   0.37543   3    0.28971   0.29570   0.27416   0.29866   0.10193   0.48602   0.07177   0.50180   4    0.93950   0.86116   0.76425   1.14990   0.49235   1.54747   0.04167   1.62726   5    0.59195   0.57633   0.54704   0.64792   0.38383   0.93943   0.14170   1.02528   6    0.41700   0.31898   0.50135   0.41058   0.15785   0.70262   0.05585   0.72227   7    0.82410   0.71466   0.81233   0.93102   0.50744   1.33214   0.09224   1.42738   8    0.37994   0.36755   0.38190   0.39003   0.12245   0.64660   0.01045   0.65808   9    0.29147   0.34692   0.27624   0.24127   0.08947   0.49622   0.02548   0.50485 10    0.22559   0.26078   0.22239   0.18763   0.12974   0.36530   0.05082   0.39073 11    0.49684   0.48898   0.59526   0.38355   0.26510   0.80894   0.13238   0.86055 12    0.71143   0.53429   0.68619   0.87298   0.38467   1.16885   0.08957   1.23224 13    0.36188   0.32337   0.38349   0.37583   0.12656   0.61346   0.02330   0.62680 14    0.50357   0.42987   0.45804   0.60511   0.18832   0.85057   0.02303   0.87221 15    0.94055   1.06915   0.92855   0.80537   0.47177   1.55645   0.03686   1.62909 16    0.34995   0.33714   0.35206   0.36027   0.16965   0.57705   0.07085   0.60614 17    0.46648   0.37784   0.42828   0.57150   0.27333   0.75928   0.04878   0.80796 18    0.29637   0.39630   0.26311   0.19293   0.14446   0.49272   0.02941   0.51332 19    0.44295   0.45312   0.35322   0.50846   0.16394   0.74756   0.04797   0.76722 20    0.50611   0.69423   0.28488   0.45313   0.32562   0.81183   0.04237   0.87661 21    0.45456   0.40781   0.41315   0.53186   0.20097   0.76092   0.06087   0.78732 22    0.52029   0.44322   0.49707   0.60712   0.23124   0.86926   0.04187   0.90117 23    0.64727   0.79259   0.59411   0.52509   0.32764   1.06979   0.02337   1.12111 24    0.14687   0.12066   0.18791   0.12181   0.12733   0.21417   0.05068   0.25438 25    0.08415   0.09965   0.08681   0.06146   0.05533   0.12211   0.05690   0.14575 26    0.41093   0.41984   0.41284   0.39986   0.15882   0.69249   0.04423   0.71175 27    0.45998   0.40876   0.41376   0.54447   0.16342   0.77976   0.01363   0.79670 28    0.11271   0.12033   0.11580   0.10110   0.05093   0.17541   0.06817   0.19522 29    0.98331   1.22239   0.82247   0.85440   0.50230   1.62699   0.03932   1.70314 30    0.39993   0.36931   0.41103   0.41771   0.14332   0.67607   0.04630   0.69270 31    0.54272   0.47710   0.53662   0.60666   0.36499   0.86162   0.07567   0.94001 32    0.49996   0.51999   0.39216   0.57072   0.19598   0.84314   0.02366   0.86596 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; MEAN   0.51421   0.52248   0.48124   0.53726   0.26258   0.84845   0.06260   0.89063 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+*定轨精度分米级，主要原因测站数目、测站分布</p>
+</blockquote>
+<p>问题解决
+一、makexp生成session.info文件无卫星信息</p>
+<blockquote>
+<p>sh_makexp 
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+</blockquote>
+<p>二、Neither T- nor G-file available (Name tigsf7.305)
+       
+方法一、修改dtest7.305文件中tigsf7.305为gigsf7.305
+方法二、生成tigsf7.305 通过arc, bctot, ngstot, sh_bctot, sh_sp3fit等生成 例如：  </p>
+<blockquote>
+<p>ngstot igs19733.sp3 tigsg7.305</p>
+</blockquote>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">yxd</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-09-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%AE%9A%E8%BD%A8/">定轨</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/hello-world/">
+            <span class="next-text nav-default">Hello World</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://geoyxd.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>yxd</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -50,7 +50,7 @@
 <meta itemprop="description" content="在Elementary OS 5 Juno是基于最新版本的Ubuntu，其平台上安装gamit无法成功，是gcc、gFortran版本太高的原因，解决方式如下：">
 <meta itemprop="datePublished" content="2019-09-17T22:11:36+08:00" />
 <meta itemprop="dateModified" content="2019-09-17T22:11:36+08:00" />
-<meta itemprop="wordCount" content="274">
+<meta itemprop="wordCount" content="2325">
 
 
 
@@ -185,6 +185,7 @@
         <li><a href="#gamit安装成功">gamit安装成功</a>
           <ul>
             <li><a href="#ubnutu最新的也适用">ubnutu最新的也适用</a></li>
+            <li><a href="#错误">错误</a></li>
           </ul>
         </li>
       </ul>
@@ -198,12 +199,136 @@
 <h1 id="gamitglobk软件简介及其应用">GAMIT/GLOBK软件简介及其应用</h1>
 <h2 id="gamitglobk软件">GAMIT/GLOBK软件</h2>
 <h3 id="简介">简介</h3>
+<p>GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于大地测量的GPS分析软件，以后经许多人不断改进而成为应用面较为广泛的高精度GPS数据分析和处理软件，是目前国际上著名GPS定位定轨软件之一。GAMIT/GLOBK 高精度数据处理软件不但精度高而且开放源代码， 使用者可以根据需要进行源程序的修改。目前，它已广泛应用于长距离、高精度、长时间的GPS 定位数据处理。GAMIT集GPS定位定轨于一体，它可以解算卫星轨道和站坐标以及其它一些辅助参数，如钟差、大气延迟改正参数、整周模糊度参数等。GLOBK是利用卡尔曼滤波技术进一步分析由VLBI和GPS分析软件解算的解向量和协方差阵的软件，通过运行GLOBK，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等。
+GAMIT/GLOBK 可以运行于所有 UNIX 及其衍生的操作系统中，但是需要编译器如 gcc/g77、gcc/gfortran 等的支持，目前最新的版本是GAMIT/GLOBK10.7。</p>
 <h3 id="安装">安装</h3>
 <h2 id="gamitglobk应用">GAMIT/GLOBK应用</h2>
 <h3 id="基线解算">基线解算</h3>
+<h4 id="分步解算">分步解算</h4>
+<h4 id="批处理">批处理</h4>
+<blockquote>
+<p>sh_gamit</p>
+</blockquote>
 <h3 id="网平差">网平差</h3>
-<h3 id="卫星定轨">卫星定轨</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">hfile: htoglb ../glbf ../tables/svs_casm.svs hca*
+gsoln: ls ../glbf/*.glx &gt;casm.gdl
+glred 6 casm.prt casm.log casm.gdl globk_comb.cmd;ls ./*glx &gt;yxd.gdl
+ensum 2 sum_rep.org val_rep.org casm.org
+mkdir mb;cd mb;multibase ../val_rep.org;sh_baseline -n 3 -res -cols 1 -f mb*
+globk 6 globk_comb.prt globk_comb.log yxd.gdl globk_comb.cmd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="卫星定轨">卫星定轨</h3>
+<blockquote>
+<p>根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。</p>
+</blockquote>
+<h4 id="一gamit软件参数设置">一、gamit软件参数设置</h4>
+<p>与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。</p>
+<p>sestbl.主要得参数设置为：</p>
+<blockquote>
+<p>Choice of Experiment = RELAX.   | ORBIT
+Update T/L files = T_AND_L</p>
+</blockquote>
+<p>二、文件准备</p>
+<blockquote>
+<p>test
+305
+rinex
+jfs3050.17ochan3050.17odaej3050.17oshao3050.17osuwn3050.17o
+brdc
+brdc3050.17o
+igs
+igs19733.sp3
+table
+&hellip;&hellip;
+table文件用sh_setup</p>
+</blockquote>
+<blockquote>
+<p>sh_setup -yr 2017 305</p>
+</blockquote>
+<h5 id="三数据处理步骤">三、数据处理步骤</h5>
+<p>1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件</p>
+<blockquote>
+<p>sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+</blockquote>
+<p>2、生成轨道初值G文件</p>
+<blockquote>
+<p>sh_sp3fit -f igs19733.sp3</p>
+</blockquote>
+<p>3、检查G文件</p>
+<blockquote>
+<p>sh_check_sess -sess 305 -type gfile -file <g-file></p>
+</blockquote>
+<p>4、生成卫星钟文件</p>
+<blockquote>
+<p>makej brdc3050.17n    jigsf7.305 igs19733.sp3</p>
+</blockquote>
+<p>5、检查j文件</p>
+<blockquote>
+<p>sh_check_sess -sess 305 -type jfile  -file   jigsf7.305</p>
+</blockquote>
+<p>6、生成双差X文件</p>
+<blockquote>
+<p>makex test.makex.batch</p>
+</blockquote>
+<p>7、生成批处理脚本</p>
+<blockquote>
+<p>fixdrv dtest7.305</p>
+</blockquote>
+<p>8、运行脚本</p>
+<blockquote>
+<p>csh bbdst7.bat</p>
+</blockquote>
+<p>四、结果分析</p>
+<p>定轨结果在生成T文件（在sestbl.设置更新T文件）</p>
+<p>1、运行orbdif比较更新前后的结果</p>
+<blockquote>
+<p>$ orbdif ORBDIF: Interactive input Runsting: <Type> <Frame> &lt;T_file1&gt; &lt;T_File2&gt; <RMS File> <Plot> <Plot Ext> Differences are T_File2-T_file1 Enter orbit file type T-Tile (T) or NGS (N) t Are T-Files Inertial (I) or Earth Fixed (E) i Enter name of T-File (A) tchkg7.305 Enter name of T-File (B) tigsg7.305 Enter RMS output file name chkrms Interpolating Orbit files interval          20 interval          40 interval          60 interval          80 interval          86 Enter the following options 0  to return to skip plot file making 1  to make a set of plot files of dx,dy,dz 2  to make a set of plot files of dr,da,dc 3  to make a set of plot files of vx,vy,vz 4  dN,dE,dU, and satellite ground track positions 0 Normal end of ORBDIF</p>
+</blockquote>
+<p>2、运行ttongs生成sp3格式的文件</p>
+<blockquote>
+<p>ttongs tchkg7.305  sp3 chk fit itr97 fes2004 IGS05_1402 chk19733.sp3</p>
+</blockquote>
+<p>3、结果</p>
+<blockquote>
+<p>Positional Errors (RMS in meters
+) between Two Orbits: tchkg7.305 ( int:15.00min) vs. tigsg7.305 ( int:15.00min) Overlapped Time Range: 2017 305  1.25 2017 305 22.75 total: 21.50 hours</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>PRN     Total    delta-X   delta-Y   delta-Z   d-Radial  d-Along   d-Cross      d-3D
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;   1    0.26833   0.22330   0.33408   0.23351   0.09138   0.44740   0.08667   0.46476   2    0.21675   0.16998   0.27468   0.19132   0.08135   0.35694   0.08391   0.37543   3    0.28971   0.29570   0.27416   0.29866   0.10193   0.48602   0.07177   0.50180   4    0.93950   0.86116   0.76425   1.14990   0.49235   1.54747   0.04167   1.62726   5    0.59195   0.57633   0.54704   0.64792   0.38383   0.93943   0.14170   1.02528   6    0.41700   0.31898   0.50135   0.41058   0.15785   0.70262   0.05585   0.72227   7    0.82410   0.71466   0.81233   0.93102   0.50744   1.33214   0.09224   1.42738   8    0.37994   0.36755   0.38190   0.39003   0.12245   0.64660   0.01045   0.65808   9    0.29147   0.34692   0.27624   0.24127   0.08947   0.49622   0.02548   0.50485 10    0.22559   0.26078   0.22239   0.18763   0.12974   0.36530   0.05082   0.39073 11    0.49684   0.48898   0.59526   0.38355   0.26510   0.80894   0.13238   0.86055 12    0.71143   0.53429   0.68619   0.87298   0.38467   1.16885   0.08957   1.23224 13    0.36188   0.32337   0.38349   0.37583   0.12656   0.61346   0.02330   0.62680 14    0.50357   0.42987   0.45804   0.60511   0.18832   0.85057   0.02303   0.87221 15    0.94055   1.06915   0.92855   0.80537   0.47177   1.55645   0.03686   1.62909 16    0.34995   0.33714   0.35206   0.36027   0.16965   0.57705   0.07085   0.60614 17    0.46648   0.37784   0.42828   0.57150   0.27333   0.75928   0.04878   0.80796 18    0.29637   0.39630   0.26311   0.19293   0.14446   0.49272   0.02941   0.51332 19    0.44295   0.45312   0.35322   0.50846   0.16394   0.74756   0.04797   0.76722 20    0.50611   0.69423   0.28488   0.45313   0.32562   0.81183   0.04237   0.87661 21    0.45456   0.40781   0.41315   0.53186   0.20097   0.76092   0.06087   0.78732 22    0.52029   0.44322   0.49707   0.60712   0.23124   0.86926   0.04187   0.90117 23    0.64727   0.79259   0.59411   0.52509   0.32764   1.06979   0.02337   1.12111 24    0.14687   0.12066   0.18791   0.12181   0.12733   0.21417   0.05068   0.25438 25    0.08415   0.09965   0.08681   0.06146   0.05533   0.12211   0.05690   0.14575 26    0.41093   0.41984   0.41284   0.39986   0.15882   0.69249   0.04423   0.71175 27    0.45998   0.40876   0.41376   0.54447   0.16342   0.77976   0.01363   0.79670 28    0.11271   0.12033   0.11580   0.10110   0.05093   0.17541   0.06817   0.19522 29    0.98331   1.22239   0.82247   0.85440   0.50230   1.62699   0.03932   1.70314 30    0.39993   0.36931   0.41103   0.41771   0.14332   0.67607   0.04630   0.69270 31    0.54272   0.47710   0.53662   0.60666   0.36499   0.86162   0.07567   0.94001 32    0.49996   0.51999   0.39216   0.57072   0.19598   0.84314   0.02366   0.86596 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; MEAN   0.51421   0.52248   0.48124   0.53726   0.26258   0.84845   0.06260   0.89063 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+*定轨精度分米级，主要原因测站数目、测站分布</p>
+</blockquote>
+<p>问题解决
+一、makexp生成session.info文件无卫星信息</p>
+<blockquote>
+<p>sh_makexp
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+</blockquote>
+<p>二、Neither T- nor G-file available (Name tigsf7.305)</p>
+<p>方法一、修改dtest7.305文件中tigsf7.305为gigsf7.305
+方法二、生成tigsf7.305 通过arc, bctot, ngstot, sh_bctot, sh_sp3fit等生成 例如：</p>
+<blockquote>
+<p>ngstot igs19733.sp3 tigsg7.305</p>
+</blockquote>
 <h3 id="可降水量解算">可降水量解算</h3>
+<blockquote>
+<p>sh_metutil</p>
+</blockquote>
 <h2 id="出现错误">出现错误</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -250,6 +375,21 @@ sudo ln -s gcc-5 gcc
 </div><h2 id="gamit安装成功">gamit安装成功</h2>
 <h3 id="ubnutu最新的也适用">ubnutu最新的也适用</h3>
 <hr>
+<h3 id="错误">错误</h3>
+<blockquote>
+<p>在用GLRED进行时间序列分析是，经常会需要把多个网的结果绑定到一起，如把区域解和SOPAC的全球解进行绑定。
+平差过程中经常会遇到Chi<strong>2过大，导致个别网的数据没有使用（在平差后的ORG文件中有“NOT USED”标示）。
+致使Chi</strong>2过大或出现负数的情况一般有如下几种。</p>
+</blockquote>
+<ol>
+<li>不同地点的同名测站相互冲突，本来是两个不同的测站但由于采用相同的测站ID。
+因此，在数据处理之前应该通过glist等提前检查核实，并在eq_file中进行更名处理。
+triangle_2x.png</li>
+<li>不同网单日解处理时采用的模型不一样。一般而言，诸如潮汐改正、对流层映射函数等差异影响不是很大。
+需要注意的是卫星的天线相位中心，该影响是比较大的，尤其是对于刚发射不久的卫星，由于短期观测数据不能很好地对相位中心进行估计，
+模型给出的改正值可能会随有比较大的偏差。
+因此，在数据处理时需要采用相同的改正模型，或者在GLRED是不对卫星参数进行卡尔曼滤波估计。</li>
+</ol>
     </div>
 
     <div class="post-copyright">

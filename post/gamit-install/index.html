@@ -49,7 +49,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2019-09-17T22:11:36+08:00" />
 <meta itemprop="dateModified" content="2019-09-17T22:11:36+08:00" />
-<meta itemprop="wordCount" content="2249">
+<meta itemprop="wordCount" content="2311">
 
 
 
@@ -200,7 +200,28 @@
 <p>GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于大地测量的GPS分析软件，以后经许多人不断改进而成为应用面较为广泛的高精度GPS数据分析和处理软件，是目前国际上著名GPS定位定轨软件之一。GAMIT/GLOBK 高精度数据处理软件不但精度高而且开放源代码， 使用者可以根据需要进行源程序的修改。目前，它已广泛应用于长距离、高精度、长时间的GPS 定位数据处理。GAMIT集GPS定位定轨于一体，它可以解算卫星轨道和站坐标以及其它一些辅助参数，如钟差、大气延迟改正参数、整周模糊度参数等。GLOBK是利用卡尔曼滤波技术进一步分析由VLBI和GPS分析软件解算的解向量和协方差阵的软件，通过运行GLOBK，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等。
 GAMIT/GLOBK 可以运行于所有 UNIX 及其衍生的操作系统中，但是需要编译器如 gcc/g77、gcc/gfortran 等的支持，目前最新的版本是GAMIT/GLOBK10.7。</p>
 <h3 id="安装">安装</h3>
-<h2 id="gamitglobk应用">GAMIT/GLOBK应用</h2>
+<h4 id="linux">linux</h4>
+<h4 id="虚拟机">虚拟机</h4>
+<h4 id="wsl">wsl</h4>
+<p>win10子系统
+更换阿里源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo sed -i &#39;s/security.ubuntu/mirrors.aliyun/g&#39; /etc/apt/sources.list
+sudo sed -i &#39;s/archive.ubuntu/mirrors.aliyun/g&#39; /etc/apt/sources.list
+sudo apt update
+sudo apt-get upgrade    //更新已安装的包到最新，这个是可选的
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="gamitglobk应用">GAMIT/GLOBK应用</h2>
 <h3 id="基线解算">基线解算</h3>
 <h4 id="分步解算">分步解算</h4>
 <h4 id="批处理">批处理</h4>

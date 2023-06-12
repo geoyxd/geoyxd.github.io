@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on A GEO&#43; Site</title>
+    <link>https://geoyxd.github.io/about/</link>
+    <description>Recent content in Abouts on A GEO&#43; Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Mon, 12 Jun 2023 19:47:49 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>https://geoyxd.github.io/about/about/</link>
+      <pubDate>Mon, 12 Jun 2023 19:47:49 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/about/about/</guid>
+      <description> 于止，知其所止，可以人而不如鸟乎? ——《礼记·大学》
+技术 python&amp;gt;c#&amp;gt;fortran&amp;gt;matlab
+理想 共产主义
+博客 本博客自豪地由 Hugo 驱动，主题是 icarus，源码在 GitHub 上。
+联系方式 geoyxd@qq.com </description>
+    </item>
+    
+  </channel>
+</rss>

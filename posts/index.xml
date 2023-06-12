@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on GeoMan</title>
+    <link>https://geoyxd.github.io/posts/</link>
+    <description>Recent content in Posts on GeoMan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demo</title>
+      <link>https://geoyxd.github.io/posts/demo/</link>
+      <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/posts/demo/</guid>
+      <description>helloworld </description>
+    </item>
+    
+  </channel>
+</rss>

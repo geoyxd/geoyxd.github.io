@@ -1,11 +1,12 @@
 <?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GeoMan</title>
+    <title>A Hugo Site</title>
     <link>https://geoyxd.github.io/</link>
-    <description>Recent content on GeoMan</description>
+    <description>Recent content on A Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
+    <copyright>This is a customized copyright.</copyright>
     <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate>
     
         <atom:link href="https://geoyxd.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +19,8 @@
         <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/demo/</guid>
-        <description>GeoMan https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
-- https://geoyxd.github.io/posts/demo/ - </description>
+        <description>A Hugo Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
+- https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
         </item>
     
     

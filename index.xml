@@ -1,15 +1,26 @@
 <?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo Site</title>
+    <title>A GEO&#43; Site</title>
     <link>https://geoyxd.github.io/</link>
-    <description>Recent content on A Hugo Site</description>
+    <description>Recent content on A GEO&#43; Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jun 2023 19:41:12 +0800</lastBuildDate>
     
         <atom:link href="https://geoyxd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Booklist</title>
+        <link>https://geoyxd.github.io/page/booklist/</link>
+        <pubDate>Mon, 12 Jun 2023 19:41:12 +0800</pubDate>
+        
+        <guid>https://geoyxd.github.io/page/booklist/</guid>
+        <description>A GEO&#43; Site https://geoyxd.github.io/page/booklist/ -- https://geoyxd.github.io/page/booklist/ - This is a customized copyright.</description>
+        </item>
     
     
     
@@ -19,7 +30,7 @@
         <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/demo/</guid>
-        <description>A Hugo Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
+        <description>A GEO&#43; Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
 - https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
         </item>
     

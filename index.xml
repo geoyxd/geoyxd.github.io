@@ -107,5 +107,78 @@
         </item>
     
     
+    
+        <item>
+        <title>Ubuntu23 安装 gamit 软件</title>
+        <link>https://geoyxd.github.io/post/install_gamit_software/</link>
+        <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
+        
+        <guid>https://geoyxd.github.io/post/install_gamit_software/</guid>
+        <description>A GEO&#43; Site https://geoyxd.github.io/post/install_gamit_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
+&lt;p&gt;GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。&lt;/p&gt;
+&lt;h1 id=&#34;安装-gamitglobk-软件&#34;&gt;安装 GAMIT/GLOBK 软件&lt;/h1&gt;
+&lt;h2 id=&#34;安装支持-gamit-软件包支持的软件&#34;&gt;安装支持 GAMIT 软件包支持的软件。&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install tcsh
+sudo apt install csh
+sudo apt install gcc
+sudo apt install libx11-dev
+sudo apt install gfortran
+sudo apt install make
+sudo apt install gmt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;下载低版本的-gcc-gfortran-软件&#34;&gt;下载低版本的 gcc gfortran 软件&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo apt-get install gcc-9&lt;br&gt;
+sudo apt-get install gfortran-9&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;##设置编译器默认使用的版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#调整gcc-11的优先级为40，gcc-9的优先级为100
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code&gt;#调整gfortran-11的优先级为40，gfortran-9的优先级为100
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-11 40
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-9 100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-gamit-软件&#34;&gt;安装 gamit 软件&lt;/h2&gt;
+&lt;p&gt;在 linux 终端下运行以下命令：将 gamit 软件包复制 linux 系统的 opt 目录下：执行下面的命令为 gamit/ 文件夹下的文件分配可执行权限：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sudo chmod 755 -R gamit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过 cd 命令进入到 gamit 目录中，运行 install_software 脚本安装软件。具体命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd gamnit
+./install_software
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;之后的一切询问输入 y，安装成功之后会看到提示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;++++++++++++++++ GLOBK installed ++++++++++++++++
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了在任何目录都能运行 GAMIT/GLOBK，需要将程序目录加入到系统的 PATH 变量中。环境变量配置方式依所使用的 Shell 有所不同。在终端内执行如下可以查看当前使用的 Shell：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;echo $SHELL&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于 Bash 用户，打开主目录的 ~/.bashrc，在其中添加以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gg=&amp;quot;/opt/gamit&amp;quot;
+export PATH=&amp;quot;$gg/gamit/bin:$gg/kf/bin:$gg/com:$PATH&amp;quot;
+export HELP_DIR=$gg/help/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对于 C Shell 或 TC Shell 用户，打开主目录的 ~/.cshrc 文件，在底部添加以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set gg = /opt/gamit
+setenv PATH &amp;quot;$gg/gamit/bin:$gg/kf/bin:$gg/com:$PATH&amp;quot;
+setenv HELP_DIR $gg/help/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存，退出。再执行命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source ~/.bashrc
+source ~/.cshrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;测试-gamit-安装是否成功&#34;&gt;测试 gamit 安装是否成功&lt;/h2&gt;
+&lt;p&gt;运行一下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;doy
+sh_gamit
+&lt;/code&gt;&lt;/pre&gt;
+- https://geoyxd.github.io/post/install_gamit_software/ - This is a customized copyright.</description>
+        </item>
+    
+    
   </channel>
 </rss> 

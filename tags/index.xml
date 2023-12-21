@@ -6,6 +6,16 @@
     <description>Recent content in Tags on GNSS Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>This is a customized copyright.</copyright><atom:link href="https://geoyxd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gamit</title>
+      <link>https://geoyxd.github.io/tags/gamit/</link>
+      <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/tags/gamit/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

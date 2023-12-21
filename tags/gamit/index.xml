@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gamit on GNSS Site</title>
+    <link>https://geoyxd.github.io/tags/gamit/</link>
+    <description>Recent content in gamit on GNSS Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/tags/gamit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu23 安装 gamit 软件</title>
+      <link>https://geoyxd.github.io/posts/install_gamit_software/</link>
+      <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/posts/install_gamit_software/</guid>
+      <description>GAMIT/GLOBK 软件简介 GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。
+安装 GAMIT/GLOBK 软件 安装支持 GAMIT 软件包支持的软件。 sudo apt install tcsh sudo apt install csh sudo apt install gcc sudo apt install libx11-dev sudo apt install gfortran sudo apt install make sudo apt install gmt 下载低版本的 gcc gfortran 软件 sudo apt-get install gcc-9
+sudo apt-get install gfortran-9
+##设置编译器默认使用的版本</description>
+    </item>
+    
+  </channel>
+</rss>

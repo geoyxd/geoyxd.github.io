@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html><head>
+<title>利用gamit/globk软件计算卫星轨道</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="利用gamit/globk软件计算卫星轨道" />
+<meta property="og:description" content="利用gamit/globk软件计算卫星轨道 根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+一、gamit软件参数设置 与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。
+sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
+二、文件准备 test 305 rinex jfs3050.17o chan3050.17o daej3050.17o shao3050.17o suwn3050.17o brdc brdc3050.17o igs igs19733.sp3 table &hellip;&hellip; table文件用sh_setup
+sh_setup -yr 2017 305
+三、数据处理步骤 1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305 -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880
+2、生成轨道初值G文件
+sh_sp3fit -f igs19733.sp3
+3、检查G文件
+sh_check_sess -sess 305 -type gfile -file &lt;g-file&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://geoyxd.github.io/posts/orbit/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-12T15:10:25+08:00" />
+<meta property="article:modified_time" content="2022-07-12T15:10:25+08:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="利用gamit/globk软件计算卫星轨道"/>
+<meta name="twitter:description" content="利用gamit/globk软件计算卫星轨道 根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+一、gamit软件参数设置 与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。
+sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
+二、文件准备 test 305 rinex jfs3050.17o chan3050.17o daej3050.17o shao3050.17o suwn3050.17o brdc brdc3050.17o igs igs19733.sp3 table &hellip;&hellip; table文件用sh_setup
+sh_setup -yr 2017 305
+三、数据处理步骤 1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305 -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880
+2、生成轨道初值G文件
+sh_sp3fit -f igs19733.sp3
+3、检查G文件
+sh_check_sess -sess 305 -type gfile -file &lt;g-file&gt;"/>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "abcdefghzd");
+</script>
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/download">
+                    资源下载
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/booklist">
+                    书单
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    关于我
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a9%e7%94%a8gamitglobk%e8%bd%af%e4%bb%b6%e8%ae%a1%e7%ae%97%e5%8d%ab%e6%98%9f%e8%bd%a8%e9%81%93" class="nav-利用gamitglobk软件计算卫星轨道">
+									利用gamit/globk软件计算卫星轨道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80gamit%e8%bd%af%e4%bb%b6%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae" class="nav-一gamit软件参数设置">
+									一、gamit软件参数设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8c%e6%96%87%e4%bb%b6%e5%87%86%e5%a4%87" class="nav-二文件准备">
+									二、文件准备
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%89%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86%e6%ad%a5%e9%aa%a4" class="nav-三数据处理步骤">
+									三、数据处理步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%9b%e7%bb%93%e6%9e%9c%e5%88%86%e6%9e%90" class="nav-四结果分析">
+									四、结果分析
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prn-----total----delta-x---delta-y---delta-z---d-radial--d-along---d-cross------d-3d" class="nav-prn-----total----delta-x---delta-y---delta-z---d-radial--d-along---d-cross------d-3d">
+									PRN Total delta-X delta-Y delta-Z d-Radial d-Along d-Cross d-3D
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#mean---051421---052248---048124---053726---026258---084845---006260---089063" class="nav-mean---051421---052248---048124---053726---026258---084845---006260---089063">
+									MEAN 0.51421 0.52248 0.48124 0.53726 0.26258 0.84845 0.06260 0.89063
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e8%bd%a8%e7%b2%be%e5%ba%a6%e5%88%86%e7%b1%b3%e7%ba%a7%e4%b8%bb%e8%a6%81%e5%8e%9f%e5%9b%a0%e6%b5%8b%e7%ab%99%e6%95%b0%e7%9b%ae%e6%b5%8b%e7%ab%99%e5%88%86%e5%b8%83" class="nav-定轨精度分米级主要原因测站数目测站分布">
+									*定轨精度分米级，主要原因测站数目、测站分布
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://geoyxd.github.io">
+            GNSS Site
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://geoyxd.github.io">
+        <div class="single-column-header-title">GNSS Site</div>
+        
+        <div class="single-column-header-subtitle">Themed by Diary.</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    利用gamit/globk软件计算卫星轨道
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-07-12 15:10
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[GNSS]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E5%AE%9A%E8%BD%A8">定轨</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="利用gamitglobk软件计算卫星轨道">利用gamit/globk软件计算卫星轨道</h1>
+<blockquote>
+<p>根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
+实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
+数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。</p>
+</blockquote>
+<h1 id="一gamit软件参数设置">一、gamit软件参数设置</h1>
+<p>与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。</p>
+<p>卫星约束为松约束，基准站约束为紧约束。</p>
+<p>sestbl.主要得参数设置为：
+Choice of Experiment = RELAX.   | ORBIT
+Update T/L files = T_AND_L</p>
+<h1 id="二文件准备">二、文件准备</h1>
+<p>test
+305
+rinex
+jfs3050.17o
+chan3050.17o
+daej3050.17o
+shao3050.17o
+suwn3050.17o
+brdc
+brdc3050.17o
+igs
+igs19733.sp3
+table
+&hellip;&hellip;
+table文件用sh_setup</p>
+<p>sh_setup -yr 2017 305</p>
+<h1 id="三数据处理步骤">三、数据处理步骤</h1>
+<p>1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件</p>
+<p>sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+<p>2、生成轨道初值G文件</p>
+<p>sh_sp3fit -f igs19733.sp3</p>
+<p>3、检查G文件</p>
+<p>sh_check_sess -sess 305 -type gfile -file &lt;g-file&gt;</p>
+<p>4、生成卫星钟文件</p>
+<p>makej brdc3050.17n    jigsf7.305 igs19733.sp3</p>
+<p>5、检查j文件</p>
+<p>sh_check_sess -sess 305 -type jfile  -file   jigsf7.305</p>
+<p>6、生成双差X文件
+makex test.makex.batch</p>
+<p>7、生成批处理脚本</p>
+<p>fixdrv dtest7.305</p>
+<p>8、运行脚本</p>
+<p>csh bbdst7.bat</p>
+<h1 id="四结果分析">四、结果分析</h1>
+<p>定轨结果在生成T文件（在sestbl.设置更新T文件）</p>
+<p>1、运行orbdif比较更新前后的结果</p>
+<pre><code>$ orbdif
+ORBDIF: Interactive input
+Runsting: &lt;Type&gt; &lt;Frame&gt; &lt;T_file1&gt; &lt;T_File2&gt; &lt;RMS File&gt; &lt;Plot&gt; &lt;Plot Ext&gt;
+Differences are T_File2-T_file1
+Enter orbit file type T-Tile (T) or NGS (N)
+t
+Are T-Files Inertial (I) or Earth Fixed (E)
+i
+Enter name of T-File (A)
+tchkg7.305
+Enter name of T-File (B)
+tigsg7.305
+Enter RMS output file name
+chkrms
+Interpolating Orbit files
+interval          20
+interval          40
+interval          60
+interval          80
+interval          86
+Enter the following options
+0  to return to skip plot file making
+1  to make a set of plot files of dx,dy,dz
+2  to make a set of plot files of dr,da,dc
+3  to make a set of plot files of vx,vy,vz
+4  dN,dE,dU, and satellite ground track positions
+0
+Normal end of ORBDIF
+</code></pre>
+<p>2、运行ttongs生成sp3格式的文件</p>
+<pre><code>ttongs tchkg7.305  sp3 chk fit itr97 fes2004 IGS05_1402 chk19733.sp3
+</code></pre>
+<p>3、结果</p>
+<pre><code>Positional Errors (RMS in meters) between Two Orbits:
+tchkg7.305 ( int:15.00min) vs. tigsg7.305 ( int:15.00min)
+Overlapped Time Range: 2017 305  1.25 2017 305 22.75 total: 21.50 hours
+</code></pre>
+<hr>
+<h2 id="prn-----total----delta-x---delta-y---delta-z---d-radial--d-along---d-cross------d-3d">PRN     Total    delta-X   delta-Y   delta-Z   d-Radial  d-Along   d-Cross      d-3D</h2>
+<h2 id="32----049996---051999---039216---057072---019598---084314---002366---086596">1    0.26833   0.22330   0.33408   0.23351   0.09138   0.44740   0.08667   0.46476
+2    0.21675   0.16998   0.27468   0.19132   0.08135   0.35694   0.08391   0.37543
+3    0.28971   0.29570   0.27416   0.29866   0.10193   0.48602   0.07177   0.50180
+4    0.93950   0.86116   0.76425   1.14990   0.49235   1.54747   0.04167   1.62726
+5    0.59195   0.57633   0.54704   0.64792   0.38383   0.93943   0.14170   1.02528
+6    0.41700   0.31898   0.50135   0.41058   0.15785   0.70262   0.05585   0.72227
+7    0.82410   0.71466   0.81233   0.93102   0.50744   1.33214   0.09224   1.42738
+8    0.37994   0.36755   0.38190   0.39003   0.12245   0.64660   0.01045   0.65808
+9    0.29147   0.34692   0.27624   0.24127   0.08947   0.49622   0.02548   0.50485
+10    0.22559   0.26078   0.22239   0.18763   0.12974   0.36530   0.05082   0.39073
+11    0.49684   0.48898   0.59526   0.38355   0.26510   0.80894   0.13238   0.86055
+12    0.71143   0.53429   0.68619   0.87298   0.38467   1.16885   0.08957   1.23224
+13    0.36188   0.32337   0.38349   0.37583   0.12656   0.61346   0.02330   0.62680
+14    0.50357   0.42987   0.45804   0.60511   0.18832   0.85057   0.02303   0.87221
+15    0.94055   1.06915   0.92855   0.80537   0.47177   1.55645   0.03686   1.62909
+16    0.34995   0.33714   0.35206   0.36027   0.16965   0.57705   0.07085   0.60614
+17    0.46648   0.37784   0.42828   0.57150   0.27333   0.75928   0.04878   0.80796
+18    0.29637   0.39630   0.26311   0.19293   0.14446   0.49272   0.02941   0.51332
+19    0.44295   0.45312   0.35322   0.50846   0.16394   0.74756   0.04797   0.76722
+20    0.50611   0.69423   0.28488   0.45313   0.32562   0.81183   0.04237   0.87661
+21    0.45456   0.40781   0.41315   0.53186   0.20097   0.76092   0.06087   0.78732
+22    0.52029   0.44322   0.49707   0.60712   0.23124   0.86926   0.04187   0.90117
+23    0.64727   0.79259   0.59411   0.52509   0.32764   1.06979   0.02337   1.12111
+24    0.14687   0.12066   0.18791   0.12181   0.12733   0.21417   0.05068   0.25438
+25    0.08415   0.09965   0.08681   0.06146   0.05533   0.12211   0.05690   0.14575
+26    0.41093   0.41984   0.41284   0.39986   0.15882   0.69249   0.04423   0.71175
+27    0.45998   0.40876   0.41376   0.54447   0.16342   0.77976   0.01363   0.79670
+28    0.11271   0.12033   0.11580   0.10110   0.05093   0.17541   0.06817   0.19522
+29    0.98331   1.22239   0.82247   0.85440   0.50230   1.62699   0.03932   1.70314
+30    0.39993   0.36931   0.41103   0.41771   0.14332   0.67607   0.04630   0.69270
+31    0.54272   0.47710   0.53662   0.60666   0.36499   0.86162   0.07567   0.94001
+32    0.49996   0.51999   0.39216   0.57072   0.19598   0.84314   0.02366   0.86596</h2>
+<h2 id="mean---051421---052248---048124---053726---026258---084845---006260---089063">MEAN   0.51421   0.52248   0.48124   0.53726   0.26258   0.84845   0.06260   0.89063</h2>
+<h2 id="定轨精度分米级主要原因测站数目测站分布">*定轨精度分米级，主要原因测站数目、测站分布</h2>
+<p>问题解决
+一、makexp生成session.info文件无卫星信息</p>
+<p>sh_makexp</p>
+<p>sh_makexp -expt test -orbt igsf -yr 2017 -doy 305  -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880</p>
+<p>二、Neither T- nor G-file available (Name tigsf7.305)</p>
+<p>方法一、修改dtest7.305文件中tigsf7.305为gigsf7.305</p>
+<p>方法二、生成tigsf7.305
+通过arc, bctot, ngstot, sh_bctot, sh_sp3fit等生成
+例如：</p>
+<blockquote>
+<p>ngstot igs19733.sp3 tigsg7.305</p>
+</blockquote>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2022-07-12</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/booklist/">
+			下回<br>书单
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/install_gamit_software/">
+			上回<br>Ubuntu23 安装 gamit 软件
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="username/repo"
+        data-repo-id=""
+        data-category="General"
+        data-category-id="*********************"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://geoyxd.github.io">
+    
+        <div class="nav-title">
+            GNSS Site
+        </div>
+        
+        <div class="nav-subtitle">
+            Themed by Diary.
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/download">
+                资源下载
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/booklist">
+                书单
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                关于我
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a9%e7%94%a8gamitglobk%e8%bd%af%e4%bb%b6%e8%ae%a1%e7%ae%97%e5%8d%ab%e6%98%9f%e8%bd%a8%e9%81%93" class="nav-利用gamitglobk软件计算卫星轨道">
+									利用gamit/globk软件计算卫星轨道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%80gamit%e8%bd%af%e4%bb%b6%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae" class="nav-一gamit软件参数设置">
+									一、gamit软件参数设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%ba%8c%e6%96%87%e4%bb%b6%e5%87%86%e5%a4%87" class="nav-二文件准备">
+									二、文件准备
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%89%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86%e6%ad%a5%e9%aa%a4" class="nav-三数据处理步骤">
+									三、数据处理步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%9b%e7%bb%93%e6%9e%9c%e5%88%86%e6%9e%90" class="nav-四结果分析">
+									四、结果分析
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prn-----total----delta-x---delta-y---delta-z---d-radial--d-along---d-cross------d-3d" class="nav-prn-----total----delta-x---delta-y---delta-z---d-radial--d-along---d-cross------d-3d">
+									PRN Total delta-X delta-Y delta-Z d-Radial d-Along d-Cross d-3D
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#mean---051421---052248---048124---053726---026258---084845---006260---089063" class="nav-mean---051421---052248---048124---053726---026258---084845---006260---089063">
+									MEAN 0.51421 0.52248 0.48124 0.53726 0.26258 0.84845 0.06260 0.89063
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e8%bd%a8%e7%b2%be%e5%ba%a6%e5%88%86%e7%b1%b3%e7%ba%a7%e4%b8%bb%e8%a6%81%e5%8e%9f%e5%9b%a0%e6%b5%8b%e7%ab%99%e6%95%b0%e7%9b%ae%e6%b5%8b%e7%ab%99%e5%88%86%e5%b8%83" class="nav-定轨精度分米级主要原因测站数目测站分布">
+									*定轨精度分米级，主要原因测站数目、测站分布
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

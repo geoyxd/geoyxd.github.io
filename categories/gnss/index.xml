@@ -29,6 +29,26 @@ sh_check_sess -sess 305 -type gfile -file &amp;lt;g-file&amp;gt;</description>
     </item>
     
     <item>
+      <title>利用gamit/globk软件计算卫星轨道</title>
+      <link>https://geoyxd.github.io/posts/%E6%96%B0%E5%BB%BA-markdown/</link>
+      <pubDate>Tue, 12 Jul 2022 15:10:25 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/posts/%E6%96%B0%E5%BB%BA-markdown/</guid>
+      <description>利用gamit/globk软件计算卫星轨道 根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+一、gamit软件参数设置 与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。
+sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
+二、文件准备 test 305 rinex jfs3050.17o chan3050.17o daej3050.17o shao3050.17o suwn3050.17o brdc brdc3050.17o igs igs19733.sp3 table &amp;hellip;&amp;hellip; table文件用sh_setup
+sh_setup -yr 2017 305
+三、数据处理步骤 1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305 -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880
+2、生成轨道初值G文件
+sh_sp3fit -f igs19733.sp3
+3、检查G文件
+sh_check_sess -sess 305 -type gfile -file &amp;lt;g-file&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>Ubuntu23 安装 gamit 软件</title>
       <link>https://geoyxd.github.io/posts/install_gamit_software/</link>
       <pubDate>Sun, 12 Jun 2022 15:10:25 +0800</pubDate>

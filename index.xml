@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Mon, 12 Jun 2023 15:10:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jun 2022 15:10:25 +0800</lastBuildDate>
     
         <atom:link href="https://geoyxd.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -25,7 +25,7 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;技术&#34;&gt;技术&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;python&amp;gt;c#&amp;gt;fortran&amp;gt;matlab&lt;/p&gt;
+&lt;p&gt;python&amp;gt;c#&amp;gt;fortran&amp;gt;matlab&amp;gt;R语言&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;理想&#34;&gt;理想&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -108,21 +108,9 @@
     
     
         <item>
-        <title>Demo</title>
-        <link>https://geoyxd.github.io/posts/demo/</link>
-        <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
-        
-        <guid>https://geoyxd.github.io/posts/demo/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
-- https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
         <title>Ubuntu23 安装 gamit 软件</title>
         <link>https://geoyxd.github.io/posts/install_gamit_software/</link>
-        <pubDate>Mon, 12 Jun 2023 15:10:25 +0800</pubDate>
+        <pubDate>Sun, 12 Jun 2022 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/install_gamit_software/</guid>
         <description>GNSS Site https://geoyxd.github.io/posts/install_gamit_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
@@ -194,6 +182,19 @@ source ~/.cshrc
 sh_gamit
 &lt;/code&gt;&lt;/pre&gt;
 - https://geoyxd.github.io/posts/install_gamit_software/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Demo</title>
+        <link>https://geoyxd.github.io/posts/demo/</link>
+        <pubDate>Mon, 01 Jan 2018 15:10:25 +0800</pubDate>
+        
+        <guid>https://geoyxd.github.io/posts/demo/</guid>
+        <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
+&lt;p&gt;*1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/p&gt;
+- https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
         </item>
     
     

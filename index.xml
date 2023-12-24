@@ -14,69 +14,6 @@
     
     
         <item>
-        <title>download</title>
-        <link>https://geoyxd.github.io/download/</link>
-        <pubDate>Thu, 21 Dec 2023 14:07:27 +0800</pubDate>
-        
-        <guid>https://geoyxd.github.io/download/</guid>
-        <description>GNSS Site https://geoyxd.github.io/download/ -- https://geoyxd.github.io/download/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>书单</title>
-        <link>https://geoyxd.github.io/booklist/</link>
-        <pubDate>Mon, 12 Jun 2023 19:41:12 +0800</pubDate>
-        
-        <guid>https://geoyxd.github.io/booklist/</guid>
-        <description>GNSS Site https://geoyxd.github.io/booklist/ -&lt;h2 id=&#34;2023年书单&#34;&gt;2023年书单&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;余光中 《心有猛虎 细嗅蔷薇》&lt;/li&gt;
-&lt;li&gt;萧红 《呼兰河传》&lt;/li&gt;
-&lt;li&gt;厚夫 《路遥传》&lt;/li&gt;
-&lt;li&gt;路遥《人生》&lt;/li&gt;
-&lt;li&gt;伯阳 《丑陋的中国人》&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2022年书单&#34;&gt;2022年书单&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;人世间&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2021年书单&#34;&gt;2021年书单&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;生活在裂隙&lt;/li&gt;
-&lt;li&gt;人类找北史&lt;/li&gt;
-&lt;li&gt;世界秩序&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2021年电影&#34;&gt;2021年电影&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;一分钟&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2020年书单&#34;&gt;2020年书单&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;真实科比&lt;/li&gt;
-&lt;li&gt;戈尔巴乔夫回忆录&lt;/li&gt;
-&lt;li&gt;地理学与生活&lt;/li&gt;
-&lt;li&gt;毛泽东选集&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2020电影&#34;&gt;2020电影&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.dytt8.net/html/gndy/dyzz/20201014/60606.html&#34;&gt;麦路人&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;夺冠&lt;/li&gt;
-&lt;li&gt;我和我的家乡&lt;/li&gt;
-&lt;li&gt;风平浪静&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2020纪录片&#34;&gt;2020纪录片&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;大国崛起&lt;/li&gt;
-&lt;li&gt;好久不见，武汉&lt;/li&gt;
-&lt;/ul&gt;
-- https://geoyxd.github.io/booklist/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
         <title>利用gamit/globk软件计算卫星轨道</title>
         <link>https://geoyxd.github.io/posts/orbit/</link>
         <pubDate>Tue, 12 Jul 2022 15:10:25 +0800</pubDate>
@@ -454,6 +391,69 @@ sh_gamit
         <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
 &lt;p&gt;*1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/p&gt;
 - https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>书单</title>
+        <link>https://geoyxd.github.io/booklist/</link>
+        <pubDate>Mon, 12 Jun 2017 19:41:12 +0800</pubDate>
+        
+        <guid>https://geoyxd.github.io/booklist/</guid>
+        <description>GNSS Site https://geoyxd.github.io/booklist/ -&lt;h2 id=&#34;2023年书单&#34;&gt;2023年书单&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;余光中 《心有猛虎 细嗅蔷薇》&lt;/li&gt;
+&lt;li&gt;萧红 《呼兰河传》&lt;/li&gt;
+&lt;li&gt;厚夫 《路遥传》&lt;/li&gt;
+&lt;li&gt;路遥《人生》&lt;/li&gt;
+&lt;li&gt;伯阳 《丑陋的中国人》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2022年书单&#34;&gt;2022年书单&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;人世间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2021年书单&#34;&gt;2021年书单&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;生活在裂隙&lt;/li&gt;
+&lt;li&gt;人类找北史&lt;/li&gt;
+&lt;li&gt;世界秩序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2021年电影&#34;&gt;2021年电影&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;一分钟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2020年书单&#34;&gt;2020年书单&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;真实科比&lt;/li&gt;
+&lt;li&gt;戈尔巴乔夫回忆录&lt;/li&gt;
+&lt;li&gt;地理学与生活&lt;/li&gt;
+&lt;li&gt;毛泽东选集&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2020电影&#34;&gt;2020电影&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.dytt8.net/html/gndy/dyzz/20201014/60606.html&#34;&gt;麦路人&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;夺冠&lt;/li&gt;
+&lt;li&gt;我和我的家乡&lt;/li&gt;
+&lt;li&gt;风平浪静&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2020纪录片&#34;&gt;2020纪录片&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;大国崛起&lt;/li&gt;
+&lt;li&gt;好久不见，武汉&lt;/li&gt;
+&lt;/ul&gt;
+- https://geoyxd.github.io/booklist/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>download</title>
+        <link>https://geoyxd.github.io/download/</link>
+        <pubDate>Wed, 21 Dec 2016 14:07:27 +0800</pubDate>
+        
+        <guid>https://geoyxd.github.io/download/</guid>
+        <description>GNSS Site https://geoyxd.github.io/download/ -- https://geoyxd.github.io/download/ - This is a customized copyright.</description>
         </item>
     
     

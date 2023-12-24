@@ -14,37 +14,6 @@
     
     
         <item>
-        <title>About</title>
-        <link>https://geoyxd.github.io/about/</link>
-        <pubDate>Thu, 21 Dec 2023 14:07:27 +0800</pubDate>
-        
-        <guid>https://geoyxd.github.io/about/</guid>
-        <description>GNSS Site https://geoyxd.github.io/about/ -&lt;blockquote&gt;
-&lt;p&gt;于止，知其所止，可以人而不如鸟乎?
-——《礼记·大学》&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;技术&#34;&gt;技术&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;python&amp;gt;c#&amp;gt;fortran&amp;gt;matlab&amp;gt;R语言&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;理想&#34;&gt;理想&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;共产主义&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;博客&#34;&gt;博客&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本博客自豪地由 Hugo 驱动，主题是 icarus，源码在 GitHub 上。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;联系方式&#34;&gt;联系方式&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;mailto:geoyxd@qq.com&#34;&gt;geoyxd@qq.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://geoyxd.github.io/about/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
         <title>download</title>
         <link>https://geoyxd.github.io/download/</link>
         <pubDate>Thu, 21 Dec 2023 14:07:27 +0800</pubDate>
@@ -486,6 +455,8 @@ sh_gamit
 &lt;p&gt;*1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/p&gt;
 - https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
         </item>
+    
+    
     
     
   </channel>

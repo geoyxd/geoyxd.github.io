@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://geoyxd.github.io/about/</loc>
-    <lastmod>2023-12-21T14:07:27+08:00</lastmod>
-  </url><url>
     <loc>https://geoyxd.github.io/download/</loc>
     <lastmod>2023-12-21T14:07:27+08:00</lastmod>
   </url><url>
@@ -43,6 +40,8 @@
   </url><url>
     <loc>https://geoyxd.github.io/posts/demo/</loc>
     <lastmod>2018-01-01T15:10:25+08:00</lastmod>
+  </url><url>
+    <loc>https://geoyxd.github.io/about/</loc>
   </url><url>
     <loc>https://geoyxd.github.io/series/</loc>
   </url>

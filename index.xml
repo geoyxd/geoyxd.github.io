@@ -622,8 +622,10 @@ source /opt/BERN52/GPS/EXE/LOADGPS.setvar
         <pubDate>Mon, 01 Jan 2018 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/demo/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;helloworld&#34;&gt;helloworld&lt;/h1&gt;
-&lt;p&gt;*1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/p&gt;
+        <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;建站日记&#34;&gt;建站日记&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/li&gt;
+&lt;/ul&gt;
 - https://geoyxd.github.io/posts/demo/ - This is a customized copyright.</description>
         </item>
     

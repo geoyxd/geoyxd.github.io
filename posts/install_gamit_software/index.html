@@ -20,7 +20,7 @@
 <meta property="og:description" content="GAMIT/GLOBK 软件简介 GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。
 安装 GAMIT/GLOBK 软件 安装支持 GAMIT 软件包支持的软件。 sudo apt install tcsh sudo apt install csh sudo apt install gcc sudo apt install libx11-dev sudo apt install gfortran sudo apt install make sudo apt install gmt 下载低版本的 gcc gfortran 软件 sudo apt-get install gcc-9
 sudo apt-get install gfortran-9
-##设置编译器默认使用的版本" />
+查询安装gcc版本 ls /usr/bin/gcc* ##设置编译器默认使用的版本" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://geoyxd.github.io/posts/install_gamit_software/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-12T15:10:25+08:00" />
@@ -35,7 +35,7 @@ sudo apt-get install gfortran-9
 <meta name="twitter:description" content="GAMIT/GLOBK 软件简介 GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。
 安装 GAMIT/GLOBK 软件 安装支持 GAMIT 软件包支持的软件。 sudo apt install tcsh sudo apt install csh sudo apt install gcc sudo apt install libx11-dev sudo apt install gfortran sudo apt install make sudo apt install gmt 下载低版本的 gcc gfortran 软件 sudo apt-get install gcc-9
 sudo apt-get install gfortran-9
-##设置编译器默认使用的版本"/>
+查询安装gcc版本 ls /usr/bin/gcc* ##设置编译器默认使用的版本"/>
 
 
 
@@ -262,6 +262,42 @@ sudo apt-get install gfortran-9
 						
 						
 							<li>
+								<a href="#%e6%9f%a5%e8%af%a2%e5%ae%89%e8%a3%85gcc%e7%89%88%e6%9c%ac" class="nav-查询安装gcc版本">
+									查询安装gcc版本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e8%af%a2%e5%bd%93%e5%89%8d%e7%9a%84gcc%e7%89%88%e6%9c%ac" class="nav-查询当前的gcc版本">
+									查询当前的gcc版本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e5%ae%89%e8%a3%85-gamit-%e8%bd%af%e4%bb%b6" class="nav-安装-gamit-软件">
 									安装 gamit 软件
 								</a>
@@ -394,7 +430,11 @@ sudo apt install gmt
 <p>sudo apt-get install gcc-9<br>
 sudo apt-get install gfortran-9</p>
 </blockquote>
-<p>##设置编译器默认使用的版本</p>
+<h2 id="查询安装gcc版本">查询安装gcc版本</h2>
+<blockquote>
+<p>ls /usr/bin/gcc*
+##设置编译器默认使用的版本</p>
+</blockquote>
 <pre><code>#调整gcc-11的优先级为40，gcc-9的优先级为100
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
@@ -403,7 +443,12 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
 <pre><code>#调整gfortran-11的优先级为40，gfortran-9的优先级为100
 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-11 40
 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-9 100
+sudo update-alternatives --config gcc
 </code></pre>
+<h2 id="查询当前的gcc版本">查询当前的gcc版本</h2>
+<blockquote>
+<p>gcc -v</p>
+</blockquote>
 <h2 id="安装-gamit-软件">安装 gamit 软件</h2>
 <blockquote>
 <p>在 linux 终端下运行以下命令：将 gamit 软件包复制 linux 系统的 opt 目录下：执行下面的命令为 gamit/ 文件夹下的文件分配可执行权限：</p>
@@ -688,6 +733,42 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 							<li>
 								<a href="#%e4%b8%8b%e8%bd%bd%e4%bd%8e%e7%89%88%e6%9c%ac%e7%9a%84-gcc-gfortran-%e8%bd%af%e4%bb%b6" class="nav-下载低版本的-gcc-gfortran-软件">
 									下载低版本的 gcc gfortran 软件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e8%af%a2%e5%ae%89%e8%a3%85gcc%e7%89%88%e6%9c%ac" class="nav-查询安装gcc版本">
+									查询安装gcc版本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9f%a5%e8%af%a2%e5%bd%93%e5%89%8d%e7%9a%84gcc%e7%89%88%e6%9c%ac" class="nav-查询当前的gcc版本">
+									查询当前的gcc版本
 								</a>
 							</li>
 						

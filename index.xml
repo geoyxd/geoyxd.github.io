@@ -328,7 +328,11 @@ sudo apt install gmt
 &lt;p&gt;sudo apt-get install gcc-9&lt;br&gt;
 sudo apt-get install gfortran-9&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;##设置编译器默认使用的版本&lt;/p&gt;
+&lt;h2 id=&#34;查询安装gcc版本&#34;&gt;查询安装gcc版本&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ls /usr/bin/gcc*
+##设置编译器默认使用的版本&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre&gt;&lt;code&gt;#调整gcc-11的优先级为40，gcc-9的优先级为100
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
@@ -337,7 +341,12 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
 &lt;pre&gt;&lt;code&gt;#调整gfortran-11的优先级为40，gfortran-9的优先级为100
 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-11 40
 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-9 100
+sudo update-alternatives --config gcc
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;查询当前的gcc版本&#34;&gt;查询当前的gcc版本&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;gcc -v&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;安装-gamit-软件&#34;&gt;安装 gamit 软件&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在 linux 终端下运行以下命令：将 gamit 软件包复制 linux 系统的 opt 目录下：执行下面的命令为 gamit/ 文件夹下的文件分配可执行权限：&lt;/p&gt;
@@ -409,6 +418,7 @@ sudo apt install gfortran
 &lt;h3 id=&#34;1-qt&#34;&gt;1 qt&lt;/h3&gt;
 &lt;h4 id=&#34;下载httpdownloadqtioarchiveqt&#34;&gt;&lt;a href=&#34;http://download.qt.io/archive/qt/&#34;&gt;下载&lt;/a&gt;&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz
+$ cd qt-everywhere-opensource-src-4.8.7
 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
 $ sudo make                                                            
 $ sudo make install

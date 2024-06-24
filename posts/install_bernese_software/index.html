@@ -18,9 +18,8 @@
 
 <meta property="og:title" content="linux mint 安装 bernese 软件" />
 <meta property="og:description" content="GAMIT/GLOBK 软件简介 linux系统编译bernese软件 安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装
-1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
-文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake.conf 修改其中的QMAKE_CXXFLAGS为：
-QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu&#43;&#43;98 如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ." />
+1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensource-src-4.8.7 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
+文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://geoyxd.github.io/posts/install_bernese_software/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-06-12T15:10:25+08:00" />
@@ -33,9 +32,8 @@ QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu&#43;&#43;98 如果该文件中不存在
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux mint 安装 bernese 软件"/>
 <meta name="twitter:description" content="GAMIT/GLOBK 软件简介 linux系统编译bernese软件 安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装
-1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
-文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake.conf 修改其中的QMAKE_CXXFLAGS为：
-QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu&#43;&#43;98 如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ."/>
+1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensource-src-4.8.7 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
+文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake."/>
 
 
 
@@ -568,6 +566,7 @@ sudo apt install gfortran
 <h3 id="1-qt">1 qt</h3>
 <h4 id="下载httpdownloadqtioarchiveqt"><a href="http://download.qt.io/archive/qt/">下载</a></h4>
 <pre tabindex="0"><code>$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz
+$ cd qt-everywhere-opensource-src-4.8.7
 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
 $ sudo make                                                            
 $ sudo make install

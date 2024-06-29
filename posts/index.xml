@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Fri, 28 Jun 2024 22:30:53 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jun 2024 08:47:50 +0800</lastBuildDate><atom:link href="https://geoyxd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#教程</title>
+      <link>https://geoyxd.github.io/posts/c_sharp_learn/</link>
+      <pubDate>Sat, 29 Jun 2024 08:47:50 +0800</pubDate>
+      
+      <guid>https://geoyxd.github.io/posts/c_sharp_learn/</guid>
+      <description>第一章 C#简介 .NET Framework的含义 .NET Framework是Microsoft为开发应用程序而创建的一个具有革命意义的平台
+可以运行在多个操作系统上：Windows,Windows Mobile, Linux, macOS
+未限制应用程序的类型：桌面应用程序、Windows桌面应用程序（UWP）、云/Web应用程序、Web API、其他各种类型的应用程序
+对于Web、云和Web API应用程序，按照定义是多平台的应用程序，因为任何带有Web浏览器的系统都可以访问 可以用于各种语言：C#, C++, F#, JavaScript, Visual Basic, COBOL及其他旧语言
+.NET Framework的内容 ``.NET Framwork主要包含一个庞大的代码库`，可以在客户端或服务器语言中通过面向对象编程技术（Object-Oriented Programming, OOP）来使用这些代码。
+模块：代码库分为多个不同的模块，这样就可以根据希望得到的结果来选择使用其中的各个部分，一些模块还分为更具体的子模块。主要是为了满足不同的操作系统可以根据各自的特征支持其中的部分或全部模块。
+通用类型系统(Common Type System, CTS)：部分.NET Framwork库定义了一些基本类型，类型是数据的一种表达方式，指定最基本类型有助于.NET Framwork的各种语言之间进行交互操作，这称为通用类型系统
+.NET 公共语言运行库(Common Language Runtime, CLR)：除了基本类型库之外，``.NET Framwork`还包含.NET公共语言运行库，负责管理用.NET库开发的所有应用程序的执行。
+.NET Standard和.NET Core 开源分支：Github上，项目可以被分支并在多个平台上定制运行。.NET Compact Framework和.NET Micro Framework是.NET Framework的分支，每个.NET Framework的分支都有一个具体的需求和目标，正是这些需求和目标催生了对应的分支。
+.NET Core是进行跨平台代码开发的最优化解决方案 基类库(Base Class Libraries, BCL)：.NET Framework中包含一组基类库(BCL)，这些库中包含的API用于大多数开发人员需要完成的基本功能。在不同版本的.NET Framework中这些功能的实现是不同的。因此需要开发人员根据应用程序运行的平台，针对对应用程序的不同分支或版本去学习、开发和管理多个基类库(BCL)。分支概念导致了更多.NET Framework版本的出现，因此需要一组基本编程API来处理各种分支和版本。
+.NET Standard可以解决上述问题，它是一个类库，它提供的API支持使用了.NET Platform的应用程序的任何分支和版本 使用.NET Framework和.NET Core编写应用程序 实质：使用.NET Framework和.NET Core编写应用程序就是使用支持.NET Framework的任何一种语言使用.NET代码库·编写代码。
+IDE：本书使用Visual Studio进行开发，是一种强大的集成开发环境，支持C#（以及托管和非托管C++，Visual Basic和其他一些语言）。这个环境的优点是便于将.</description>
+    </item>
+    
     <item>
       <title>C#教程</title>
       <link>https://geoyxd.github.io/posts/c#_%E6%95%99%E7%A8%8B/</link>

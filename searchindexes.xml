@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>利用gamit/globk软件计算卫星轨道</title><url>/posts/orbit/</url><categories><category>GNSS</category></categories><tags><tag>定轨</tag></tags><content type="html"><![CDATA[  利用gamit/globk软件计算卫星轨道根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>世界，你好！</title><url>/post/hello-world.html</url><categories><category>开始建站</category></categories><tags><tag>Hugo</tag><tag>开始</tag></tags><content type="html"> “使用 weight 关键字置顶文章。”
+Hugo
+是现今世界上最快的网站建设框架，也是最流行的开源静态站点生成器之一。 凭借其惊人的速度和灵活性，Hugo 让建设网站再次变得有趣起来。
+快速开始
+发表新文章
+$ hugo new hello-world.md 更多信息：
+内容格式
+启动服务
+$ hugo server 更多信息：
+Hugo 服务命令行
+生成静态文件
+$ hugo 更多信息：
+Hugo 建站
+部署到服务器
+$ hugo deploy 更多信息：
+Hugo 发布
+祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>Hello World</title><url>/hello-world/</url><categories/><tags/><content type="html"> “使用 weight 关键字置顶文章。”
+Hugo
+是现今世界上最快的网站建设框架，也是最流行的开源静态站点生成器之一。 凭借其惊人的速度和灵活性，Hugo 让建设网站再次变得有趣起来。
+快速开始
+发表新文章
+$ hugo new hello-world.md 更多信息：
+内容格式
+启动服务
+$ hugo server 更多信息：
+Hugo 服务命令行
+生成静态文件
+$ hugo 更多信息：
+Hugo 建站
+部署到服务器
+$ hugo deploy 更多信息：
+Hugo 发布
+祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>利用gamit/globk软件计算卫星轨道</title><url>/posts/orbit/</url><categories><category>GNSS</category></categories><tags><tag>定轨</tag></tags><content type="html"><![CDATA[  利用gamit/globk软件计算卫星轨道根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
 一、gamit软件参数设置与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
 卫星约束为松约束，基准站约束为紧约束。
 sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
@@ -67,23 +99,7 @@ $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensou
 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
 文件夹中mkspecs打开在Build type后面的linux-g++文件夹/qmake.conf 修改其中的QMAKE_CXXFLAGS为：
 QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu++98 如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ../common/linux.conf、../common/gcc-base-unix.conf、../common/g++-unix.conf 这三个文件。如果没有找到还需要递归的打开着三个文件中包含的文件。在../common/gcc-base.conf （包含在文件../common/gcc-base-unix.conf 中）文件中找到，并修改为如下所示。 本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。
-QMAKE_CXXFLAGS += …</content></entry><entry><title>建站</title><url>/posts/demo/</url><categories/><tags/><content type="html"><![CDATA[   文章标题title: &ldquo;{{ replace .Name &ldquo;-&rdquo; &quot; &quot; | title }}&rdquo;
-文章内容摘要description: &ldquo;{{ .Name }}&rdquo;
-文章内容关键字keywords: &ldquo;{{replace .Name &ldquo;-&rdquo; &ldquo;,&rdquo;}}&rdquo;
-发表日期date: {{ .Date }}
-最后修改日期lastmod: {{ .Date }}
-分类categories:标签tags:原文作者#author:
-原文链接#link:
-图片链接，用在open graph和twitter卡片上#imgs:
-在首页展开内容#expand: true
-外部链接地址，访问时直接跳转#extlink:
-在当前页面关闭评论功能#comment:
-enable: false关闭当前页面目录功能注意：正常情况下文章中有H2-H4标题会自动生成目录，无需额外配置#toc: false
-绝对访问路径#url: &ldquo;{{ lower .Name }}.html&rdquo;
-开启文章置顶，数字越小越靠前#weight: 1
-开启数学公式渲染，可选值： mathjax, katex#math: mathjax
-开启各种图渲染，如流程图、时序图、类图等#mermaid: true建站日记1 博客采用hugo驱动，主题由next修改,由github托管。 站点管理添加文章hugo new posts/my-first-post.md
-添加页面  ]]></content></entry><entry><title/><url>/about/</url><categories/><tags/><content type="html"><![CDATA[   于止，知其所止，可以人而不如鸟乎? ——《礼记·大学》
+QMAKE_CXXFLAGS += …</content></entry><entry><title/><url>/about/</url><categories/><tags/><content type="html"><![CDATA[   于止，知其所止，可以人而不如鸟乎? ——《礼记·大学》
 编程语言C#&gt;C/C++&gt;python&gt;fortran&gt;matlab&gt;R语言
 博客本博客自豪地由 Hugo 驱动，主题是 icarus，源码在 GitHub 上。
 联系方式geoyxd@qq.com  ]]></content></entry><entry><title/><url>/booklist/</url><categories/><tags/><content type="html"> 2024年书单

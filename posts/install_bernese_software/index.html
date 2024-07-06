@@ -1,644 +1,98 @@
-<!DOCTYPE html>
-<html><head>
-<title>linux mint 安装 bernese 软件</title>
-
-
-
-
-<meta charset="utf-8">
-<meta name="X-UA-Compatible" content="IE=edge">
-<meta name="google-site-verification" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<meta content="telephone=no" name="format-detection">
-<meta name="description" content="">
-<meta name="renderer" content="webkit">
-<meta name="theme-color" content="#ffffff">
-
-
-
-<meta property="og:title" content="linux mint 安装 bernese 软件" />
-<meta property="og:description" content="GAMIT/GLOBK 软件简介 linux系统编译bernese软件 安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装
-1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensource-src-4.8.7 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
-文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://geoyxd.github.io/posts/install_bernese_software/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2018-06-12T15:10:25+08:00" />
-<meta property="article:modified_time" content="2018-06-12T15:10:25+08:00" /><meta property="og:site_name" content="My Blog" />
-
-
-
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="linux mint 安装 bernese 软件"/>
-<meta name="twitter:description" content="GAMIT/GLOBK 软件简介 linux系统编译bernese软件 安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装
-1编译平台 1 Ubuntu18.04 2 bernese5.2 2依赖库 $ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g&#43;&#43; sudo apt install gfortran 安装 软件 1 qt 下载 $ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensource-src-4.8.7 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数 在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
-文件夹中mkspecs打开在Build type后面的linux-g&#43;&#43;文件夹/qmake."/>
-
-
-
-
-
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-123-45', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-
-
-
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "abcdefghzd");
-</script>
-
-
-
-  
-
-
-
-
-
-
-      <script src="/js/toc.js"></script>
-    
-    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
-
-
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Material+Icons">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-<body>
-    	<div id="app"><div class="single-column-drawer-container" id="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-            
-                
-                
-                
-                    
-                
-                
-                
-                <a class="a-block drawer-menu-item active" href="/posts">
-                    归档
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/categories">
-                    分类
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/tags">
-                    标签
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/download">
-                    下载
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/booklist">
-                    书单
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/about">
-                    关于
-                </a>
-                
-            
-            
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#gamitglobk-%e8%bd%af%e4%bb%b6%e7%ae%80%e4%bb%8b" class="nav-gamitglobk-软件简介">
-									GAMIT/GLOBK 软件简介
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#linux%e7%b3%bb%e7%bb%9f%e7%bc%96%e8%af%91bernese%e8%bd%af%e4%bb%b6" class="nav-linux系统编译bernese软件">
-									linux系统编译bernese软件
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#1%e7%bc%96%e8%af%91%e5%b9%b3%e5%8f%b0" class="nav-1编译平台">
-									1编译平台
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#2%e4%be%9d%e8%b5%96%e5%ba%93" class="nav-2依赖库">
-									2依赖库
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%ae%89%e8%a3%85-%e8%bd%af%e4%bb%b6" class="nav-安装-软件">
-									安装 软件
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#1-qt" class="nav-1-qt">
-									1 qt
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e4%b8%8b%e8%bd%bdhttpdownloadqtioarchiveqt" class="nav-下载httpdownloadqtioarchiveqt">
-									下载
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#qt%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5%e7%bc%96%e8%af%91%e5%99%a8%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae%e4%b8%8d%e5%af%b9%e5%ba%94%e8%af%a5%e5%8a%a0%e4%b8%8a-stdgnu98%e5%8f%82%e6%95%b0" class="nav-qt编译失败编译器参数设置不对应该加上-stdgnu98参数">
-									QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e5%ae%89%e8%a3%85%e9%94%99%e8%af%af" class="nav-安装错误">
-									安装错误
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#bernese52" class="nav-bernese52">
-									bernese5.2
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e6%b7%bb%e5%8a%a0%e6%99%ae%e9%80%9a%e7%94%a8%e6%88%b7" class="nav-添加普通用户">
-									添加普通用户
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" class="nav-配置环境变量">
-									配置环境变量
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%8d%b8%e8%bd%bdqt4" class="nav-卸载qt4">
-									卸载qt4
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae" class="nav-参考文献">
-									参考文献
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div id="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a id="navTitle" class="navbar-brand" href="https://geoyxd.github.io">
-            南图时空
-        </a>
-        
-        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
-            <i class="material-icons" id="darkModeToggleIcon2">
-                dark_mode
-            </i>
-        </button>
-        
-    </div>
-</nav>
-<div class="single-column-header-container" id="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://geoyxd.github.io">
-        <div class="single-column-header-title">南图时空</div>
-        
-        <div class="single-column-header-subtitle">这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。</div>
-        
-
-    </a>
-</div>
-
-            <div id="content">
-                <div id="streamContainer" class="stream-container">
-
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    linux mint 安装 bernese 软件
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2018-06-12 15:10
-                        </time>
-                        
-
-                        
-                            <i class="material-icons" style="">folder</i>
-                                <a href="/categories/">[GNSS]</a>
-                                &nbsp;
-                        
-
-                        
-                            <i class="material-icons" style="">label</i>
-                            
-                                <a href="/tags/bernese">bernese</a>
-                                &nbsp;
-                            
-                        
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <h1 id="gamitglobk-软件简介">GAMIT/GLOBK 软件简介</h1>
-<h1 id="linux系统编译bernese软件">linux系统编译bernese软件</h1>
-<p>安装bernese5.2遇到两个坑
+<!doctype html><html lang=zh-CN data-theme=dark><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.128.2"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="linux mint 安装 bernese 软件"><meta itemprop=description content="保持简单的易用性和强大的功能。"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="//localhost:1313/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="bernese"><meta property="og:type" content="article"><meta property="og:title" content="linux mint 安装 bernese 软件"><meta property="og:description" content="保持简单的易用性和强大的功能。"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="//localhost:1313/posts/install_bernese_software/"><meta property="og:site_name" content="Hugo NexT"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="NexT 主题"><meta property="article:published_time" content="2018-06-12 15:10:25 +0800 CST"><meta property="article:modified_time" content="2018-06-12 15:10:25 +0800 CST"><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/font-awesome/6.1.2/css/all.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.css><link rel=stylesheet href=/css/main.css><style type=text/css>.post-footer,.flinks-list-footer hr:after{content:"~ 我可是有底线的哟 ~"}</style><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script class=next-config data-name=page type=application/json>{"comments":false,"isHome":false,"isPage":true,"path":"install_bernese_software","permalink":"//localhost:1313/posts/install_bernese_software/","title":"linux mint 安装 bernese 软件","waline":{"js":[{"alias":"waline","alias_name":"@waline/client","file":"dist/pageview.js","name":"pageview","version":"2.13.0"},{"alias":"waline","alias_name":"@waline/client","file":"dist/comment.js","name":"comment","version":"2.13.0"}]}}</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>linux mint 安装 bernese 软件 - Hugo NexT</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>Hugo NexT</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>为 Hugo 打造的主题</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about/ class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-flinks"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-thumbs-up hvr-icon"></i>站点示例</a></li><li class="menu-item menu-item-archives"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>0</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404.html class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#1编译平台>1编译平台</a></li><li><a href=#2依赖库>2依赖库</a></li><li><a href=#安装-软件>安装 软件</a><ul><li><a href=#1-qt>1 qt</a><ul><li><a href=#下载httpdownloadqtioarchiveqt><a href=http://download.qt.io/archive/qt/>下载</a></a></li><li><a href=#qt编译失败编译器参数设置不对应该加上-stdgnu98参数>QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数</a></li></ul></li></ul></li><li><a href=#安装错误>安装错误</a></li><li><a href=#bernese52>bernese5.2</a><ul><li><a href=#添加普通用户>添加普通用户</a></li><li><a href=#配置环境变量>配置环境变量</a></li><li><a href=#卸载qt4>卸载qt4</a></li></ul></li><li><a href=#参考文献>参考文献</a></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt="NexT 主题" src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>NexT 主题</p><div class=site-description itemprop=description>保持简单的易用性和强大的功能。</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>0</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>1</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>3</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/elkan1788 title="Github → https://github.com/elkan1788" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/lisenhui title="知乎 → https://www.zhihu.com/people/lisenhui" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-book fa-fw hvr-icon"></i>
+知乎</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt=共享知识></a></div><div class="links-of-blogroll site-overview-item animated"><div class=links-of-blogroll-title><i class="fa fa-globe fa-fw"></i>
+友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://gitee.com/hugo-next/hugo-theme-next title=https://gitee.com/hugo-next/hugo-theme-next target=_blank>Hugo-NexT</a></li><li class=links-of-blogroll-item><a href=https://lisenhui.cn title=https://lisenhui.cn target=_blank>凡梦星尘空间站</a></li></ul></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-gtranslate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><a href=https://github.com/hugo-next rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg>
+</a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=//localhost:1313/posts/install_bernese_software/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="NexT 主题"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="NexT 主题"><meta itemprop=description content="保持简单的易用性和强大的功能。"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="linux mint 安装 bernese 软件"><meta itemprop=description content="GAMIT/GLOBK 软件简介 linux系统编译bernese软件 安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装 1编译平台 1 Ubuntu18.04 2 bernese5.2 2依"></span><header class=post-header><h1 class=post-title itemprop="name headline">linux mint 安装 bernese 软件
+<a href=https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/posts/install_bernese_software.md rel="noopener external nofollow noreferrer" target=_blank class="exturl post-edit-link" title=编辑><i class="fa fa-pen-nib"></i></a></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2018-06-12 15:10:25 +0800 CST" itemprop="dateCreated datePublished" datetime="2018-06-12 15:10:25 +0800 CST">2018-06-12
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/gnss itemprop=url rel=index><span itemprop=name>GNSS</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="far fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>2373</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="far fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>5分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="far fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/posts/install_bernese_software/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h1 id=gamitglobk-软件简介>GAMIT/GLOBK 软件简介
+<a class=header-anchor href=#gamitglobk-%e8%bd%af%e4%bb%b6%e7%ae%80%e4%bb%8b></a></h1><h1 id=linux系统编译bernese软件>linux系统编译bernese软件
+<a class=header-anchor href=#linux%e7%b3%bb%e7%bb%9f%e7%bc%96%e8%af%91bernese%e8%bd%af%e4%bb%b6></a></h1><p>安装bernese5.2遇到两个坑
 一、Qt的安装
-二、bernese的按装</p>
-<h2 id="1编译平台">1编译平台</h2>
-<ul>
-<li>1 Ubuntu18.04</li>
-<li>2 bernese5.2</li>
-</ul>
-<h2 id="2依赖库">2依赖库</h2>
-<pre tabindex="0"><code>$ C 
-$ sudo apt install libxext-dev 
-$ sudo apt install libxtst-dev 
-$ sudo apt install zlib1g-dev
-sudo apt install g++
-sudo apt install gfortran
-</code></pre><h2 id="安装-软件">安装 软件</h2>
-<h3 id="1-qt">1 qt</h3>
-<h4 id="下载httpdownloadqtioarchiveqt"><a href="http://download.qt.io/archive/qt/">下载</a></h4>
-<pre tabindex="0"><code>$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz
-$ cd qt-everywhere-opensource-src-4.8.7
-$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
-$ sudo make                                                            
-$ sudo make install
-</code></pre><h4 id="qt编译失败编译器参数设置不对应该加上-stdgnu98参数">QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数</h4>
-<p>在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:</p>
-<p><img src="en-resource://database/568:1" alt="406f0c73372bd6b85a474626185200be.png">
+二、bernese的按装</p><h2 id=1编译平台>1编译平台
+<a class=header-anchor href=#1%e7%bc%96%e8%af%91%e5%b9%b3%e5%8f%b0></a></h2><ul><li>1 Ubuntu18.04</li><li>2 bernese5.2</li></ul><h2 id=2依赖库>2依赖库
+<a class=header-anchor href=#2%e4%be%9d%e8%b5%96%e5%ba%93></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ C 
+</span></span><span style=display:flex><span>$ sudo apt install libxext-dev 
+</span></span><span style=display:flex><span>$ sudo apt install libxtst-dev 
+</span></span><span style=display:flex><span>$ sudo apt install zlib1g-dev
+</span></span><span style=display:flex><span>sudo apt install g++
+</span></span><span style=display:flex><span>sudo apt install gfortran
+</span></span></code></pre></div><h2 id=安装-软件>安装 软件
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85-%e8%bd%af%e4%bb%b6></a></h2><h3 id=1-qt>1 qt
+<a class=header-anchor href=#1-qt></a></h3><h4 id=下载httpdownloadqtioarchiveqt><a href=http://download.qt.io/archive/qt/ title=下载 rel="noopener external nofollow noreferrer" target=_blank class=exturl>下载
+<i class="fa fa-external-link-alt"></i>
+</a><a class=header-anchor href=#%e4%b8%8b%e8%bd%bdhttpdownloadqtioarchiveqt></a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz
+</span></span><span style=display:flex><span>$ cd qt-everywhere-opensource-src-4.8.7
+</span></span><span style=display:flex><span>$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
+</span></span><span style=display:flex><span>$ sudo make                                                            
+</span></span><span style=display:flex><span>$ sudo make install
+</span></span></code></pre></div><h4 id=qt编译失败编译器参数设置不对应该加上-stdgnu98参数>QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数
+<a class=header-anchor href=#qt%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5%e7%bc%96%e8%af%91%e5%99%a8%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae%e4%b8%8d%e5%af%b9%e5%ba%94%e8%af%a5%e5%8a%a0%e4%b8%8a-stdgnu98%e5%8f%82%e6%95%b0></a></h4><p>在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:</p><p><img src=/imgs/img-lazy-loading.gif data-src=en-resource://database/568:1 alt=406f0c73372bd6b85a474626185200be.png>
 文件夹中mkspecs打开在Build type后面的linux-g++文件夹/qmake.conf
-修改其中的QMAKE_CXXFLAGS为：</p>
-<pre tabindex="0"><code>QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu++98
-</code></pre><p>如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。
+修改其中的QMAKE_CXXFLAGS为：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu++98
+</span></span></code></pre></div><p>如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。
 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ../common/linux.conf、../common/gcc-base-unix.conf、../common/g++-unix.conf 这三个文件。如果没有找到还需要递归的打开着三个文件中包含的文件。在../common/gcc-base.conf （包含在文件../common/gcc-base-unix.conf 中）文件中找到，并修改为如下所示。
-<strong><strong>本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。</strong></strong></p>
-<pre tabindex="0"><code>QMAKE_CXXFLAGS         += $$QMAKE_CFLAGS  -std=gnu++98  #gcc-base.conf文件
-QMAKE_CXX = g++ -std=gnu++98   # g++-base.conf 文件
-</code></pre><p>然后再执行</p>
-<pre tabindex="0"><code>$ sudo make confclean 
-$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
-$ sudo make 
-$ sudo make install
-</code></pre><p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 QTDIR，将其指向 Qt 4 的安装目录。切换至 root ，打开 bash 环境配置文件：</p>
-<pre tabindex="0"><code>$ su root 
-# gedit ~/.bashrc
-</code></pre><p>在bashrc文件中添加</p>
-<pre tabindex="0"><code># PATH for QT4.8 
-export QTDIR=/usr/local/qt4 
-export PARH=PATH:QTDIR/bin 
-export MANPATH=$QTDIR/doc/man 
-export LD_LIBRARY_PATH=$QTDIR/lib
-</code></pre><h2 id="安装错误">安装错误</h2>
-<pre tabindex="0"><code>gmake[1]: *** [Makefile:128864: .obj/release-shared/qprintdialog_unix.o] Error 1
-gmake[1]: Leaving directory &#39;/home/casm/Desktop/qt-everywhere-opensource-src-4.8.7/src/gui&#39;
-gmake: *** [Makefile:385: sub-gui-make_default-ordered] Error 2
-</code></pre><h2 id="bernese52">bernese5.2</h2>
-<p>通过 root 用户执行 Bernese 的安装引导脚本：</p>
-<p>首先给root用户设置密码：</p>
-<pre tabindex="0"><code>$ sudo passwd root
-输入密码，并确认密码
-</code></pre><p>然后进入root，运行setup.sh</p>
-<pre tabindex="0"><code>$ su root
-# sh setup.sh
-</code></pre><p>之后程序提示输入 Bernese 软件的安装目录，
+<strong><strong>本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。</strong></strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>QMAKE_CXXFLAGS         += $$QMAKE_CFLAGS  -std=gnu++98  #gcc-base.conf文件
+</span></span><span style=display:flex><span>QMAKE_CXX = g++ -std=gnu++98   # g++-base.conf 文件
+</span></span></code></pre></div><p>然后再执行</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ sudo make confclean 
+</span></span><span style=display:flex><span>$ sudo ./configure -release -opensource -static -prefix /usr/local/qt4
+</span></span><span style=display:flex><span>$ sudo make 
+</span></span><span style=display:flex><span>$ sudo make install
+</span></span></code></pre></div><p>Qt 4 的编译安装过程需要耗费较长的时间，具体时长取决于你的计算机硬件配置，耐心等待其编译完成。然后设置环境变量 QTDIR，将其指向 Qt 4 的安装目录。切换至 root ，打开 bash 环境配置文件：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ su root 
+</span></span><span style=display:flex><span># gedit ~/.bashrc
+</span></span></code></pre></div><p>在bashrc文件中添加</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#75715e># PATH for QT4.8 </span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> QTDIR<span style=color:#f92672>=/</span>usr<span style=color:#f92672>/</span>local<span style=color:#f92672>/</span>qt4 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> PARH<span style=color:#f92672>=</span>PATH:QTDIR<span style=color:#f92672>/</span>bin 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> MANPATH<span style=color:#f92672>=$</span>QTDIR<span style=color:#f92672>/</span>doc<span style=color:#f92672>/</span>man 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> LD_LIBRARY_PATH<span style=color:#f92672>=$</span>QTDIR<span style=color:#f92672>/</span>lib
+</span></span></code></pre></div><h2 id=安装错误>安装错误
+<a class=header-anchor href=#%e5%ae%89%e8%a3%85%e9%94%99%e8%af%af></a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>gmake[1]: *** [Makefile:128864: .obj/release-shared/qprintdialog_unix.o] Error 1
+</span></span><span style=display:flex><span>gmake[1]: Leaving directory &#39;/home/casm/Desktop/qt-everywhere-opensource-src-4.8.7/src/gui&#39;
+</span></span><span style=display:flex><span>gmake: *** [Makefile:385: sub-gui-make_default-ordered] Error 2
+</span></span></code></pre></div><h2 id=bernese52>bernese5.2
+<a class=header-anchor href=#bernese52></a></h2><p>通过 root 用户执行 Bernese 的安装引导脚本：</p><p>首先给root用户设置密码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ sudo passwd root
+</span></span><span style=display:flex><span>输入密码，并确认密码
+</span></span></code></pre></div><p>然后进入root，运行setup.sh</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ su root
+</span></span><span style=display:flex><span># sh setup.sh
+</span></span></code></pre></div><p>之后程序提示输入 Bernese 软件的安装目录，
 <strong><strong>这里的 /root 表示默认安装路径。</strong></strong> !这里有坑，显示/root为正常
 我们将其安装到 /opt/BERN52 文件夹，因此输入：/opt。
-一路回车，之后，配置文件 configure.pm 被启动，并在屏幕打印以下提示：</p>
-<pre tabindex="0"><code>==========================================
-CONFIGURATION OF THE BERNESE GNSS SOFTWARE
-==========================================
-0 ... Complete installation (Steps 1 to 5)
-1 ... Update LOADGPS.setvar
-2 ... Install online updates (only after Step 1)
-3 ... Add a new user environment (only after Step 1)
-4 ... Compile the menu (only after Step 1)
-5 ... Compile the programs (only after Step 1)
-6 ... Install the example campaign (only after Step 1)
-7 ...   ---
-
-x ... Exit
-</code></pre><p>解释一下此处的各个选项：
+一路回车，之后，配置文件 configure.pm 被启动，并在屏幕打印以下提示：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#f92672>==========================================</span>
+</span></span><span style=display:flex><span>CONFIGURATION OF THE BERNESE GNSS SOFTWARE
+</span></span><span style=display:flex><span><span style=color:#f92672>==========================================</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>0</span> <span style=color:#f92672>...</span> Complete installation (Steps <span style=color:#ae81ff>1</span> to <span style=color:#ae81ff>5</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>1</span> <span style=color:#f92672>...</span> Update LOADGPS<span style=color:#f92672>.</span>setvar
+</span></span><span style=display:flex><span><span style=color:#ae81ff>2</span> <span style=color:#f92672>...</span> Install online updates (only after Step <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>3</span> <span style=color:#f92672>...</span> Add a new user environment (only after Step <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>4</span> <span style=color:#f92672>...</span> Compile the menu (only after Step <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>5</span> <span style=color:#f92672>...</span> Compile the programs (only after Step <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>6</span> <span style=color:#f92672>...</span> Install the example campaign (only after Step <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#ae81ff>7</span> <span style=color:#f92672>...</span>   <span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x <span style=color:#f92672>...</span> Exit
+</span></span></code></pre></div><p>解释一下此处的各个选项：
 键入 0：执行从第 1 项至第 5 项的全部过程键入 
 1：更新环境变量设置键入 
 2：安装在线更新包键入 
@@ -647,44 +101,41 @@ x ... Exit
 5：编辑程序键入 
 6：安装解算工程示例键入 
 x： 退出安装程序
-由于存在一些坑，我们老老实实一步一步进行。键入 1，安装程序打印出支持的编译器，其中 GNU 指示到 gfortran 的路径，表明安装程序找到的了该编译器：</p>
-<pre tabindex="0"><code>Enter option: 1
-
-Information about compiler tests for OS LINUX:
- 1: g95 tested at AIUB
- 2: gfortran tested at AIUB
- 3: ifort tested at AIUB (version 10 and 12)
- 4: pgf90 tested at AIUB
- 5: f90 tested at AIUB
- 6: Use &#34;OTHER&#34; compiler from /opt/BERN52/GPS/EXE/Makefile.template
-
-Select Compiler for OS LINUX:
- 1: G95
- 2: GNU -&gt; /usr/bin/gfortran
- 3: IFC
- 4: PG_F90
- 5: SUNF90
- 6: OTHER
-
-Select  [2]: 
-</code></pre><p>这里系统已经检测到了 gfortran，键入 2 选择 gfortran 编译器（也可以直接按 Enter 键回车，因为默认就是 2）。然后安装程序继续打印出当前应用的环境变量：</p>
-<pre tabindex="0"><code>Current Values:
---------------
-    VARIABLE DESCRIPTION           VARIABLE NAME      VARIABLE VALUE
- 1: Path to software               C               =&gt; /opt/BERN52
- 2: Path to Qt libraries           QTBERN          =&gt; /usr/local/qt4
- 3: Operating system group         OS              =&gt; UNIX
- 4: Operating system name          OS_NAME         =&gt; LINUX
- 5: Fortran compiler name          F_VERS          =&gt; GNU
- 6: List of additional compilers   F_VERS_LIST     =&gt; 
- 7: Host of the BPE server         BPE_SERVER_HOST =&gt; U1604
- 8: Path to user environment       U               =&gt; ${HOME}/GPSUSER52
- 9: Path to temp. user environment T               =&gt; ${HOME}/GPSTEMP
-10: Path to campaign area          P               =&gt; ${HOME}/GPSDATA/CAMPAIGN52
-11: Path to datapool area          D               =&gt; ${HOME}/GPSDATA/DATAPOOL
-12: Path to savedisk area          S               =&gt; ${HOME}/GPSDATA/SAVEDISK
-</code></pre><p>解释一下此处的默认环境变量：</p>
-<p>第 1 项：Bernese 软件的安装目录
+由于存在一些坑，我们老老实实一步一步进行。键入 1，安装程序打印出支持的编译器，其中 GNU 指示到 gfortran 的路径，表明安装程序找到的了该编译器：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>Enter option: 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Information about compiler tests for OS LINUX:
+</span></span><span style=display:flex><span> 1: g95 tested at AIUB
+</span></span><span style=display:flex><span> 2: gfortran tested at AIUB
+</span></span><span style=display:flex><span> 3: ifort tested at AIUB (version 10 and 12)
+</span></span><span style=display:flex><span> 4: pgf90 tested at AIUB
+</span></span><span style=display:flex><span> 5: f90 tested at AIUB
+</span></span><span style=display:flex><span> 6: Use &#34;OTHER&#34; compiler from /opt/BERN52/GPS/EXE/Makefile.template
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Select Compiler for OS LINUX:
+</span></span><span style=display:flex><span> 1: G95
+</span></span><span style=display:flex><span> 2: GNU -&gt; /usr/bin/gfortran
+</span></span><span style=display:flex><span> 3: IFC
+</span></span><span style=display:flex><span> 4: PG_F90
+</span></span><span style=display:flex><span> 5: SUNF90
+</span></span><span style=display:flex><span> 6: OTHER
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Select  [2]: 
+</span></span></code></pre></div><p>这里系统已经检测到了 gfortran，键入 2 选择 gfortran 编译器（也可以直接按 Enter 键回车，因为默认就是 2）。然后安装程序继续打印出当前应用的环境变量：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>Current Values:
+</span></span><span style=display:flex><span>--------------
+</span></span><span style=display:flex><span>    VARIABLE DESCRIPTION           VARIABLE NAME      VARIABLE VALUE
+</span></span><span style=display:flex><span> 1: Path to software               C               =&gt; /opt/BERN52
+</span></span><span style=display:flex><span> 2: Path to Qt libraries           QTBERN          =&gt; /usr/local/qt4
+</span></span><span style=display:flex><span> 3: Operating system group         OS              =&gt; UNIX
+</span></span><span style=display:flex><span> 4: Operating system name          OS_NAME         =&gt; LINUX
+</span></span><span style=display:flex><span> 5: Fortran compiler name          F_VERS          =&gt; GNU
+</span></span><span style=display:flex><span> 6: List of additional compilers   F_VERS_LIST     =&gt; 
+</span></span><span style=display:flex><span> 7: Host of the BPE server         BPE_SERVER_HOST =&gt; U1604
+</span></span><span style=display:flex><span> 8: Path to user environment       U               =&gt; ${HOME}/GPSUSER52
+</span></span><span style=display:flex><span> 9: Path to temp. user environment T               =&gt; ${HOME}/GPSTEMP
+</span></span><span style=display:flex><span>10: Path to campaign area          P               =&gt; ${HOME}/GPSDATA/CAMPAIGN52
+</span></span><span style=display:flex><span>11: Path to datapool area          D               =&gt; ${HOME}/GPSDATA/DATAPOOL
+</span></span><span style=display:flex><span>12: Path to savedisk area          S               =&gt; ${HOME}/GPSDATA/SAVEDISK
+</span></span></code></pre></div><p>解释一下此处的默认环境变量：</p><p>第 1 项：Bernese 软件的安装目录
 第 2 项：所使用的 Qt 4 所在目录
 第 3 项：操作系统类型
 第 4 项：操作系统名称
@@ -695,562 +146,85 @@ Select  [2]:
 第 9 项：用户临时文件缓存目录
 第 10 项：用户解算工程文件夹
 第 11 项：用户数据文件夹目录
-第 12 项：解算成果目录</p>
-<p>若接受其默认的变量设置，输入 y。要修改其中的配置，输入 n，然后根据其提示，输入变量编号来配置变量。这里使用默认设置，输入 y。随后安装程序将检测是否存在所需的文件夹，当提示某个文件夹不存在时，程序提示是否创建，键入 y 创建即可。
-<strong><strong>坑1</strong></strong> 进行到第三步时重新打开终端</p>
-<pre tabindex="0"><code>cd /opt/BERN52
-</code></pre><pre tabindex="0"><code>$ ld -v
-GNU ld (GNU Binutils for Ubuntu) 2.30
-</code></pre><p>版本大于 2.22，需要修改 BERN52/MENU/memu.pro 中的内容。
-打开该文件：</p>
-<pre tabindex="0"><code>$ sudo gedit /opt/BERN52/MENU/menu.pro
-</code></pre><p>去掉前面的##</p>
-<pre tabindex="0"><code>##QMAKE_LIBS += -lz
-</code></pre><p>保存后退出。然后，回到原终端，按 3 添加新用户环境。
-<strong><strong>坑2</strong></strong> 进行到第五步</p>
-<pre tabindex="0"><code>若提示 Fortran 程序编译至 100/100 时出错，返回安装程序引导
-</code></pre><p>是安装文件没有权限</p>
-<pre tabindex="0"><code>cd /opt
-sudo chmod 755 -R BERN52
-</code></pre><p>继续安装，直至提示安装成功。</p>
-<h3 id="添加普通用户">添加普通用户</h3>
-<p>使用 root 用户进行数据解算操作既不方便也不安全。为了让非 root 用户也能使用 Bernese，需要使用新用户加载环境变量设置文件，并启动配置程序。按 3 继续，若不慎将终端关闭，新开终端中执行如下命令：</p>
-<pre tabindex="0"><code>$ source /opt/BERN52/GPS/EXE/LOADGPS.setvar
-$ perl /opt/BERN52/GPS/EXE/configure.pm
-</code></pre><p>程序再次打印出安装提示，此时键入 3，根据程序提示添加新用户的环境变量即可。</p>
-<pre tabindex="0"><code>==========================================
-CONFIGURATION OF THE BERNESE GNSS SOFTWARE
-==========================================
- 1 ... Update LOADGPS.setvar
- 2 ... Install online updates
- 3 ... Add a new user environment
- 4 ... Compile the menu
- 5 ... Compile the programs
- 6 ... Install the example campaign
- 7 ...   ---
-
- x ... Exit
-
-Enter option: 3
-
-Create user environment /home/xxx/GPSUSER52 (y/n): y
-
-Copying menu and program input files...
-Copying BPE user scripts...
-Copying examples for process control files...
-Copying BPE options for processing examples...
-Copying ICONS ...
-Extracting ICONS ...
-
-
-**********************************************************************
-* User area /home/spacefan/GPSUSER52
-* has been added/updated.
-**********************************************************************
-
-注意：此步是在普通用户模式下进行的操作，而非 root 用户。
-</code></pre><p>Installation of the Example campaign has been finished</p>
-<pre tabindex="0"><code>ATTENTION:
-When you are going to run them, please make sure that your
-user scripts are still not modified.
- ### Executable CRX2RNX is missing!
-</code></pre><h3 id="配置环境变量">配置环境变量</h3>
-<p>为了在每次开机后都能直接使用 Bernese 软件，需要配置在系统启动时自动加载环境变量。编辑用户主文件夹内的配置文件（root 下的配置文件也可以一并添加了）：</p>
-<pre tabindex="0"><code>$ gedit ~/.bashrc
-</code></pre><p>在文件末尾为 Bernese 加载环境变量：</p>
-<pre tabindex="0"><code># Load environment variables for Bernese GNSS Software
-source /opt/BERN52/GPS/EXE/LOADGPS.setvar
-</code></pre><p>从 /root 目录将 GPSDATA 拷贝到普通用户目录 /home/spacefan，再为其添加普通用户权限即可。</p>
-<pre tabindex="0"><code>sudo chown -R  geoyxd /home/geoyxd/GPSDATA
-</code></pre><h3 id="卸载qt4">卸载qt4</h3>
-<pre tabindex="0"><code>sudo apt-get autoremove --purge libqt4-[a-z]*
-</code></pre><p>4 结束语</p>
-<h2 id="参考文献">参考文献</h2>
-<ul>
-<li>1 <a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=1094854&amp;do=blog&amp;quickforward=1&amp;id=863531">BERNESE5.2 linux 安装</a></li>
-<li>2 <a href="https://blog.csdn.net/spacefan/article/details/94559873">Bernese 5.2 + Ubuntu 16.04 编译安装完全指南</a></li>
-<li>3 <a href="http://blog.sciencenet.cn/home.phpmod=space&amp;uid=3379275&amp;do=blog&amp;quickforward=1&amp;id=1183495">Windows安装虚拟机-Centos7；fortran及Qt4.8.4, BERNESE5.2 linux下安装步骤</a></li>
-<li>4 <a href="https://blog.csdn.net/weixin_38311046/article/details/99681240">Ubuntu18.04 搭建 OpenGL+Qt 4.8.6 的开发环境</a></li>
-</ul>
-<hr>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2018-06-12</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/posts/install_gamit_software/">
-			下回<br>Ubuntu23 安装 gamit 软件
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/posts/demo/">
-			上回<br>Demo
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-                    </div>
-            </div><div id="sideContainer" class="side-container">
-    
-    <a class="a-block nav-head false" href="https://geoyxd.github.io">
-    
-        <div class="nav-title">
-            南图时空
-        </div>
-        
-        <div class="nav-subtitle">
-            这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。
-        </div>
-        
-    </a>
-
-    <div class="nav-link-list">
-        
-        
-            
-            
-            
-                
-            
-            
-            
-            <a class="a-block nav-link-item active" href="/posts">
-                归档
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/categories">
-                分类
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/tags">
-                标签
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/download">
-                下载
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/booklist">
-                书单
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/about">
-                关于
-            </a>
-            
-        
-    </div>
-
-    
-
-    <div class="nav-footer">
-        
-Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
-<br>
-移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
-<br>
-
-&copy;
-	
-	This is a customized copyright.
-	
-
-    </div>
-    
-</div><div id="extraContainer" class="extra-container">
-    <div class="toc-wrapper">
-        
-
-        
-        <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#gamitglobk-%e8%bd%af%e4%bb%b6%e7%ae%80%e4%bb%8b" class="nav-gamitglobk-软件简介">
-									GAMIT/GLOBK 软件简介
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#linux%e7%b3%bb%e7%bb%9f%e7%bc%96%e8%af%91bernese%e8%bd%af%e4%bb%b6" class="nav-linux系统编译bernese软件">
-									linux系统编译bernese软件
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#1%e7%bc%96%e8%af%91%e5%b9%b3%e5%8f%b0" class="nav-1编译平台">
-									1编译平台
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#2%e4%be%9d%e8%b5%96%e5%ba%93" class="nav-2依赖库">
-									2依赖库
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%ae%89%e8%a3%85-%e8%bd%af%e4%bb%b6" class="nav-安装-软件">
-									安装 软件
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#1-qt" class="nav-1-qt">
-									1 qt
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e4%b8%8b%e8%bd%bdhttpdownloadqtioarchiveqt" class="nav-下载httpdownloadqtioarchiveqt">
-									下载
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#qt%e7%bc%96%e8%af%91%e5%a4%b1%e8%b4%a5%e7%bc%96%e8%af%91%e5%99%a8%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae%e4%b8%8d%e5%af%b9%e5%ba%94%e8%af%a5%e5%8a%a0%e4%b8%8a-stdgnu98%e5%8f%82%e6%95%b0" class="nav-qt编译失败编译器参数设置不对应该加上-stdgnu98参数">
-									QT编译失败，编译器参数设置不对，应该加上：-std=gnu&#43;&#43;98 参数
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e5%ae%89%e8%a3%85%e9%94%99%e8%af%af" class="nav-安装错误">
-									安装错误
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#bernese52" class="nav-bernese52">
-									bernese5.2
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e6%b7%bb%e5%8a%a0%e6%99%ae%e9%80%9a%e7%94%a8%e6%88%b7" class="nav-添加普通用户">
-									添加普通用户
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" class="nav-配置环境变量">
-									配置环境变量
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%8d%b8%e8%bd%bdqt4" class="nav-卸载qt4">
-									卸载qt4
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae" class="nav-参考文献">
-									参考文献
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-        
-    </div>
-    <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
-            :class="{ invisible: scrollY == 0 }">
-            <i class="material-icons pagination-action-icon">
-                keyboard_arrow_up
-            </i>
-        </a>
-        
-        <a type="button" class="pagination-action" id="darkModeToggleButton">
-            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
-                dark_mode
-            </span>
-        </a>
-        
-        
-    </div>
-</div><div id="single-column-footer">
-Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
-<br>
-移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
-<br>
-
-&copy;
-	
-	This is a customized copyright.
-	
-</div>
-            </div>
-    
-    <script src="/js/journal.js"></script></body>
-</html>
+第 12 项：解算成果目录</p><p>若接受其默认的变量设置，输入 y。要修改其中的配置，输入 n，然后根据其提示，输入变量编号来配置变量。这里使用默认设置，输入 y。随后安装程序将检测是否存在所需的文件夹，当提示某个文件夹不存在时，程序提示是否创建，键入 y 创建即可。
+<strong><strong>坑1</strong></strong> 进行到第三步时重新打开终端</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>cd /opt/BERN52
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ ld -v
+</span></span><span style=display:flex><span>GNU ld (GNU Binutils for Ubuntu) 2.30
+</span></span></code></pre></div><p>版本大于 2.22，需要修改 BERN52/MENU/memu.pro 中的内容。
+打开该文件：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ sudo gedit /opt/BERN52/MENU/menu.pro
+</span></span></code></pre></div><p>去掉前面的##</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>##QMAKE_LIBS += -lz
+</span></span></code></pre></div><p>保存后退出。然后，回到原终端，按 3 添加新用户环境。
+<strong><strong>坑2</strong></strong> 进行到第五步</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>若提示 Fortran 程序编译至 100/100 时出错，返回安装程序引导
+</span></span></code></pre></div><p>是安装文件没有权限</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>cd /opt
+</span></span><span style=display:flex><span>sudo chmod 755 -R BERN52
+</span></span></code></pre></div><p>继续安装，直至提示安装成功。</p><h3 id=添加普通用户>添加普通用户
+<a class=header-anchor href=#%e6%b7%bb%e5%8a%a0%e6%99%ae%e9%80%9a%e7%94%a8%e6%88%b7></a></h3><p>使用 root 用户进行数据解算操作既不方便也不安全。为了让非 root 用户也能使用 Bernese，需要使用新用户加载环境变量设置文件，并启动配置程序。按 3 继续，若不慎将终端关闭，新开终端中执行如下命令：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#f92672>$</span> source <span style=color:#f92672>/</span>opt<span style=color:#f92672>/</span>BERN52<span style=color:#f92672>/</span>GPS<span style=color:#f92672>/</span>EXE<span style=color:#f92672>/</span>LOADGPS<span style=color:#f92672>.</span>setvar
+</span></span><span style=display:flex><span><span style=color:#f92672>$</span> perl <span style=color:#f92672>/</span>opt<span style=color:#f92672>/</span>BERN52<span style=color:#f92672>/</span>GPS<span style=color:#f92672>/</span>EXE<span style=color:#f92672>/</span>configure<span style=color:#f92672>.</span>pm
+</span></span></code></pre></div><p>程序再次打印出安装提示，此时键入 3，根据程序提示添加新用户的环境变量即可。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#f92672>==========================================</span>
+</span></span><span style=display:flex><span>CONFIGURATION OF THE BERNESE GNSS SOFTWARE
+</span></span><span style=display:flex><span><span style=color:#f92672>==========================================</span>
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>...</span> Update LOADGPS<span style=color:#f92672>.</span>setvar
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>...</span> Install online updates
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>3</span> <span style=color:#f92672>...</span> Add a new user environment
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>...</span> Compile the menu
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>5</span> <span style=color:#f92672>...</span> Compile the programs
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>6</span> <span style=color:#f92672>...</span> Install the example campaign
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>7</span> <span style=color:#f92672>...</span>   <span style=color:#f92672>---</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> x <span style=color:#f92672>...</span> Exit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Enter option: <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Create user environment <span style=color:#f92672>/</span>home<span style=color:#f92672>/</span>xxx<span style=color:#f92672>/</span>GPSUSER52 (y<span style=color:#f92672>/</span>n): y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Copying menu <span style=color:#f92672>and</span> program input files<span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Copying BPE user scripts<span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Copying examples <span style=color:#66d9ef>for</span> process control files<span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Copying BPE options <span style=color:#66d9ef>for</span> processing examples<span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Copying ICONS <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>Extracting ICONS <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>**********************************************************************</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>*</span> User area <span style=color:#f92672>/</span>home<span style=color:#f92672>/</span>spacefan<span style=color:#f92672>/</span>GPSUSER52
+</span></span><span style=display:flex><span><span style=color:#f92672>*</span> has been added<span style=color:#f92672>/</span>updated<span style=color:#f92672>.</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>**********************************************************************</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>注意：此步是在普通用户模式下进行的操作，而非</span> root <span style=color:#960050;background-color:#1e0010>用户。</span>
+</span></span></code></pre></div><p>Installation of the Example campaign has been finished</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>ATTENTION:
+</span></span><span style=display:flex><span>When you are going to run them, please make sure that your
+</span></span><span style=display:flex><span>user scripts are still not modified.
+</span></span><span style=display:flex><span> ### Executable CRX2RNX is missing!
+</span></span></code></pre></div><h3 id=配置环境变量>配置环境变量
+<a class=header-anchor href=#%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f></a></h3><p>为了在每次开机后都能直接使用 Bernese 软件，需要配置在系统启动时自动加载环境变量。编辑用户主文件夹内的配置文件（root 下的配置文件也可以一并添加了）：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>$ gedit ~/.bashrc
+</span></span></code></pre></div><p>在文件末尾为 Bernese 加载环境变量：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#75715e># Load environment variables for Bernese GNSS Software</span>
+</span></span><span style=display:flex><span>source <span style=color:#f92672>/</span>opt<span style=color:#f92672>/</span>BERN52<span style=color:#f92672>/</span>GPS<span style=color:#f92672>/</span>EXE<span style=color:#f92672>/</span>LOADGPS<span style=color:#f92672>.</span>setvar
+</span></span></code></pre></div><p>从 /root 目录将 GPSDATA 拷贝到普通用户目录 /home/spacefan，再为其添加普通用户权限即可。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>sudo chown -R  geoyxd /home/geoyxd/GPSDATA
+</span></span></code></pre></div><h3 id=卸载qt4>卸载qt4
+<a class=header-anchor href=#%e5%8d%b8%e8%bd%bdqt4></a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-fallback data-lang=fallback><span style=display:flex><span>sudo apt-get autoremove --purge libqt4-[a-z]*
+</span></span></code></pre></div><p>4 结束语</p><h2 id=参考文献>参考文献
+<a class=header-anchor href=#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae></a></h2><ul><li>1
+<a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=1094854&amp;do=blog&amp;quickforward=1&amp;id=863531" title="BERNESE5.2 linux 安装" rel="noopener external nofollow noreferrer" target=_blank class=exturl>BERNESE5.2 linux 安装
+<i class="fa fa-external-link-alt"></i></a></li><li>2
+<a href=https://blog.csdn.net/spacefan/article/details/94559873 title="Bernese 5.2 + Ubuntu 16.04 编译安装完全指南" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Bernese 5.2 + Ubuntu 16.04 编译安装完全指南
+<i class="fa fa-external-link-alt"></i></a></li><li>3
+<a href="http://blog.sciencenet.cn/home.phpmod=space&amp;uid=3379275&amp;do=blog&amp;quickforward=1&amp;id=1183495" title="Windows安装虚拟机-Centos7；fortran及Qt4.8.4, BERNESE5.2 linux下安装步骤" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Windows安装虚拟机-Centos7；fortran及Qt4.8.4, BERNESE5.2 linux下安装步骤
+<i class="fa fa-external-link-alt"></i></a></li><li>4
+<a href=https://blog.csdn.net/weixin_38311046/article/details/99681240 title="Ubuntu18.04 搭建 OpenGL+Qt 4.8.6 的开发环境" rel="noopener external nofollow noreferrer" target=_blank class=exturl>Ubuntu18.04 搭建 OpenGL+Qt 4.8.6 的开发环境
+<i class="fa fa-external-link-alt"></i></a></li></ul><hr></div><footer class=post-footer><div class=post-tags><a href=/tags/bernese>bernese</a></div><div class=addthis_inline_share_toolbox style=text-align:center></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="NexT 主题 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="NexT 主题 - 微信">
+<span>微信</span></div></div></div><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+linux mint 安装 bernese 软件</li><li class=post-copyright-author><strong>本文作者： </strong>NexT 主题</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=//localhost:1313/posts/install_bernese_software/ title="linux mint 安装 bernese 软件">//localhost:1313/posts/install_bernese_software/</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/images/wechat_channel.jpg><span class=icon><i class="fab fa-weixin"></i>
+</span><span class=label>WeChat</span></a></div><div class=social-item><a target=_blank class=social-link href=/atom.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/posts/install_gamit_software/ rel=next title="Ubuntu23 安装 gamit 软件"><i class="fa fa-chevron-left"></i> Ubuntu23 安装 gamit 软件</a></div><div class="post-nav-prev post-nav-item"><a href=/posts/demo/ rel=prev title=Demo>Demo
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=gtranslate class=google-translate><i class="fa fa-language"></i><div id=google_translate_element></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2024
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>NexT 主题</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.128.2 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.5.3 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>粤ICP备 18047355-1 号</a>
+<img src=/imgs/gongan.png alt=沪公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009770" target=_blank>沪公网安备 31011402009770 号</a></div><div class=vendors-list><a target=_blank href=https://vercel.com title=Vercel><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/vercel.svg alt=Vercel>
+</a><a target=_blank href=https://upyun.com title=又拍云><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/upyun.png alt=又拍云>
+</a><a target=_blank href=https://webify.cloudbase.net title=Webify>Webify
+</a><span>提供CDN/云资源支持</span></div></div></footer><script type=text/javascript src=https://cdn.staticfile.org/animejs/3.2.1/anime.min.js defer></script><script type=text/javascript src=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.js defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"//localhost:1313/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"qiniu","router":"https://cdn.staticfile.org"},"version":"4.5.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"waline","file":"dist/waline.css","name":"@waline/client","version":"2.13.0"},"js":{"alias":"waline","file":"dist/waline.js","name":"@waline/client","version":"2.13.0"}}}</script><script type=text/javascript src=/js/main.js defer></script></body></html>

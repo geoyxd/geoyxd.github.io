@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>利用gamit/globk软件计算卫星轨道</title><url>/posts/orbit/</url><categories><category>GNSS</category></categories><tags><tag>定轨</tag></tags><content type="html"><![CDATA[  利用gamit/globk软件计算卫星轨道根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+一、gamit软件参数设置与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。
+sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
+二、文件准备test 305 rinex jfs3050.17o chan3050.17o daej3050.17o shao3050.17o suwn3050.17o brdc brdc3050.17o igs igs19733.sp3 table &amp;hellip;&amp;hellip; table文件用sh_setup
+sh_setup -yr 2017 305
+三、数据处理步骤1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305 -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880
+2、生成轨道初值G文件
+sh_sp3fit -f igs19733.sp3
+3、检查G文件
+sh_check_sess -sess 305 -type gfile -file &amp;lt;g-file&amp;gt;
+4、生成卫星钟文件
+makej brdc3050.17n jigsf7.305 igs19733.sp3
+5、检查j文件
+sh_check_sess -sess 305 -type jfile -file jigsf7.305
+6、生成双差X文件 makex test.makex.batch
+7、生成批处理脚本
+fixdrv dtest7.305
+8、运行脚本
+csh bbdst7.bat
+四、结果分析定轨结果 …  ]]></content></entry><entry><title>利用gamit/globk软件计算卫星轨道</title><url>/posts/%E6%96%B0%E5%BB%BA-markdown/</url><categories><category>GNSS</category></categories><tags><tag>定轨</tag></tags><content type="html"><![CDATA[  利用gamit/globk软件计算卫星轨道根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。 数值积分需要卫星的初始状态（位置、速度）。初始状态一般通过一系列的观测值约束，经过数据处理，来精化卫星的初始状态值，最终得到高精度的卫星初始运动状态。
+一、gamit软件参数设置与解算地面测站的坐标的方法相比，在解算参数设置上有些区别。
+卫星约束为松约束，基准站约束为紧约束。
+sestbl.主要得参数设置为： Choice of Experiment = RELAX. | ORBIT Update T/L files = T_AND_L
+二、文件准备test 305 rinex jfs3050.17o chan3050.17o daej3050.17o shao3050.17o suwn3050.17o brdc brdc3050.17o igs igs19733.sp3 table &amp;hellip;&amp;hellip; table文件用sh_setup
+sh_setup -yr 2017 305
+三、数据处理步骤1、将rinex、igs、brdc、table中的文件链接到305文件夹，在305下运行sh_makexp,生成session.info等文件
+sh_makexp -expt test -orbt igsf -yr 2017 -doy 305 -sess 0 -nav brdc3050.17n -jclock sp3 -apr lfile. -sinfo 30 00 00 2880
+2、生成轨道初值G文件
+sh_sp3fit -f igs19733.sp3
+3、检查G文件
+sh_check_sess -sess 305 -type gfile -file &amp;lt;g-file&amp;gt;
+4、生成卫星钟文件
+makej brdc3050.17n jigsf7.305 igs19733.sp3
+5、检查j文件
+sh_check_sess -sess 305 -type jfile -file jigsf7.305
+6、生成双差X文件 makex test.makex.batch
+7、生成批处理脚本
+fixdrv dtest7.305
+8、运行脚本
+csh bbdst7.bat
+四、结果分析定轨结果 …  ]]></content></entry><entry><title>Ubuntu23 安装 gamit 软件</title><url>/posts/install_gamit_software/</url><categories><category>GNSS</category></categories><tags><tag>gamit</tag></tags><content type="html"><![CDATA[  GAMIT/GLOBK 软件简介GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。
+安装 GAMIT/GLOBK 软件安装支持 GAMIT 软件包支持的软件。sudo apt install tcsh sudo apt install csh sudo apt install gcc sudo apt install libx11-dev sudo apt install gfortran sudo apt install make sudo apt install gmt 下载低版本的 gcc gfortran 软件sudo apt-get install gcc-9
+sudo apt-get install gfortran-9
+查询安装gcc版本ls /usr/bin/gcc* ##设置编译器默认使用的版本
+#调整gcc-11的优先级为40，gcc-9的优先级为100 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100 #调整gfortran-11的优先级为40，gfortran-9的优先级为100 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-11 40 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-9 100 sudo update-alternatives --config gcc 查询当前的gcc版本gcc -v
+安装 gamit 软件在 linux 终端下运行以下命令：将 gamit 软件包复制 linux 系统的 opt 目录下：执行下面的命令为 gamit/ 文件夹下的文件分配可执行权限：
+sudo chmod 755 -R gamit
+通过 cd 命令进入到 gamit 目录中，运行 install_software 脚本安装软件。具体命令如下：
+cd gamnit ./install_software 之后的一切询问输入 y，安装成功之后会看到提示：
+++++++++++++++++ GLOBK installed ++++++++++++++++ 为了在任何目录都能运行 GAMIT/GLOBK，需要将程序目录加入到系统的 PATH 变量中。环境变量配置方式依所使用的 Shell 有所不同。在终端内执行如下可以查看当前使用的 Shell：
+echo $SHELL
+对于 Bash 用户，打开主目录的 ~/.bashrc，在其中添加以下内容：
+gg=&quot;/opt/gamit&quot; export PATH=&quot;$gg/gamit/bin:$gg/kf/bin:$gg/com:$PATH&quot; export HELP_DIR=$gg/help/ 对于 C Shell 或 TC Shell 用户，打开主目录的 ~/.cshrc 文件，在底部添加以下内容：
+set gg = /opt/gamit setenv PATH &quot;$gg/gamit/bin:$gg/kf/bin:$gg/com:$PATH&quot; setenv HELP_DIR $gg/help/ 保存，退出。再执行命令：
+source ~/.bashrc source ~/.cshrc 测试 gamit 安装是否成功运行一下命令
+doy sh_gamit   ]]></content></entry><entry><title>linux mint 安装 bernese 软件</title><url>/posts/install_bernese_software/</url><categories><category>GNSS</category></categories><tags><tag>bernese</tag></tags><content type="html"> GAMIT/GLOBK 软件简介
+linux系统编译bernese软件
+安装bernese5.2遇到两个坑 一、Qt的安装 二、bernese的按装
+1编译平台
+1 Ubuntu18.04 2 bernese5.2 2依赖库
+$ C $ sudo apt install libxext-dev $ sudo apt install libxtst-dev $ sudo apt install zlib1g-dev sudo apt install g++ sudo apt install gfortran 安装 软件
+1 qt
+下载
+$ tar -zxvf qt-everywhere-opensource-src-4.8.7.tar.gz $ cd qt-everywhere-opensource-src-4.8.7 $ sudo ./configure -release -opensource -static -prefix /usr/local/qt4 $ sudo make $ sudo make install QT编译失败，编译器参数设置不对，应该加上：-std=gnu++98 参数
+在终端执行./configure 后，在终端文本中搜索mkspecs或者Build type:
+文件夹中mkspecs打开在Build type后面的linux-g++文件夹/qmake.conf 修改其中的QMAKE_CXXFLAGS为：
+QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -std=gnu++98 如果该文件中不存在QMAKE_CXXFLAGS 参数，则在该文件包含的头文件中查找。 例如：该文件不存在QMAKE_CXXFLAGS 参数，则打开 ../common/linux.conf、../common/gcc-base-unix.conf、../common/g++-unix.conf 这三个文件。如果没有找到还需要递归的打开着三个文件中包含的文件。在../common/gcc-base.conf （包含在文件../common/gcc-base-unix.conf 中）文件中找到，并修改为如下所示。 本文在gcc-base.conf和g++-base.conf 中对参数修改为如下所示。
+QMAKE_CXXFLAGS += …</content></entry><entry><title>Demo</title><url>/posts/demo/</url><categories/><tags/><content type="html"> 建站日记
+1 博客采用hugo驱动，主题由diary修改,由github托管。 站点管理
+添加文章
+hugo new posts/my-first-post.md
+添加页面</content></entry><entry><title/><url>/about/</url><categories/><tags/><content type="html"><![CDATA[   于止，知其所止，可以人而不如鸟乎? ——《礼记·大学》
+编程语言C#&gt;C/C++&gt;python&gt;fortran&gt;matlab&gt;R语言
+博客本博客自豪地由 Hugo 驱动，主题是 icarus，源码在 GitHub 上。
+联系方式geoyxd@qq.com  ]]></content></entry><entry><title/><url>/booklist/</url><categories/><tags/><content type="html"> 2024年书单
+马克思 《资本论》 阿耐 《大江大河》 2023年书单
+余光中 《心有猛虎 细嗅蔷薇》 萧红 《呼兰河传》 厚夫 《路遥传》 路遥《人生》 伯阳 《丑陋的中国人》 人世间 生活在裂隙 人类找北史 世界秩序 真实科比 戈尔巴乔夫回忆录 地理学与生活</content></entry><entry><title/><url>/download/</url><categories/><tags/><content type="html"> 资源下载</content></entry></search>

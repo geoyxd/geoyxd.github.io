@@ -1,9 +1,9 @@
 <?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GNSS Site</title>
+    <title>南图时空</title>
     <link>https://geoyxd.github.io/</link>
-    <description>Recent content on GNSS Site</description>
+    <description>Recent content on 南图时空</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This is a customized copyright.</copyright>
@@ -19,7 +19,7 @@
         <pubDate>Tue, 12 Jul 2022 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/orbit/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/orbit/ -&lt;h1 id=&#34;利用gamitglobk软件计算卫星轨道&#34;&gt;利用gamit/globk软件计算卫星轨道&lt;/h1&gt;
+        <description>南图时空 https://geoyxd.github.io/posts/orbit/ -&lt;h1 id=&#34;利用gamitglobk软件计算卫星轨道&#34;&gt;利用gamit/globk软件计算卫星轨道&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
@@ -164,7 +164,7 @@ Overlapped Time Range: 2017 305  1.25 2017 305 22.75 total: 21.50 hours
         <pubDate>Tue, 12 Jul 2022 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/%E6%96%B0%E5%BB%BA-markdown/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/%E6%96%B0%E5%BB%BA-markdown/ -&lt;h1 id=&#34;利用gamitglobk软件计算卫星轨道&#34;&gt;利用gamit/globk软件计算卫星轨道&lt;/h1&gt;
+        <description>南图时空 https://geoyxd.github.io/posts/%E6%96%B0%E5%BB%BA-markdown/ -&lt;h1 id=&#34;利用gamitglobk软件计算卫星轨道&#34;&gt;利用gamit/globk软件计算卫星轨道&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;根据卫星的受力受力情况和卫星的运动状态可以建立卫星的运动方程。
 实际确定卫星的轨道时通过数值积分得到卫星轨道的数值解。
@@ -309,7 +309,7 @@ Overlapped Time Range: 2017 305  1.25 2017 305 22.75 total: 21.50 hours
         <pubDate>Sun, 12 Jun 2022 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/install_gamit_software/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/install_gamit_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
+        <description>南图时空 https://geoyxd.github.io/posts/install_gamit_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;GAMIT/GLOBK 是由麻省理工学院(MIT)、美国加利福尼亚斯克瑞布(SCRIPPS)海洋研究所(SIO)等研制的用于 GNSS 数据处理与分析的软件，经不断改进而成为著名的高精度 GNSS 数据分析和处理软件之一，GAMIT/GLOBK 高精度数据处理软件不但精度高且开放源代码， 可以根据需要进行二次开发。GAMIT 集 GNSS 定位定轨于一体，可以解算卫星轨道和测站坐标以及其它一些辅助参数（如钟差、大气延迟改正参数、整周模糊度参数等）。GLOBK 是利用卡尔曼滤波方法，可对多天和多期观测数据进行平差分析，求出观测点的精确坐标和在不同期观测中各测点的变化速率等，其输入的原始数据为 H 文件或 SINEX 文件。GAMIT/GLOBK 运行于所有 UNIX 及其衍生的操作系统中，目前最新的版本是 GAMIT/GLOBK10.7，其支持 GPS、北斗等导航卫星系统的数据处理。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -397,7 +397,7 @@ sh_gamit
         <pubDate>Tue, 12 Jun 2018 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/install_bernese_software/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/install_bernese_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
+        <description>南图时空 https://geoyxd.github.io/posts/install_bernese_software/ -&lt;h1 id=&#34;gamitglobk-软件简介&#34;&gt;GAMIT/GLOBK 软件简介&lt;/h1&gt;
 &lt;h1 id=&#34;linux系统编译bernese软件&#34;&gt;linux系统编译bernese软件&lt;/h1&gt;
 &lt;p&gt;安装bernese5.2遇到两个坑
 一、Qt的安装
@@ -622,7 +622,7 @@ source /opt/BERN52/GPS/EXE/LOADGPS.setvar
         <pubDate>Mon, 01 Jan 2018 15:10:25 +0800</pubDate>
         
         <guid>https://geoyxd.github.io/posts/demo/</guid>
-        <description>GNSS Site https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;建站日记&#34;&gt;建站日记&lt;/h1&gt;
+        <description>南图时空 https://geoyxd.github.io/posts/demo/ -&lt;h1 id=&#34;建站日记&#34;&gt;建站日记&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;1 博客采用hugo驱动，主题由diary修改,由github托管。&lt;/li&gt;
 &lt;/ul&gt;

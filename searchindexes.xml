@@ -14,7 +14,24 @@ Hugo 建站
 部署到服务器
 $ hugo deploy 更多信息：
 Hugo 发布
-祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>Hello World</title><url>/hello-world/</url><categories/><tags/><content type="html"> “使用 weight 关键字置顶文章。”
+祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>注册测绘师学习笔记</title><url>/posts/%E6%B3%A8%E5%86%8C%E6%B5%8B%E7%BB%98%E5%B8%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url><categories/><tags/><content type="html"> 综合能力
+大地测量
+平差
+工程测量
+海洋测绘
+摄影测量
+地图制图
+地理信息
+不动产
+案例分析
+法律法规</content></entry><entry><title>测绘程序设计Csharp</title><url>/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</url><categories/><tags/><content type="html"><![CDATA[  测绘程序设计（C#）第一章 程序结构在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。
+C# Hello World 实例一个 C# 程序主要包括以下部分：
+命名空间声明（Namespace declaration） 一个 class Class 方法 Class 属性 一个 Main 方法 语句（Statements）&amp;amp; 表达式（Expressions） 注释 C# 文件的后缀为 .cs。
+以下创建一个 test.cs 文件，文件包含了可以打印出 &amp;ldquo;Hello World&amp;rdquo; 的简单代码：
+using System; namespace HelloWorldApplication { class HelloWorld { static void Main(string[] args) { /* 我的第一个 C# 程序*/ Console.WriteLine(&amp;#34;Hello World&amp;#34;); Console.ReadKey(); } } } 当上面的代码被编译和执行时，它会产生下列结果：
+Hello World
+让我们看一下上面程序的各个部分：
+程序的第一行 using System; - using 关键字用于在程序中包含 System 命名空间。 一个程序一般有多个 using 语句。 下一行是 namespace 声明。一个 namespace 里包含了一系列的类。HelloWorldApplication 命名空间包含了类 HelloWorld。 下一行是 class 声明。类 HelloWorld 包含了程序使用的数据和方法声明。类一般包含多个方法。方法定义了类的行为。在这里，HelloWorld 类只有一个 Main 方法。 下一行定义了 Main 方法，是所有 C# 程序的 入口点。Main 方法说明当执行时 类将做什么动作。 下一行 /&amp;hellip;/ 将会被编译器忽略，且它会在程序中添加额外的 注释。 Main 方法通过语句 Console.WriteLine(&amp;ldquo;Hello World&amp;rdquo;); 指定了它的行为。 WriteLine 是一个定义在 System 命名空间中的 Console 类的一个方法。该语句会在屏幕 …  ]]></content></entry><entry><title>Hello World</title><url>/hello-world/</url><categories/><tags/><content type="html"> “使用 weight 关键字置顶文章。”
 Hugo
 是现今世界上最快的网站建设框架，也是最流行的开源静态站点生成器之一。 凭借其惊人的速度和灵活性，Hugo 让建设网站再次变得有趣起来。
 快速开始

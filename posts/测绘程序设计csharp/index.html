@@ -1,0 +1,857 @@
+<!doctype html><html lang=zh-CN data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.128.2"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="测绘程序设计Csharp"><meta itemprop=description content="这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="https://geoyxd.github.io/imgs/hugo_next_avatar.png"><meta itemprop=keywords content="Hugo,NexT,主题,简单,强大"><meta property="og:type" content="article"><meta property="og:title" content="测绘程序设计Csharp"><meta property="og:description" content="这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。"><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://geoyxd.github.io/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/"><meta property="og:site_name" content="南图"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="南图"><meta property="article:published_time" content="2024-07-12 20:19:50 +0800 CST"><meta property="article:modified_time" content="2024-07-12 20:19:50 +0800 CST"><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/font-awesome/6.1.2/css/all.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.css><link rel=stylesheet href=/css/main.min.ff5358e101ab82ec794f45d2098d2c4ffcc8f07f2a73d9524fbc39dc6612ec3f.css><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script class=next-config data-name=page type=application/json>{"comments":false,"isHome":false,"isPage":true,"path":"%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp","permalink":"https://geoyxd.github.io/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/","title":"测绘程序设计Csharp","waline":{"js":[{"alias":"waline","alias_name":"@waline/client","file":"dist/pageview.js","name":"pageview","version":"2.13.0"},{"alias":"waline","alias_name":"@waline/client","file":"dist/comment.js","name":"comment","version":"2.13.0"}]}}</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>测绘程序设计Csharp - 南图</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>南图</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>图南未可料，变化有鲲鹏。</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about/ class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-flinks"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-thumbs-up hvr-icon"></i>站点示例</a></li><li class="menu-item menu-item-archives"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>7</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404.html class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-booklist"><a href=/booklist.html class=hvr-icon-pulse rel=section><i class="fa fa-booklist hvr-icon"></i>书单</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents><ul><li><a href=#第一章-程序结构>第一章 程序结构</a><ul><li><a href=#c-hello-world-实例>C# Hello World 实例</a></li><li><a href=#heading></a></li><li><a href=#编译--执行-c-程序>编译 & 执行 C# 程序</a></li></ul></li><li><a href=#第-章>第 章</a></li><li><a href=#第-章-数据类型>第 章 数据类型</a><ul><li><a href=#heading-1></a></li></ul></li><li><a href=#表达式与运算符>表达式与运算符</a><ul><li><a href=#表达式>表达式</a></li><li><a href=#运算符>运算符</a><ul><li><a href=#算数运算符>算数运算符</a></li><li><a href=#赋值运算符>赋值运算符</a></li><li><a href=#关系运算符>关系运算符</a></li><li><a href=#逻辑运算符>逻辑运算符</a></li><li><a href=#其他运算符>其他运算符</a></li></ul></li></ul></li><li><a href=#第-章-c-方法函数>第 章 C# 方法（函数）</a><ul><li><a href=#c-中定义方法>C# 中定义方法</a></li></ul></li><li><a href=#c-结构体struct>C# 结构体（Struct）</a></li><li><a href=#第-章-类>第 章 类</a></li><li><a href=#文件的输入与输出>文件的输入与输出</a><ul><li><a href=#c-io-类>C# I/O 类</a></li></ul></li><li><a href=#测绘程序设计>测绘程序设计</a><ul><li><a href=#大地线计算>大地线计算</a></li></ul></li></ul></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=南图 src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>南图</p><div class=site-description itemprop=description>这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>7</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>2</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>5</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://space.bilibili.com/390117748 title="B站 → https://space.bilibili.com/390117748" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-bilibli fa-fw hvr-icon"></i>
+B站</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt=共享知识></a></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate=12066-06-12T15:10:25+08:00></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-user"></i>总访客数：</div><div class=item-count id=busuanzi_value_site_uv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fas fa fa-eye"></i>页面浏览：</div><div class=item-count id=busuanzi_value_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=15582></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=35></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate=12076-07-12T20:27:56+08:00></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-gtranslate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><a href=https://github.com/hugo-next rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg>
+</a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://geoyxd.github.io/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="南图"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="南图"><meta itemprop=description content="这是机器代替人的时代，也是人控制机器的时代。这是程序员的时代，也是非程序员学编程的时代。这是算法的时代，也是编程语言的时代。"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="测绘程序设计Csharp"><meta itemprop=description content="测绘程序设计（C#） 第一章 程序结构 在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。 C# Hello World 实"></span><header class=post-header><h1 class=post-title itemprop="name headline">测绘程序设计Csharp
+<a href=https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/posts/%e6%b5%8b%e7%bb%98%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1Csharp.md rel="noopener external nofollow noreferrer" target=_blank class="exturl post-edit-link" title=编辑><i class="fa fa-pen-nib"></i></a></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2024-07-12 20:19:50 +0800 CST" itemprop="dateCreated datePublished" datetime="2024-07-12 20:19:50 +0800 CST">12076-07-12</time></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="far fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>9751</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="far fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>20分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="far fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=busuanzi_value_page_pv data-path=/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class="post-body autonumber" itemprop=articleBody><h1 id=测绘程序设计c>测绘程序设计（C#）
+<a class=header-anchor href=#%e6%b5%8b%e7%bb%98%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1c></a></h1><h2 id=第一章-程序结构>第一章 程序结构
+<a class=header-anchor href=#%e7%ac%ac%e4%b8%80%e7%ab%a0-%e7%a8%8b%e5%ba%8f%e7%bb%93%e6%9e%84></a></h2><p>在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。</p><h3 id=c-hello-world-实例>C# Hello World 实例
+<a class=header-anchor href=#c-hello-world-%e5%ae%9e%e4%be%8b></a></h3><p>一个 C# 程序主要包括以下部分：</p><p>命名空间声明（Namespace declaration）
+一个 class
+Class 方法
+Class 属性
+一个 Main 方法
+语句（Statements）& 表达式（Expressions）
+注释
+C# 文件的后缀为 .cs。</p><p>以下创建一个 test.cs 文件，文件包含了可以打印出 &ldquo;Hello World&rdquo; 的简单代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> HelloWorldApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>HelloWorld</span>
+</span></span><span style=display:flex><span>   {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         <span style=color:#75715e>/* 我的第一个 C# 程序*/</span>
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;Hello World&#34;</span>);
+</span></span><span style=display:flex><span>         Console.ReadKey();
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><blockquote><p>Hello World</p></blockquote><h3 id=heading><a class=header-anchor href=#heading></a></h3><p>让我们看一下上面程序的各个部分：</p><p>程序的第一行 using System; - using 关键字用于在程序中包含 System 命名空间。 一个程序一般有多个 using 语句。
+下一行是 namespace 声明。一个 namespace 里包含了一系列的类。HelloWorldApplication 命名空间包含了类 HelloWorld。
+下一行是 class 声明。类 HelloWorld 包含了程序使用的数据和方法声明。类一般包含多个方法。方法定义了类的行为。在这里，HelloWorld 类只有一个 Main 方法。
+下一行定义了 Main 方法，是所有 C# 程序的 入口点。Main 方法说明当执行时 类将做什么动作。
+下一行 /<em>&mldr;</em>/ 将会被编译器忽略，且它会在程序中添加额外的 注释。
+Main 方法通过语句 Console.WriteLine(&ldquo;Hello World&rdquo;); 指定了它的行为。
+WriteLine 是一个定义在 System 命名空间中的 Console 类的一个方法。该语句会在屏幕上显示消息 &ldquo;Hello World&rdquo;。</p><p>最后一行 Console.ReadKey(); 是针对 VS.NET 用户的。这使得程序会等待一个按键的动作，防止程序从 Visual Studio .NET 启动时屏幕会快速运行并关闭。
+以下几点值得注意：</p><p>C# 是大小写敏感的。
+所有的语句和表达式必须以分号（;）结尾。
+程序的执行从 Main 方法开始。
+与 Java 不同的是，文件名可以不同于类的名称。</p><h3 id=编译--执行-c-程序>编译 & 执行 C# 程序
+<a class=header-anchor href=#%e7%bc%96%e8%af%91--%e6%89%a7%e8%a1%8c-c-%e7%a8%8b%e5%ba%8f></a></h3><p>如果您使用 Visual Studio.Net 编译和执行 C# 程序，请按下面的步骤进行：</p><p>启动 Visual Studio。
+在菜单栏上，选择 File -> New -> Project。
+从模板中选择 Visual C#，然后选择 Windows。
+选择 Console Application。
+为您的项目制定一个名称，然后点击 OK 按钮。
+新项目会出现在解决方案资源管理器（Solution Explorer）中。
+在代码编辑器（Code Editor）中编写代码。
+点击 Run 按钮或者按下 F5 键来运行程序。会出现一个命令提示符窗口（Command Prompt window），显示 Hello World。
+您也可以使用命令行代替 Visual Studio IDE 来编译 C# 程序：</p><p>打开一个文本编辑器，添加上面提到的代码。
+保存文件为 helloworld.cs。
+打开命令提示符工具，定位到文件所保存的目录。
+键入 csc helloworld.cs 并按下 enter 键来编译代码。
+如果代码没有错误，命令提示符会进入下一行，并生成 helloworld.exe 可执行文件。
+接下来，键入 helloworld 来执行程序。
+您将看到 &ldquo;Hello World&rdquo; 打印在屏幕上。</p><h2 id=第-章>第 章
+<a class=header-anchor href=#%e7%ac%ac-%e7%ab%a0></a></h2><p>C# 基本语法
+C# 是一种面向对象的编程语言。在面向对象的程序设计方法中，程序由各种相互交互的对象组成。相同种类的对象通常具有相同的类型，或者说，是在相同的 class 中。</p><p>例如，以 Rectangle（矩形）对象为例。它具有 length 和 width 属性。根据设计，它可能需要接受这些属性值、计算面积和显示细节。</p><p>让我们来看看一个 Rectangle（矩形）类的实现，并借此讨论 C# 的基本语法：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-c data-lang=c><span style=display:flex><span>using System;
+</span></span><span style=display:flex><span>namespace RectangleApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    class Rectangle
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 成员变量
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>double</span> length;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>double</span> width;
+</span></span><span style=display:flex><span>        public <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>Acceptdetails</span>()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            length <span style=color:#f92672>=</span> <span style=color:#ae81ff>4.5</span>;    
+</span></span><span style=display:flex><span>            width <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.5</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        public <span style=color:#66d9ef>double</span> <span style=color:#a6e22e>GetArea</span>()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> length <span style=color:#f92672>*</span> width;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        public <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>Display</span>()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            Console.<span style=color:#a6e22e>WriteLine</span>(<span style=color:#e6db74>&#34;Length: {0}&#34;</span>, length);
+</span></span><span style=display:flex><span>            Console.<span style=color:#a6e22e>WriteLine</span>(<span style=color:#e6db74>&#34;Width: {0}&#34;</span>, width);
+</span></span><span style=display:flex><span>            Console.<span style=color:#a6e22e>WriteLine</span>(<span style=color:#e6db74>&#34;Area: {0}&#34;</span>, <span style=color:#a6e22e>GetArea</span>());
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>   
+</span></span><span style=display:flex><span>    class ExecuteRectangle
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>Main</span>(string[] args)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            Rectangle r <span style=color:#f92672>=</span> new <span style=color:#a6e22e>Rectangle</span>();
+</span></span><span style=display:flex><span>            r.<span style=color:#a6e22e>Acceptdetails</span>();
+</span></span><span style=display:flex><span>            r.<span style=color:#a6e22e>Display</span>();
+</span></span><span style=display:flex><span>            Console.<span style=color:#a6e22e>ReadLine</span>();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>尝试一下 »
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>Length: 4.5
+Width: 3.5
+Area: 15.75
+using 关键字
+在任何 C# 程序中的第一条语句都是：</p><p>using System;
+using 关键字用于在程序中包含命名空间。一个程序可以包含多个 using 语句。</p><p>class 关键字
+class 关键字用于声明一个类。</p><p>C# 中的注释
+注释是用于解释代码。编译器会忽略注释的条目。在 C# 程序中，多行注释以 /* 开始，并以字符 */ 终止，如下所示：</p><p>/* 这个程序演示
+C# 的注释
+使用 */
+单行注释是用 // 符号表示。例如：</p><p>// 这一行是注释
+成员变量
+变量是类的属性或数据成员，用于存储数据。在上面的程序中，Rectangle 类有两个成员变量，名为 length 和 width。</p><p>成员函数
+函数是一系列执行指定任务的语句。类的成员函数是在类内声明的。我们举例的类 Rectangle 包含了三个成员函数： AcceptDetails、GetArea 和 Display。</p><p>实例化一个类
+在上面的程序中，类 ExecuteRectangle 是一个包含 Main() 方法和实例化 Rectangle 类的类。</p><p>标识符
+标识符是用来识别类、变量、函数或任何其它用户定义的项目。在 C# 中，类的命名必须遵循如下基本规则：</p><p>标识符必须以字母、下划线或 @ 开头，后面可以跟一系列的字母、数字（ 0 - 9 ）、下划线（ _ ）、@。
+标识符中的第一个字符不能是数字。
+标识符必须不包含任何嵌入的空格或符号，比如 ? - +! # % ^ & * ( ) [ ] { } . ; : " &rsquo; / \。
+标识符不能是 C# 关键字。除非它们有一个 @ 前缀。 例如，@if 是有效的标识符，但 if 不是，因为 if 是关键字。
+标识符必须区分大小写。大写字母和小写字母被认为是不同的字母。
+不能与C#的类库名称相同。
+C# 关键字
+关键字是 C# 编译器预定义的保留字。这些关键字不能用作标识符，但是，如果您想使用这些关键字作为标识符，可以在关键字前面加上 @ 字符作为前缀。</p><p>在 C# 中，有些关键字在代码的上下文中有特殊的意义，如 get 和 set，这些被称为上下文关键字（contextual keywords）。</p><p>下表列出了 C# 中的保留关键字（Reserved Keywords）和上下文关键字（Contextual Keywords）：</p><h2 id=第-章-数据类型>第 章 数据类型
+<a class=header-anchor href=#%e7%ac%ac-%e7%ab%a0-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b></a></h2><p>在 C# 中，变量分为以下几种类型：</p><p>值类型（Value types）
+引用类型（Reference types）
+指针类型（Pointer types）</p><h3 id=heading-1><a class=header-anchor href=#heading-1></a></h3><h2 id=表达式与运算符>表达式与运算符
+<a class=header-anchor href=#%e8%a1%a8%e8%be%be%e5%bc%8f%e4%b8%8e%e8%bf%90%e7%ae%97%e7%ac%a6></a></h2><h3 id=表达式>表达式
+<a class=header-anchor href=#%e8%a1%a8%e8%be%be%e5%bc%8f></a></h3><h3 id=运算符>运算符
+<a class=header-anchor href=#%e8%bf%90%e7%ae%97%e7%ac%a6></a></h3><h4 id=算数运算符>算数运算符
+<a class=header-anchor href=#%e7%ae%97%e6%95%b0%e8%bf%90%e7%ae%97%e7%ac%a6></a></h4><h4 id=赋值运算符>赋值运算符
+<a class=header-anchor href=#%e8%b5%8b%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6></a></h4><h4 id=关系运算符>关系运算符
+<a class=header-anchor href=#%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%e7%ac%a6></a></h4><h4 id=逻辑运算符>逻辑运算符
+<a class=header-anchor href=#%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6></a></h4><h4 id=其他运算符>其他运算符
+<a class=header-anchor href=#%e5%85%b6%e4%bb%96%e8%bf%90%e7%ae%97%e7%ac%a6></a></h4><ul><li>new 运算符</li></ul><h2 id=第-章-c-方法函数>第 章 C# 方法（函数）
+<a class=header-anchor href=#%e7%ac%ac-%e7%ab%a0-c-%e6%96%b9%e6%b3%95%e5%87%bd%e6%95%b0></a></h2><p>一个方法是把一些相关的语句组织在一起，用来执行一个任务的语句块。每一个 C# 程序至少有一个带有 Main 方法的类。</p><p>要使用一个方法，您需要：</p><p>定义方法
+调用方法</p><h3 id=c-中定义方法>C# 中定义方法
+<a class=header-anchor href=#c-%e4%b8%ad%e5%ae%9a%e4%b9%89%e6%96%b9%e6%b3%95></a></h3><p>当定义一个方法时，从根本上说是在声明它的结构的元素。在 C# 中，定义方法的语法如下：</p><p><access specifier><return type><method name>(Parameter List)
+{
+Method Body
+}
+下面是方法的各个元素：</p><p>Access Specifier：访问修饰符，这个决定了变量或方法对于另一个类的可见性。
+Return type：返回类型，一个方法可以返回一个值。返回类型是方法返回的值的数据类型。如果方法不返回任何值，则返回类型为 void。
+Method name：方法名称，是一个唯一的标识符，且是大小写敏感的。它不能与类中声明的其他标识符相同。
+Parameter list：参数列表，使用圆括号括起来，该参数是用来传递和接收方法的数据。参数列表是指方法的参数类型、顺序和数量。参数是可选的，也就是说，一个方法可能不包含参数。
+Method body：方法主体，包含了完成任务所需的指令集。
+实例
+下面的代码片段显示一个函数 FindMax，它接受两个整数值，并返回两个中的较大值。它有 public 访问修饰符，所以它可以使用类的实例从类的外部进行访问。</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-c# data-lang=c#><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NumberManipulator</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> FindMax(<span style=color:#66d9ef>int</span> num1, <span style=color:#66d9ef>int</span> num2)
+</span></span><span style=display:flex><span>   {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>/* 局部变量声明 */</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>int</span> result;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (num1 &gt; num2)
+</span></span><span style=display:flex><span>         result = num1;
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>         result = num2;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> result;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>   ...
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>C# 中调用方法
+您可以使用方法名调用方法。下面的实例演示了这点：</p><p>实例
+using System;</p><p>namespace CalculatorApplication
+{
+class NumberManipulator
+{
+public int FindMax(int num1, int num2)
+{
+/* 局部变量声明 */
+int result;</p><pre><code>     if (num1 &gt; num2)
+        result = num1;
+     else
+        result = num2;
+
+     return result;
+  }
+  static void Main(string[] args)
+  {
+     /* 局部变量定义 */
+     int a = 100;
+     int b = 200;
+     int ret;
+     NumberManipulator n = new NumberManipulator();
+
+     //调用 FindMax 方法
+     ret = n.FindMax(a, b);
+     Console.WriteLine(&quot;最大值是： {0}&quot;, ret );
+     Console.ReadLine();
+  }
+</code></pre><p>}
+}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>最大值是： 200
+您也可以使用类的实例从另一个类中调用其他类的公有方法。例如，方法 FindMax 属于 NumberManipulator 类，您可以从另一个类 Test 中调用它。</p><p>实例
+using System;</p><p>namespace CalculatorApplication
+{
+class NumberManipulator
+{
+public int FindMax(int num1, int num2)
+{
+/* 局部变量声明 */
+int result;</p><pre><code>        if (num1 &gt; num2)
+            result = num1;
+        else
+            result = num2;
+
+        return result;
+    }
+}
+class Test
+{
+    static void Main(string[] args)
+    {
+        /* 局部变量定义 */
+        int a = 100;
+        int b = 200;
+        int ret;
+        NumberManipulator n = new NumberManipulator();
+        //调用 FindMax 方法
+        ret = n.FindMax(a, b);
+        Console.WriteLine(&quot;最大值是： {0}&quot;, ret );
+        Console.ReadLine();
+
+    }
+}
+</code></pre><p>}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>最大值是： 200
+递归方法调用
+一个方法可以自我调用。这就是所谓的 递归。下面的实例使用递归函数计算一个数的阶乘：</p><p>实例
+using System;</p><p>namespace CalculatorApplication
+{
+class NumberManipulator
+{
+public int factorial(int num)
+{
+/* 局部变量定义 */
+int result;</p><pre><code>        if (num == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            result = factorial(num - 1) * num;
+            return result;
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        NumberManipulator n = new NumberManipulator();
+        //调用 factorial 方法
+        Console.WriteLine(&quot;6 的阶乘是： {0}&quot;, n.factorial(6));
+        Console.WriteLine(&quot;7 的阶乘是： {0}&quot;, n.factorial(7));
+        Console.WriteLine(&quot;8 的阶乘是： {0}&quot;, n.factorial(8));
+        Console.ReadLine();
+
+    }
+}
+</code></pre><p>}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>6 的阶乘是： 720
+7 的阶乘是： 5040
+8 的阶乘是： 40320
+参数传递
+当调用带有参数的方法时，您需要向方法传递参数。在 C# 中，有三种向方法传递参数的方式：</p><h2 id=c-结构体struct>C# 结构体（Struct）
+<a class=header-anchor href=#c-%e7%bb%93%e6%9e%84%e4%bd%93struct></a></h2><p>在 C# 中，结构体（struct）是一种值类型（value type），用于组织和存储相关数据。</p><p>在 C# 中，结构体是值类型数据结构，这样使得一个单一变量可以存储各种数据类型的相关数据。</p><p>struct 关键字用于创建结构体。</p><p>结构体是用来代表一个记录，假设您想跟踪图书馆中书的动态，您可能想跟踪每本书的以下属性：</p><p>Title
+Author
+Subject
+Book ID
+定义结构体
+为了定义一个结构体，您必须使用 struct 语句。</p><p>struct 语句为程序定义了一个带有多个成员的新的数据类型。</p><p>例如，您可以按照如下的方式声明 Book 结构：</p><p>struct Books
+{
+public string title;
+public string author;
+public string subject;
+public int book_id;
+};<br>下面的程序演示了结构的用法：</p><p>实例
+using System;
+using System.Text;</p><p>struct Books
+{
+public string title;
+public string author;
+public string subject;
+public int book_id;
+};</p><p>public class testStructure
+{
+public static void Main(string[] args)
+{</p><pre><code>  Books Book1;        /* 声明 Book1，类型为 Books */
+  Books Book2;        /* 声明 Book2，类型为 Books */
+
+  /* book 1 详述 */
+  Book1.title = &quot;C Programming&quot;;
+  Book1.author = &quot;Nuha Ali&quot;;
+  Book1.subject = &quot;C Programming Tutorial&quot;;
+  Book1.book_id = 6495407;
+
+  /* book 2 详述 */
+  Book2.title = &quot;Telecom Billing&quot;;
+  Book2.author = &quot;Zara Ali&quot;;
+  Book2.subject =  &quot;Telecom Billing Tutorial&quot;;
+  Book2.book_id = 6495700;
+
+  /* 打印 Book1 信息 */
+  Console.WriteLine( &quot;Book 1 title : {0}&quot;, Book1.title);
+  Console.WriteLine(&quot;Book 1 author : {0}&quot;, Book1.author);
+  Console.WriteLine(&quot;Book 1 subject : {0}&quot;, Book1.subject);
+  Console.WriteLine(&quot;Book 1 book_id :{0}&quot;, Book1.book_id);
+
+  /* 打印 Book2 信息 */
+  Console.WriteLine(&quot;Book 2 title : {0}&quot;, Book2.title);
+  Console.WriteLine(&quot;Book 2 author : {0}&quot;, Book2.author);
+  Console.WriteLine(&quot;Book 2 subject : {0}&quot;, Book2.subject);
+  Console.WriteLine(&quot;Book 2 book_id : {0}&quot;, Book2.book_id);      
+
+  Console.ReadKey();
+</code></pre><p>}
+}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>Book 1 title : C Programming
+Book 1 author : Nuha Ali
+Book 1 subject : C Programming Tutorial
+Book 1 book_id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Zara Ali
+Book 2 subject : Telecom Billing Tutorial
+Book 2 book_id : 6495700
+C# 结构的特点
+结构提供了一种轻量级的数据类型，适用于表示简单的数据结构，具有较好的性能特性和值语义：</p><p>结构可带有方法、字段、索引、属性、运算符方法和事件，适用于表示轻量级数据的情况，如坐标、范围、日期、时间等。
+结构可定义构造函数，但不能定义析构函数。但是，您不能为结构定义无参构造函数。无参构造函数(默认)是自动定义的，且不能被改变。
+与类不同，结构不能继承其他的结构或类。
+结构不能作为其他结构或类的基础结构。
+结构可实现一个或多个接口。
+结构成员不能指定为 abstract、virtual 或 protected。
+当您使用 New 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。与类不同，结构可以不使用 New 操作符即可被实例化。
+如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。
+结构变量通常分配在栈上，这使得它们的创建和销毁速度更快。但是，如果将结构用作类的字段，且这个类是引用类型，那么结构将存储在堆上。
+结构默认情况下是可变的，这意味着你可以修改它们的字段。但是，如果结构定义为只读，那么它的字段将是不可变的。
+类 vs 结构
+类和结构在设计和使用时有不同的考虑因素，类适合表示复杂的对象和行为，支持继承和多态性，而结构则更适合表示轻量级数据和值类型，以提高性能并避免引用的管理开销。</p><p>类和结构有以下几个基本的不同点：</p><p>值类型 vs 引用类型：</p><p>结构是值类型（Value Type）： 结构是值类型，它们在栈上分配内存，而不是在堆上。当将结构实例传递给方法或赋值给另一个变量时，将复制整个结构的内容。
+类是引用类型（Reference Type）： 类是引用类型，它们在堆上分配内存。当将类实例传递给方法或赋值给另一个变量时，实际上是传递引用（内存地址）而不是整个对象的副本。
+继承和多态性：</p><p>结构不能继承： 结构不能继承其他结构或类，也不能作为其他结构或类的基类。
+类支持继承： 类支持继承和多态性，可以通过派生新类来扩展现有类的功能。
+默认构造函数：</p><p>结构不能有无参数的构造函数： 结构不能包含无参数的构造函数。每个结构都必须有至少一个有参数的构造函数。
+类可以有无参数的构造函数： 类可以包含无参数的构造函数，如果没有提供构造函数，系统会提供默认的无参数构造函数。
+赋值行为：</p><p>类型为类的变量在赋值时存储的是引用，因此两个变量指向同一个对象。
+结构变量在赋值时会复制整个结构，因此每个变量都有自己的独立副本。
+传递方式：</p><p>类型为类的对象在方法调用时通过引用传递，这意味着在方法中对对象所做的更改会影响到原始对象。
+结构对象通常通过值传递，这意味着传递的是结构的副本，而不是原始结构对象本身。因此，在方法中对结构所做的更改不会影响到原始对象。
+可空性：</p><p>结构体是值类型，不能直接设置为 null：因为 null 是引用类型的默认值，而不是值类型的默认值。如果你需要表示结构体变量的缺失或无效状态，可以使用 Nullable<t> 或称为 T? 的可空类型。
+类默认可为null： 类的实例默认可以为 null，因为它们是引用类型。
+性能和内存分配：</p><p>结构通常更轻量： 由于结构是值类型且在栈上分配内存，它们通常比类更轻量，适用于简单的数据表示。
+类可能有更多开销： 由于类是引用类型，可能涉及更多的内存开销和管理。
+以下实例中，MyStruct 是一个结构，而 MyClass 是一个类。</p><p>注释部分演示了结构不能包含无参数的构造函数、不能继承以及结构的实例复制是复制整个结构的内容。与之相反，类可以包含无参数的构造函数，可以继承，并且实例复制是复制引用。</p><p>实例
+using System;</p><p>// 结构声明
+struct MyStruct
+{
+public int X;
+public int Y;</p><pre><code>// 结构不能有无参数的构造函数
+// public MyStruct()
+// {
+// }
+
+// 有参数的构造函数
+public MyStruct(int x, int y)
+{
+    X = x;
+    Y = y;
+}
+
+// 结构不能继承
+// struct MyDerivedStruct : MyBaseStruct
+// {
+// }
+</code></pre><p>}</p><p>// 类声明
+class MyClass
+{
+public int X;
+public int Y;</p><pre><code>// 类可以有无参数的构造函数
+public MyClass()
+{
+}
+
+// 有参数的构造函数
+public MyClass(int x, int y)
+{
+    X = x;
+    Y = y;
+}
+
+// 类支持继承
+// class MyDerivedClass : MyBaseClass
+// {
+// }
+</code></pre><p>}</p><p>class Program
+{
+static void Main()
+{
+// 结构是值类型，分配在栈上
+MyStruct structInstance1 = new MyStruct(1, 2);
+MyStruct structInstance2 = structInstance1; // 复制整个结构</p><pre><code>    // 类是引用类型，分配在堆上
+    MyClass classInstance1 = new MyClass(3, 4);
+    MyClass classInstance2 = classInstance1; // 复制引用，指向同一个对象
+
+    // 修改结构实例不影响其他实例
+    structInstance1.X = 5;
+    Console.WriteLine($&quot;Struct: {structInstance1.X}, {structInstance2.X}&quot;);
+
+    // 修改类实例会影响其他实例
+    classInstance1.X = 6;
+    Console.WriteLine($&quot;Class: {classInstance1.X}, {classInstance2.X}&quot;);
+}
+</code></pre><p>}
+针对上述讨论，让我们重写前面的实例：</p><p>实例
+using System;
+using System.Text;</p><p>struct Books
+{
+private string title;
+private string author;
+private string subject;
+private int book_id;
+public void setValues(string t, string a, string s, int id)
+{
+title = t;
+author = a;
+subject = s;
+book_id =id;
+}
+public void display()
+{
+Console.WriteLine(&ldquo;Title : {0}&rdquo;, title);
+Console.WriteLine(&ldquo;Author : {0}&rdquo;, author);
+Console.WriteLine(&ldquo;Subject : {0}&rdquo;, subject);
+Console.WriteLine(&ldquo;Book_id :{0}&rdquo;, book_id);
+}</p><p>};</p><p>public class testStructure
+{
+public static void Main(string[] args)
+{</p><pre><code>  Books Book1 = new Books(); /* 声明 Book1，类型为 Books */
+  Books Book2 = new Books(); /* 声明 Book2，类型为 Books */
+
+  /* book 1 详述 */
+  Book1.setValues(&quot;C Programming&quot;,
+  &quot;Nuha Ali&quot;, &quot;C Programming Tutorial&quot;,6495407);
+
+  /* book 2 详述 */
+  Book2.setValues(&quot;Telecom Billing&quot;,
+  &quot;Zara Ali&quot;, &quot;Telecom Billing Tutorial&quot;, 6495700);
+
+  /* 打印 Book1 信息 */
+  Book1.display();
+
+  /* 打印 Book2 信息 */
+  Book2.display();
+
+  Console.ReadKey();
+</code></pre><p>}
+}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>Title : C Programming
+Author : Nuha Ali
+Subject : C Programming Tutorial
+Book_id : 6495407
+Title : Telecom Billing
+Author : Zara Ali
+Subject : Telecom Billing Tutorial
+Book_id : 6495700</p><h2 id=第-章-类>第 章 类
+<a class=header-anchor href=#%e7%ac%ac-%e7%ab%a0-%e7%b1%bb></a></h2><p>C# 类（Class）
+当你定义一个类时，你定义了一个数据类型的蓝图。这实际上并没有定义任何的数据，但它定义了类的名称意味着什么，也就是说，类的对象由什么组成及在这个对象上可执行什么操作。对象是类的实例。构成类的方法和变量称为类的成员。</p><p>类的定义
+类的定义是以关键字 class 开始，后跟类的名称。类的主体，包含在一对花括号内。下面是类定义的一般形式：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-c# data-lang=c#><span style=display:flex><span>&lt;access specifier&gt; <span style=color:#66d9ef>class</span>  <span style=color:#a6e22e>class_name</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// member variables</span>
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;data type&gt; variable1;
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;data type&gt; variable2;
+</span></span><span style=display:flex><span>    ...
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;data type&gt; variableN;
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// member methods</span>
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;<span style=color:#66d9ef>return</span> type&gt; method1(parameter_list)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// method body</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;<span style=color:#66d9ef>return</span> type&gt; method2(parameter_list)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// method body</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    ...
+</span></span><span style=display:flex><span>    &lt;access specifier&gt; &lt;<span style=color:#66d9ef>return</span> type&gt; methodN(parameter_list)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// method body</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>请注意：</p><p>访问标识符 <access specifier>指定了对类及其成员的访问规则。如果没有指定，则使用默认的访问标识符。类的默认访问标识符是 internal，成员的默认访问标识符是 private。
+数据类型 <data type>指定了变量的类型，返回类型 <return type>指定了返回的方法返回的数据类型。
+如果要访问类的成员，你要使用点（.）运算符。
+点运算符链接了对象的名称和成员的名称。
+下面的实例说明了目前为止所讨论的概念：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> BoxApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Box</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> length;   <span style=color:#75715e>// 长度</span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> breadth;  <span style=color:#75715e>// 宽度</span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> height;   <span style=color:#75715e>// 高度</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Boxtester</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            Box Box1 = <span style=color:#66d9ef>new</span> Box();        <span style=color:#75715e>// 声明 Box1，类型为 Box</span>
+</span></span><span style=display:flex><span>            Box Box2 = <span style=color:#66d9ef>new</span> Box();        <span style=color:#75715e>// 声明 Box2，类型为 Box</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>double</span> volume = <span style=color:#ae81ff>0.0</span>;         <span style=color:#75715e>// 体积</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box1 详述</span>
+</span></span><span style=display:flex><span>            Box1.height = <span style=color:#ae81ff>5.0</span>;
+</span></span><span style=display:flex><span>            Box1.length = <span style=color:#ae81ff>6.0</span>;
+</span></span><span style=display:flex><span>            Box1.breadth = <span style=color:#ae81ff>7.0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box2 详述</span>
+</span></span><span style=display:flex><span>            Box2.height = <span style=color:#ae81ff>10.0</span>;
+</span></span><span style=display:flex><span>            Box2.length = <span style=color:#ae81ff>12.0</span>;
+</span></span><span style=display:flex><span>            Box2.breadth = <span style=color:#ae81ff>13.0</span>;
+</span></span><span style=display:flex><span>           
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box1 的体积</span>
+</span></span><span style=display:flex><span>            volume = Box1.height * Box1.length * Box1.breadth;
+</span></span><span style=display:flex><span>            Console.WriteLine(<span style=color:#e6db74>&#34;Box1 的体积： {0}&#34;</span>,  volume);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box2 的体积</span>
+</span></span><span style=display:flex><span>            volume = Box2.height * Box2.length * Box2.breadth;
+</span></span><span style=display:flex><span>            Console.WriteLine(<span style=color:#e6db74>&#34;Box2 的体积： {0}&#34;</span>, volume);
+</span></span><span style=display:flex><span>            Console.ReadKey();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><p>Box1 的体积： 210
+Box2 的体积： 1560
+成员函数和封装
+类的成员函数是一个在类定义中有它的定义或原型的函数，就像其他变量一样。作为类的一个成员，它能在类的任何对象上操作，且能访问该对象的类的所有成员。</p><p>成员变量是对象的属性（从设计角度），且它们保持私有来实现封装。这些变量只能使用公共成员函数来访问。</p><p>让我们使用上面的概念来设置和获取一个类中不同的类成员的值：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> BoxApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Box</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>double</span> length;   <span style=color:#75715e>// 长度</span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>double</span> breadth;  <span style=color:#75715e>// 宽度</span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>double</span> height;   <span style=color:#75715e>// 高度</span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> setLength( <span style=color:#66d9ef>double</span> len )
+</span></span><span style=display:flex><span>       {
+</span></span><span style=display:flex><span>            length = len;
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> setBreadth( <span style=color:#66d9ef>double</span> bre )
+</span></span><span style=display:flex><span>       {
+</span></span><span style=display:flex><span>            breadth = bre;
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> setHeight( <span style=color:#66d9ef>double</span> hei )
+</span></span><span style=display:flex><span>       {
+</span></span><span style=display:flex><span>            height = hei;
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> getVolume()
+</span></span><span style=display:flex><span>       {
+</span></span><span style=display:flex><span>           <span style=color:#66d9ef>return</span> length * breadth * height;
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Boxtester</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            Box Box1 = <span style=color:#66d9ef>new</span> Box();        <span style=color:#75715e>// 声明 Box1，类型为 Box</span>
+</span></span><span style=display:flex><span>            Box Box2 = <span style=color:#66d9ef>new</span> Box();        <span style=color:#75715e>// 声明 Box2，类型为 Box</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>double</span> volume;               <span style=color:#75715e>// 体积</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box1 详述</span>
+</span></span><span style=display:flex><span>            Box1.setLength(<span style=color:#ae81ff>6.0</span>);
+</span></span><span style=display:flex><span>            Box1.setBreadth(<span style=color:#ae81ff>7.0</span>);
+</span></span><span style=display:flex><span>            Box1.setHeight(<span style=color:#ae81ff>5.0</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box2 详述</span>
+</span></span><span style=display:flex><span>            Box2.setLength(<span style=color:#ae81ff>12.0</span>);
+</span></span><span style=display:flex><span>            Box2.setBreadth(<span style=color:#ae81ff>13.0</span>);
+</span></span><span style=display:flex><span>            Box2.setHeight(<span style=color:#ae81ff>10.0</span>);
+</span></span><span style=display:flex><span>       
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box1 的体积</span>
+</span></span><span style=display:flex><span>            volume = Box1.getVolume();
+</span></span><span style=display:flex><span>            Console.WriteLine(<span style=color:#e6db74>&#34;Box1 的体积： {0}&#34;</span> ,volume);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Box2 的体积</span>
+</span></span><span style=display:flex><span>            volume = Box2.getVolume();
+</span></span><span style=display:flex><span>            Console.WriteLine(<span style=color:#e6db74>&#34;Box2 的体积： {0}&#34;</span>, volume);
+</span></span><span style=display:flex><span>           
+</span></span><span style=display:flex><span>            Console.ReadKey();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><p>Box1 的体积： 210
+Box2 的体积： 1560
+C# 中的构造函数
+类的 构造函数 是类的一个特殊的成员函数，当创建类的新对象时执行。</p><p>构造函数的名称与类的名称完全相同，它没有任何返回类型。</p><p>下面的实例说明了构造函数的概念：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> LineApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Line</span>
+</span></span><span style=display:flex><span>   {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>double</span> length;   <span style=color:#75715e>// 线条的长度</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> Line()
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;对象已创建&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> setLength( <span style=color:#66d9ef>double</span> len )
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         length = len;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> getLength()
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         <span style=color:#66d9ef>return</span> length;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         Line line = <span style=color:#66d9ef>new</span> Line();    
+</span></span><span style=display:flex><span>         <span style=color:#75715e>// 设置线条长度</span>
+</span></span><span style=display:flex><span>         line.setLength(<span style=color:#ae81ff>6.0</span>);
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;线条的长度： {0}&#34;</span>, line.getLength());
+</span></span><span style=display:flex><span>         Console.ReadKey();
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><p>对象已创建
+线条的长度： 6
+默认的构造函数没有任何参数。但是如果你需要一个带有参数的构造函数可以有参数，这种构造函数叫做参数化构造函数。这种技术可以帮助你在创建对象的同时给对象赋初始值，具体请看下面实例：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> LineApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Line</span>
+</span></span><span style=display:flex><span>   {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>double</span> length;   <span style=color:#75715e>// 线条的长度</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> Line(<span style=color:#66d9ef>double</span> len)  <span style=color:#75715e>// 参数化构造函数</span>
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;对象已创建，length = {0}&#34;</span>, len);
+</span></span><span style=display:flex><span>         length = len;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> setLength( <span style=color:#66d9ef>double</span> len )
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         length = len;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>double</span> getLength()
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         <span style=color:#66d9ef>return</span> length;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>         Line line = <span style=color:#66d9ef>new</span> Line(<span style=color:#ae81ff>10.0</span>);
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;线条的长度： {0}&#34;</span>, line.getLength());
+</span></span><span style=display:flex><span>         <span style=color:#75715e>// 设置线条长度</span>
+</span></span><span style=display:flex><span>         line.setLength(<span style=color:#ae81ff>6.0</span>);
+</span></span><span style=display:flex><span>         Console.WriteLine(<span style=color:#e6db74>&#34;线条的长度： {0}&#34;</span>, line.getLength());
+</span></span><span style=display:flex><span>         Console.ReadKey();
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><p>对象已创建，length = 10
+线条的长度： 10
+线条的长度： 6
+C# 中的析构函数
+类的 析构函数 是类的一个特殊的成员函数，当类的对象超出范围时执行。</p><p>析构函数的名称是在类的名称前加上一个波浪形（~）作为前缀，它不返回值，也不带任何参数。</p><p>析构函数用于在结束程序（比如关闭文件、释放内存等）之前释放资源。析构函数不能继承或重载。</p><p>下面的实例说明了析构函数的概念：</p><p>实例</p><p>using System;
+namespace LineApplication
+{
+class Line
+{
+private double length; // 线条的长度
+public Line() // 构造函数
+{
+Console.WriteLine(&ldquo;对象已创建&rdquo;);
+}
+~Line() //析构函数
+{
+Console.WriteLine(&ldquo;对象已删除&rdquo;);
+}</p><pre><code>  public void setLength( double len )
+  {
+     length = len;
+  }
+  public double getLength()
+  {
+     return length;
+  }
+
+  static void Main(string[] args)
+  {
+     Line line = new Line();
+     // 设置线条长度
+     line.setLength(6.0);
+     Console.WriteLine(&quot;线条的长度： {0}&quot;, line.getLength());          
+  }
+</code></pre><p>}
+}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>对象已创建
+线条的长度： 6
+对象已删除
+C# 类的静态成员
+我们可以使用 static 关键字把类成员定义为静态的。当我们声明一个类成员为静态时，意味着无论有多少个类的对象被创建，只会有一个该静态成员的副本。</p><p>关键字 static 意味着类中只有一个该成员的实例。静态变量用于定义常量，因为它们的值可以通过直接调用类而不需要创建类的实例来获取。静态变量可在成员函数或类的定义外部进行初始化。你也可以在类的定义内部初始化静态变量。</p><p>下面的实例演示了静态变量的用法：</p><p>实例
+using System;
+namespace StaticVarApplication
+{
+class StaticVar
+{
+public static int num;
+public void count()
+{
+num++;
+}
+public int getNum()
+{
+return num;
+}
+}
+class StaticTester
+{
+static void Main(string[] args)
+{
+StaticVar s1 = new StaticVar();
+StaticVar s2 = new StaticVar();
+s1.count();
+s1.count();
+s1.count();
+s2.count();
+s2.count();
+s2.count();<br>Console.WriteLine(&ldquo;s1 的变量 num： {0}&rdquo;, s1.getNum());
+Console.WriteLine(&ldquo;s2 的变量 num： {0}&rdquo;, s2.getNum());
+Console.ReadKey();
+}
+}
+}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>s1 的变量 num： 6
+s2 的变量 num： 6
+你也可以把一个成员函数声明为 static。这样的函数只能访问静态变量。静态函数在对象被创建之前就已经存在。下面的实例演示了静态函数的用法：</p><p>实例</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-C# data-lang=C#><span style=display:flex><span><span style=color:#66d9ef>using</span> System;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> StaticVarApplication
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>StaticVar</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> num;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> count()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            num++;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> getNum()
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> num;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>StaticTester</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> Main(<span style=color:#66d9ef>string</span>[] args)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            StaticVar s = <span style=color:#66d9ef>new</span> StaticVar();
+</span></span><span style=display:flex><span>            s.count();
+</span></span><span style=display:flex><span>            s.count();
+</span></span><span style=display:flex><span>            s.count();                  
+</span></span><span style=display:flex><span>            Console.WriteLine(<span style=color:#e6db74>&#34;变量 num： {0}&#34;</span>, StaticVar.getNum());
+</span></span><span style=display:flex><span>            Console.ReadKey();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p><p>变量 num： 3</p><h2 id=文件的输入与输出>文件的输入与输出
+<a class=header-anchor href=#%e6%96%87%e4%bb%b6%e7%9a%84%e8%be%93%e5%85%a5%e4%b8%8e%e8%be%93%e5%87%ba></a></h2><p>一个 文件 是一个存储在磁盘中带有指定名称和目录路径的数据集合。当打开文件进行读写时，它变成一个 流。</p><p>从根本上说，流是通过通信路径传递的字节序列。有两个主要的流：输入流 和 输出流。输入流用于从文件读取数据（读操作），输出流用于向文件写入数据（写操作）。</p><h3 id=c-io-类>C# I/O 类
+<a class=header-anchor href=#c-io-%e7%b1%bb></a></h3><p>System.IO 命名空间有各种不同的类，用于执行各种文件操作，如创建和删除文件、读取或写入文件，关闭文件等。</p><p>下表列出了一些 System.IO 命名空间中常用的非抽象类：</p><p>I/O 类 描述
+BinaryReader 从二进制流读取原始数据。
+BinaryWriter 以二进制格式写入原始数据。
+BufferedStream 字节流的临时存储。
+Directory 有助于操作目录结构。
+DirectoryInfo 用于对目录执行操作。
+DriveInfo 提供驱动器的信息。
+File 有助于处理文件。
+FileInfo 用于对文件执行操作。
+FileStream 用于文件中任何位置的读写。
+MemoryStream 用于随机访问存储在内存中的数据流。
+Path 对路径信息执行操作。
+StreamReader 用于从字节流中读取字符。
+StreamWriter 用于向一个流中写入字符。
+StringReader 用于读取字符串缓冲区。
+StringWriter 用于写入字符串缓冲区。
+FileStream 类
+System.IO 命名空间中的 FileStream 类有助于文件的读写与关闭。该类派生自抽象类 Stream。</p><p>您需要创建一个 FileStream 对象来创建一个新的文件，或打开一个已有的文件。创建 FileStream 对象的语法如下：</p><p>FileStream &lt;object_name> = new FileStream( &lt;file_name>,
+<filemode enumerator>, <fileaccess enumerator>, <fileshare enumerator>);
+例如，创建一个 FileStream 对象 F 来读取名为 sample.txt 的文件：</p><p>FileStream F = new FileStream(&ldquo;sample.txt&rdquo;, FileMode.Open, FileAccess.Read, FileShare.Read);
+参数 描述
+FileMode
+FileMode 枚举定义了各种打开文件的方法。FileMode 枚举的成员有：</p><p>Append：打开一个已有的文件，并将光标放置在文件的末尾。如果文件不存在，则创建文件。
+Create：创建一个新的文件。如果文件已存在，则删除旧文件，然后创建新文件。
+CreateNew：指定操作系统应创建一个新的文件。如果文件已存在，则抛出异常。
+Open：打开一个已有的文件。如果文件不存在，则抛出异常。
+OpenOrCreate：指定操作系统应打开一个已有的文件。如果文件不存在，则用指定的名称创建一个新的文件打开。
+Truncate：打开一个已有的文件，文件一旦打开，就将被截断为零字节大小。然后我们可以向文件写入全新的数据，但是保留文件的初始创建日期。如果文件不存在，则抛出异常。
+FileAccess
+FileAccess 枚举的成员有：Read、ReadWrite 和 Write。</p><p>FileShare
+FileShare 枚举的成员有：</p><p>Inheritable：允许文件句柄可由子进程继承。Win32 不直接支持此功能。
+None：谢绝共享当前文件。文件关闭前，打开该文件的任何请求（由此进程或另一进程发出的请求）都将失败。
+Read：允许随后打开文件读取。如果未指定此标志，则文件关闭前，任何打开该文件以进行读取的请求（由此进程或另一进程发出的请求）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件。
+ReadWrite：允许随后打开文件读取或写入。如果未指定此标志，则文件关闭前，任何打开该文件以进行读取或写入的请求（由此进程或另一进程发出）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件。
+Write：允许随后打开文件写入。如果未指定此标志，则文件关闭前，任何打开该文件以进行写入的请求（由此进程或另一进过程发出的请求）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件。
+Delete：允许随后删除文件。
+实例
+下面的程序演示了 FileStream 类的用法：</p><p>实例
+using System;
+using System.IO;</p><p>namespace FileIOApplication
+{
+class Program
+{
+static void Main(string[] args)
+{
+FileStream F = new FileStream(&ldquo;test.dat&rdquo;,
+FileMode.OpenOrCreate, FileAccess.ReadWrite);</p><pre><code>        for (int i = 1; i &lt;= 20; i++)
+        {
+            F.WriteByte((byte)i);
+        }
+
+        F.Position = 0;
+
+        for (int i = 0; i &lt;= 20; i++)
+        {
+            Console.Write(F.ReadByte() + &quot; &quot;);
+        }
+        F.Close();
+        Console.ReadKey();
+    }
+}
+</code></pre><p>}
+当上面的代码被编译和执行时，它会产生下列结果：</p><p>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -1
+C# 高级文件操作
+上面的实例演示了 C# 中简单的文件操作。但是，要充分利用 C# System.IO 类的强大功能，您需要知道这些类常用的属性和方法。</p><p>在下面的章节中，我们将讨论这些类和它们执行的操作。请单击链接详细了解各个部分的知识：</p><p>主题 描述
+文本文件的读写 它涉及到文本文件的读写。StreamReader 和 StreamWriter 类有助于完成文本文件的读写。
+二进制文件的读写 它涉及到二进制文件的读写。BinaryReader 和 BinaryWriter 类有助于完成二进制文件的读写。</p><h2 id=测绘程序设计>测绘程序设计
+<a class=header-anchor href=#%e6%b5%8b%e7%bb%98%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1></a></h2><h3 id=大地线计算>大地线计算
+<a class=header-anchor href=#%e5%a4%a7%e5%9c%b0%e7%ba%bf%e8%ae%a1%e7%ae%97></a></h3></div><footer class=post-footer><div class=addthis_inline_share_toolbox style=text-align:center></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="南图 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="南图 - 微信">
+<span>微信</span></div></div></div><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+测绘程序设计Csharp</li><li class=post-copyright-author><strong>本文作者： </strong>南图</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=https://geoyxd.github.io/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/ title=测绘程序设计Csharp>https://geoyxd.github.io/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/images/wechat_channel.jpg><span class=icon><i class="fab fa-weixin"></i>
+</span><span class=label>WeChat</span></a></div><div class=social-item><a target=_blank class=social-link href=/atom.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/posts/%E6%B3%A8%E5%86%8C%E6%B5%8B%E7%BB%98%E5%B8%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ rel=next title=注册测绘师学习笔记><i class="fa fa-chevron-left"></i> 注册测绘师学习笔记</a></div><div class="post-nav-prev post-nav-item"><a href=/posts/orbit/ rel=prev title=利用gamit/globk软件计算卫星轨道>利用gamit/globk软件计算卫星轨道
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=gtranslate class=google-translate><i class="fa fa-language"></i><div id=google_translate_element></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2024
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>南图</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.128.2 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.5.3 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>粤ICP备 18047355-1 号</a>
+<img src=/imgs/gongan.png alt=甘公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009770" target=_blank>甘公网安备 31011402009770 号</a></div><div class=vendors-list><a target=_blank href=https://vercel.com title=Vercel><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/vercel.svg alt=Vercel>
+</a><a target=_blank href=https://upyun.com title=又拍云><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/upyun.png alt=又拍云>
+</a><a target=_blank href=https://webify.cloudbase.net title=Webify>Webify
+</a><span>提供CDN/云资源支持</span></div></div></footer><script type=text/javascript src=https://cdn.staticfile.org/animejs/3.2.1/anime.min.js defer></script><script type=text/javascript src=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.js defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://geoyxd.github.io/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"qiniu","router":"https://cdn.staticfile.org"},"version":"4.5.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"waline","file":"dist/waline.css","name":"@waline/client","version":"2.13.0"},"js":{"alias":"waline","file":"dist/waline.js","name":"@waline/client","version":"2.13.0"}}}</script><script type=text/javascript src=/js/main.min.0fb3547374c917d23a2e5f762b70f3698d20b46a01cc18c38f9c467aeffc99fc.js defer></script></body></html>

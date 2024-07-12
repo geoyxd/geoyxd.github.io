@@ -14,7 +14,7 @@ Hugo 建站
 部署到服务器
 $ hugo deploy 更多信息：
 Hugo 发布
-祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>测绘程序设计Csharp</title><url>/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</url><categories/><tags/><content type="html"><![CDATA[  测绘程序设计（C#）第一章 程序结构在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。
+祝你好运，相信你会喜欢上 Hugo 建站的旅程！</content></entry><entry><title>测绘程序设计C#版</title><url>/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</url><categories/><tags/><content type="html"><![CDATA[  测绘程序设计（C#）第一章 程序结构在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。
 C# Hello World 实例一个 C# 程序主要包括以下部分：
 命名空间声明（Namespace declaration） 一个 class Class 方法 Class 属性 一个 Main 方法 语句（Statements）&amp;amp; 表达式（Expressions） 注释 C# 文件的后缀为 .cs。
 以下创建一个 test.cs 文件，文件包含了可以打印出 &amp;ldquo;Hello World&amp;rdquo; 的简单代码：

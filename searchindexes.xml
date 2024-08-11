@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>测绘程序设计C#版</title><url>/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</url><categories><category>测绘程序设计</category></categories><tags><tag>c#</tag></tags><content type="html"><![CDATA[  测绘程序设计（C#）第1章 C#与.NET Framework简介在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包</title><url>/posts/gdps/</url><categories/><tags/><content type="html"> GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包
+简介
+该软件可在 Windows 和 Linux 操作系统上编译和运行，支持处理接收机独立交换格式 (RINEX) 2.11 到 4.01 格式的数据，并实现了四个功能模块：格式转换、数据编辑、质量检查和辅助工具。此外，它还提供了一个用户友好的图形用户界面 (GUI)，使用户能够自定义和选择不同的处理设置参数，然后通过绘图工具分析相应的结果。GDPS 软件能够满足多频多星座数据预处理需求，有望为相关研究人员提供一个开源、便捷、集成的 GNSS 数据预处理解决方案。
+特征
+GDPS 提供了一个开源的基于 Python 的交互式工具，可在 Windows 和 Linux 上使用，用于预处理多频和多系统 GNSS 数据，例如 GPS、GLONASS、伽利略、北斗、QZSS、IRNSS 和 SBAS。 GDPS 支持对不同版本的 RINEX 2.11 ~ 4.01 数据文件进行格式转换，例如观测数据、广播星历和气象数据。 GDPS 支持基于 RINEX 数据的编辑处理，包括数据分割、拼接和提取模块，以修改所需数据记录内容。 GDPS 支持对多 GNSS 数据进行质量检查分析，包括载噪比、电离层延迟率、伪距/载波相位多路径、伪距/载波相位观测噪声、数据完整性/饱和率和单点定位。 下载
+软件
+论文</content></entry><entry><title>测绘程序设计C#版</title><url>/posts/%E6%B5%8B%E7%BB%98%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1csharp/</url><categories><category>测绘程序设计</category></categories><tags><tag>c#</tag></tags><content type="html"><![CDATA[  测绘程序设计（C#）第1章 C#与.NET Framework简介在我们学习 C# 编程语言的基础构件块之前，让我们先看一下 C# 的最小的程序结构，以便作为接下来章节的参考。
 C# Hello World 实例一个 C# 程序主要包括以下部分：
 命名空间声明（Namespace declaration） 一个 class Class 方法 Class 属性 一个 Main 方法 语句（Statements）&amp;amp; 表达式（Expressions） 注释 C# 文件的后缀为 .cs。 以下创建一个 test.cs 文件，文件包含了可以打印出 &amp;ldquo;Hello World&amp;rdquo; 的简单代码： using System; namespace HelloWorldApplication { class HelloWorld { static void Main(string[] args) { /* 我的第一个 C# 程序*/ Console.WriteLine(&amp;#34;Hello World&amp;#34;); Console.ReadKey(); } } } 当上面的代码被编译和执行时，它会产生下列结果：
 Hello World

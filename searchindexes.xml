@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包</title><url>/posts/gdps/</url><categories/><tags/><content type="html"> GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Gnssrefl_software</title><url>/posts/gnssrefl_software/</url><categories/><tags/><content type="html"> Gnssrefl: 一个用于 GNSS 干涉反射计应用的 Python 开源软件包
+软件简介
+一个开源软件包已开发用于全球导航卫星系统 (GNSS) 干涉反射测量。gnssrefl 包是用 python 编写的；它可以从源代码、python 包索引网站或通过 docker 安装。它包含模块，可以从全球档案下载 GNSS 数据和轨道数据。利用信噪比数据，周期图用于获取GNSS天线在反射面上的高度。支持来自全球定位系统、格洛纳斯、伽利略和北斗星座的信号。提供模块来估计土壤容积含水量、积雪深度/累积量和水位。提供用于映射和评估反射区以及确定最大可分辨高度的工具。
+软件的安装
+资源下载
+1 github网站
+更新pip
+sudo apt install python3-pip pip install &amp;ndash;upgrade pip
+新建工程目录
+mkdir gnss cd gnss mkdir rnxexe gnssorbit gnsscode
+设置环境变量
+export EXE=/XXX/gnsss/rnxexe export ORBITS=/XXX/gnsss/gnssorbit export REFL_CODE=/XXX/gnsss/gnsscode 新建虚拟环境
+python3 -m venv env
+进入虚拟环境
+source env/bin/activate
+pip install .
+查看numpy版本
+pip show numpy
+卸载numpy
+pip uninstall numpy
+自定numpy版本下载/降级下载
+pip install -U numpy==1.15.4
+安装解压软件
+sudo apt install unzip sudo apt install ncompress
+反演土壤湿度
+source env/bin/activate gnssir_input p002 -l2c T #分析策略 gnssir scia 2018 1 -doy_end 365 -year_end 2019 #估计反射高度 vwc p038 2015 -year_end 2017 # 安装包下载
+下载地址
+参考文献
+1 https://doi.org/10.1007/s10291-024-01694-8</content></entry><entry><title>GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包</title><url>/posts/gdps/</url><categories/><tags/><content type="html"> GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包
 简介
 该软件可在 Windows 和 Linux 操作系统上编译和运行，支持处理接收机独立交换格式 (RINEX) 2.11 到 4.01 格式的数据，并实现了四个功能模块：格式转换、数据编辑、质量检查和辅助工具。此外，它还提供了一个用户友好的图形用户界面 (GUI)，使用户能够自定义和选择不同的处理设置参数，然后通过绘图工具分析相应的结果。GDPS 软件能够满足多频多星座数据预处理需求，有望为相关研究人员提供一个开源、便捷、集成的 GNSS 数据预处理解决方案。
 特征

@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包</title><url>/posts/gdps/</url><categories/><tags/><content type="html"> GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包
-简介
-该软件可在 Windows 和 Linux 操作系统上编译和运行，支持处理接收机独立交换格式 (RINEX) 2.11 到 4.01 格式的数据，并实现了四个功能模块：格式转换、数据编辑、质量检查和辅助工具。此外，它还提供了一个用户友好的图形用户界面 (GUI)，使用户能够自定义和选择不同的处理设置参数，然后通过绘图工具分析相应的结果。GDPS 软件能够满足多频多星座数据预处理需求，有望为相关研究人员提供一个开源、便捷、集成的 GNSS 数据预处理解决方案。
-特征
-GDPS 提供了一个开源的基于 Python 的交互式工具，可在 Windows 和 Linux 上使用，用于预处理多频和多系统 GNSS 数据，例如 GPS、GLONASS、伽利略、北斗、QZSS、IRNSS 和 SBAS。 GDPS 支持对不同版本的 RINEX 2.11 ~ 4.01 数据文件进行格式转换，例如观测数据、广播星历和气象数据。 GDPS 支持基于 RINEX 数据的编辑处理，包括数据分割、拼接和提取模块，以修改所需数据记录内容。 GDPS 支持对多 GNSS 数据进行质量检查分析，包括载噪比、电离层延迟率、伪距/载波相位多路径、伪距/载波相位观测噪声、数据完整性/饱和率和单点定位。 下载
-软件
-论文</content></entry><entry><title>机器学习笔记</title><url>/posts/ml_note/</url><categories/><tags/><content type="html"> 数据预处理
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>机器学习笔记</title><url>/posts/ml_note/</url><categories/><tags/><content type="html"> 数据预处理
 归一化
 import numpy as np x_1 = np.random.ramdint(0,10,size =10 ) x_2 - np.random.randint(10000,500000,size=10)
 X=np.c_[x_1,x_2]

@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Gnssrefl_software</title><url>/posts/gnssrefl_software/</url><categories/><tags/><content type="html"> Gnssrefl: 一个用于 GNSS 干涉反射计应用的 Python 开源软件包
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>测绘程序设计（Python）</title><url>/posts/surveying_and_mapping_programmingpython/</url><categories/><tags/><content type="html"> 测绘程序设计（Python）
+简介
+Python是目前流行的编程语言之一，是一门解释型、面向对象的语言，由吉多（Guido van Rossum）于1989年发明。于1994正式发布第一版。Python是解释型语言，意味着开发过程中没有了编译这个环节。类似于 PHP 和 Perl 语言。Python 是面向对象语言，支持面向对象的风格或代码封装在对象的编程技术。
+特点
+解释性：python是边解释边执行 面向对象： 免费开源 可移植性和跨平台：python程序无需修改可以运行在多个平台上。 丰富的库：标准库种类繁多，帮助处理各类工作。 可拓展性 动态类型：声明变量时不需要制定数据类型。 应用范围自动化办公、自动化运维、科学计算、机器学习、深度学习。 环境搭建</content></entry><entry><title>Gnssrefl: 一个用于 GNSS 干涉反射计应用的 Python 开源软件包</title><url>/posts/gnssrefl_software/</url><categories/><tags/><content type="html"> Gnssrefl: 一个用于 GNSS 干涉反射计应用的 Python 开源软件包
 软件简介
 一个开源软件包已开发用于全球导航卫星系统 (GNSS) 干涉反射测量。gnssrefl 包是用 python 编写的；它可以从源代码、python 包索引网站或通过 docker 安装。它包含模块，可以从全球档案下载 GNSS 数据和轨道数据。利用信噪比数据，周期图用于获取GNSS天线在反射面上的高度。支持来自全球定位系统、格洛纳斯、伽利略和北斗星座的信号。提供模块来估计土壤容积含水量、积雪深度/累积量和水位。提供用于映射和评估反射区以及确定最大可分辨高度的工具。
 软件的安装

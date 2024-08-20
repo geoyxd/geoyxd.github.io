@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>测绘程序设计（Python）</title><url>/posts/surveying_and_mapping_programmingpython/</url><categories/><tags/><content type="html"> 测绘程序设计（Python）
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>PRIDE软件安装及其GNSS数据自动化处理</title><url>/posts/install_pride/</url><categories/><tags/><content type="html"> PRIDE软件安装及其GNSS数据自动化处理
+软件安装
+软件安装
+自动化shell脚本</content></entry><entry><title>测绘程序设计（Python）</title><url>/posts/surveying_and_mapping_programmingpython/</url><categories/><tags/><content type="html"> 测绘程序设计（Python）
 简介
 Python是目前流行的编程语言之一，是一门解释型、面向对象的语言，由吉多（Guido van Rossum）于1989年发明。于1994正式发布第一版。Python是解释型语言，意味着开发过程中没有了编译这个环节。类似于 PHP 和 Perl 语言。Python 是面向对象语言，支持面向对象的风格或代码封装在对象的编程技术。
 特点
@@ -32,8 +35,7 @@ source env/bin/activate gnssir_input p002 -l2c T #分析策略 gnssir scia 2018 
 参考文献
 1 https://doi.org/10.1007/s10291-024-01694-8</content></entry><entry><title>GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包</title><url>/posts/gdps/</url><categories/><tags/><content type="html"> GDPS：一个基于 Python 的开源多 GNSS 数据预处理软件包
 简介
-该软件可在 Windows 和 Linux 操作系统上编译和运行，支持处理接收机独立交换格式 (RINEX) 2.11 到 4.01 格式的数据，并实现了四个功能模块：格式转换、数据编辑、质量检查和辅助工具。此外，它还提供了一个用户友好的图形用户界面 (GUI)，使用户能够自定义和选择不同的处理设置参数，然后通过绘图工具分析相应的结果。GDPS 软件能够满足多频多星座数据预处理需求，有望为相关研究人员提供一个开源、便捷、集成的 GNSS 数据预处理解决方案。
-特征
+该软件可在 Windows 和 Linux 操作系统上编译和运行，支持处理接收机独立交换格式 (RINEX) 2.11 到 4.01 格式的数据，并实现了四个功能模块：格式转换、数据编辑、质量检查和辅助工具。此外，它还提供了一个用户友好的图形用户界面 (GUI)，使用户能够自定义和选择不同的处理设置参数，然后通过绘图工具分析相应的结果。GDPS 软件能够满足多频多星座数据预处理需求，有望为相关研究人员提供一个开源、便捷、集成的 GNSS 数据预处理解决方案。 特征
 GDPS 提供了一个开源的基于 Python 的交互式工具，可在 Windows 和 Linux 上使用，用于预处理多频和多系统 GNSS 数据，例如 GPS、GLONASS、伽利略、北斗、QZSS、IRNSS 和 SBAS。 GDPS 支持对不同版本的 RINEX 2.11 ~ 4.01 数据文件进行格式转换，例如观测数据、广播星历和气象数据。 GDPS 支持基于 RINEX 数据的编辑处理，包括数据分割、拼接和提取模块，以修改所需数据记录内容。 GDPS 支持对多 GNSS 数据进行质量检查分析，包括载噪比、电离层延迟率、伪距/载波相位多路径、伪距/载波相位观测噪声、数据完整性/饱和率和单点定位。 下载
 软件
 论文</content></entry><entry><title>机器学习笔记</title><url>/posts/ml_note/</url><categories/><tags/><content type="html"> 数据预处理

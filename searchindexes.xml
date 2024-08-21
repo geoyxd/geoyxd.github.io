@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>PRIDE软件安装及其GNSS数据自动化处理</title><url>/posts/install_pride/</url><categories/><tags/><content type="html"> PRIDE软件安装及其GNSS数据自动化处理
-软件安装
-软件安装
-自动化shell脚本</content></entry><entry><title>测绘程序设计（Python）</title><url>/posts/surveying_and_mapping_programmingpython/</url><categories/><tags/><content type="html"> 测绘程序设计（Python）
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>PRIDE软件安装及其GNSS数据自动化处理</title><url>/posts/install_pride/</url><categories/><tags/><content type="html"><![CDATA[  PRIDE软件安装及其GNSS数据自动化处理软件简介PRIDE PPP-AR源于葛茂荣博士在PPP-AR方面的努力，后来由耿江辉博士的团队开发和改进。它是一个开源软件包，基于武汉大学GNSS研究中心的许多GNSS专业人员的集体工作。
+PRIDE PPP-AR 版本 3.0 适用于使用 GPS、GLONASS、Galileo、BDS-2/3 和 QZSS 进行多 GNSS 数据处理 GPS、Galileo 和 BDS-2/3 的任何双频无电离层组合上的全频 PPP-AR 高达 50 Hz 的高速 GNSS 数据处理 适用于航空摄影测量、船载重力测量等的高动态移动平台。 LEO卫星的运动学轨道 长达 108 天（采样率为 30 秒）的多日处理，无日边界不连续性 用于时间和频率传输的 IPPP 时钟估计 使用维也纳映射函数 1/3 （VMF1/VMF3） 进行对流层建模 使用GIM产品进行二阶电离层延迟校正 接收器时钟跳跃检测和缓解 采用最新的IGS规范：Bias-SINEX、IGS20参考框架、ORBEX、RINEX 4等。 使用精简版 GUI 为早期职业研究人员提供用户友好的操作和可视化 自 1994 年选择性可用性 （SA） 开启时具有向后兼容性的模糊浮动 PPP 使用快速 （RAP） 产品和实时归档 （RTS） 产品及时处理数据 软件安装下载安装包拷贝到/opt目录下,然后为安装脚本添加可执行权限： chmod +x install.sh
+执行安装脚本进行安装 ./install.sh
+自动化shell脚本#!/bin/bash # 在rinex文件夹下获得001天的测站文件名 ls *&#34;0010.23o&#34; &gt; ls.txt for s in $(cat ls.txt) do sitename=`ls $s | cut -b 1-4` doy=`ls $s | cut -b 5-7` year=`ls $s | cut -b 10-11` pdp3 -s 2023/001 -e 2023/038 $sitename&#34;0010.23o&#34; done   ]]></content></entry><entry><title>测绘程序设计（Python）</title><url>/posts/surveying_and_mapping_programmingpython/</url><categories/><tags/><content type="html"> 测绘程序设计（Python）
 简介
 Python是目前流行的编程语言之一，是一门解释型、面向对象的语言，由吉多（Guido van Rossum）于1989年发明。于1994正式发布第一版。Python是解释型语言，意味着开发过程中没有了编译这个环节。类似于 PHP 和 Perl 语言。Python 是面向对象语言，支持面向对象的风格或代码封装在对象的编程技术。
 特点
